@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.jiang.shoolshow.view.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="42dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <include
+                android:id="@+id/floor_1"
+                layout="@layout/floor_demo_1"
+                android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+
+            <include
+
+                android:id="@+id/floor_2"
+                layout="@layout/floor_demo_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="110dp" />
+
+            <include
+                android:id="@+id/floor_3"
+                layout="@layout/floor_demo_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="130dp" />
+
+            <include
+                android:id="@+id/floor_4"
+                layout="@layout/floor_demo_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="88dp" />
+
+            <include
+                android:id="@+id/floor_5"
+                layout="@layout/floor_demo_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="66dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/white"
+                    android:text="Back" />
+
+                <Button
+                    android:id="@+id/home"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/white"
+                    android:text="Home" />
+
+                <Button
+                    android:id="@+id/menu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/white"
+                    android:text="Menu" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="200dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
