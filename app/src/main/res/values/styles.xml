@@ -12,7 +12,7 @@
 
     </style>
 
-    <style name="StartTheme" parent="AppTheme">
+    <style name="StartTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
@@ -20,6 +20,5 @@
         <item name="android:windowBackground">@drawable/bg</item>
         <item name="android:windowIsTranslucent">false</item>
     </style>
-
 
 </resources>

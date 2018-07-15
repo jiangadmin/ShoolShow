@@ -21,7 +21,6 @@ public class TitleView extends RelativeLayout {
 
     private TextView tvTime, tvDate;
 
-
     private final Handler timeHandle = new Handler();
 
     private final Runnable timeRun = new Runnable() {

@@ -18,28 +18,31 @@
             android:gravity="center"
             android:scaleType="fitStart"
             android:src="@drawable/logo" />
+
         <!--日期-->
         <TextView
             android:id="@+id/title_bar_date"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/title_bar_hour"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:text="12313"
             android:textColor="@color/white"
             android:textSize="22sp" />
 
         <!--时间-->
         <TextView
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_alignParentRight="true"
             android:id="@+id/title_bar_hour"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
             android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:textColor="@color/white"
             android:textSize="22sp" />
 
     </RelativeLayout>
+
 </RelativeLayout>
