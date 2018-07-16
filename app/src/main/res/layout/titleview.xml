@@ -6,15 +6,15 @@
     <RelativeLayout
         android:id="@+id/home_title"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:layout_height="63dp"
         android:alpha="70"
         android:background="#26fcfcfc">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="44dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="21dp"
             android:gravity="center"
             android:scaleType="fitStart"
             android:src="@drawable/logo" />
@@ -25,7 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/title_bar_hour"
+            android:layout_toStartOf="@+id/title_bar_hour"
             android:gravity="center"
             android:text="12313"
             android:textColor="@color/white"
