@@ -4,9 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.jiang.shoolshow.servlet.Get_Building_Info;
+import com.jiang.shoolshow.servlet.Get_Classroom_Info;
+import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.utils.AnimUtils;
 
 import java.util.ArrayList;
@@ -17,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     RelativeLayout main, floor_1, floor_2, floor_3, floor_4, floor_5;
 
-    Button back, home, menu;
+    ImageView left,right, home, help;
 
     List<RelativeLayout> floor = new ArrayList<>();
 
@@ -35,6 +39,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initview();
+
+        //获取教学楼信息
+//        new Get_Building_Info().execute("192.168.0.123");
+        //获取楼层信息
+//        new Get_Floor_Info().execute("192.168.0.123","2");
+        //获取教室信息
+        new Get_Classroom_Info().execute("192.168.0.123","2"," 教3－203");
     }
 
     int rx = 60, r = -10;
@@ -53,9 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         floor_4 = findViewById(R.id.floor_4);
         floor_5 = findViewById(R.id.floor_5);
 
-        back = findViewById(R.id.back);
+        left = findViewById(R.id.left);
+        right = findViewById(R.id.right);
         home = findViewById(R.id.home);
-        menu = findViewById(R.id.menu);
+        help = findViewById(R.id.help);
 
         FW();
         floor_1.setOnClickListener(this);
@@ -70,18 +82,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         floor.add(floor_4);
         floor.add(floor_5);
 
-        back.setOnClickListener(this);
+        left.setOnClickListener(this);
+        right.setOnClickListener(this);
         home.setOnClickListener(this);
-        menu.setOnClickListener(this);
-
-        back.setEnabled(false);
+        help.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.back:
+            case R.id.left:
                 FW();
                 break;
 
@@ -134,7 +145,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void ZK(int i) {
 
-        back.setEnabled(true);
         floor_1.setEnabled(false);
         floor_2.setEnabled(false);
         floor_3.setEnabled(false);
@@ -268,7 +278,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void FW() {
 
-        back.setEnabled(true);
         if (floor_1.getVisibility() == View.GONE) {
             AnimUtils.Y(floor_1, bottom, 0);
             floor_1.setVisibility(View.VISIBLE);
