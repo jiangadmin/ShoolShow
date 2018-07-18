@@ -7,10 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Classroom_Info;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
+import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.utils.AnimUtils;
 
 import java.util.ArrayList;
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     List<RelativeLayout> floor = new ArrayList<>();
 
     LinearLayout main_main;
+
+    TextView item_2_text;
     int demo_x = 0, demo_y = 0, demo_r = 0, demo_rx = 0, demo_ry = 0;
 
     /**
@@ -41,16 +46,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initview();
 
         //获取教学楼信息
-//        new Get_Building_Info().execute("192.168.0.123");
+        new Get_Building_Info(this).execute("192.168.0.123");
         //获取楼层信息
 //        new Get_Floor_Info().execute("192.168.0.123","2");
         //获取教室信息
-        new Get_Classroom_Info().execute("192.168.0.123","2"," 教3－203");
+//        new Get_Classroom_Info().execute("192.168.0.123","2"," 教3－203");
+        //获取天气
+        new Get_Weather().execute();
     }
 
-    int rx = 60, r = -10;
+    int rx = 65, r =0;
 
-    int f1 = 0, f2 = 10, f3 = 20, f4 = 30, f5 = 40;
+    float s = 0.7F;
+
+    int f1 = 0, f2 = 0, f3 = 0, f4 = 0, f5 = 0;
 
     int top = -1080;
     int bottom = 1080;
@@ -68,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         right = findViewById(R.id.right);
         home = findViewById(R.id.home);
         help = findViewById(R.id.help);
+
+        item_2_text = findViewById(R.id.item_2_text);
 
         FW();
         floor_1.setOnClickListener(this);
@@ -276,75 +287,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     * 初始化  复位
+     */
     public void FW() {
-
-        if (floor_1.getVisibility() == View.GONE) {
-            AnimUtils.Y(floor_1, bottom, 0);
-            floor_1.setVisibility(View.VISIBLE);
-        }
-
-        if (floor_2.getVisibility() == View.GONE) {
-            if (fg2 == -1) {
-                AnimUtils.Y(floor_2, top, 0);
-            } else {
-                AnimUtils.Y(floor_2, bottom, 0);
-            }
-            floor_2.setVisibility(View.VISIBLE);
-        }
-
-        if (floor_3.getVisibility() == View.GONE) {
-            if (fg3 == -1) {
-                AnimUtils.Y(floor_3, top, 0);
-            } else {
-                AnimUtils.Y(floor_3, bottom, 0);
-            }
-            floor_3.setVisibility(View.VISIBLE);
-        }
-        if (floor_4.getVisibility() == View.GONE) {
-            if (fg4 == -1) {
-                AnimUtils.Y(floor_4, top, 0);
-            } else {
-                AnimUtils.Y(floor_4, bottom, 0);
-            }
-            floor_4.setVisibility(View.VISIBLE);
-        }
-        if (floor_5.getVisibility() == View.GONE) {
-            if (fg5 == -1) {
-                AnimUtils.Y(floor_5, top, 0);
-            } else {
-                AnimUtils.Y(floor_5, bottom, 0);
-            }
-            floor_5.setVisibility(View.VISIBLE);
-        }
+//
+//        if (floor_1.getVisibility() == View.GONE) {
+//            AnimUtils.Y(floor_1, bottom, 0);
+//            floor_1.setVisibility(View.VISIBLE);
+//        }
+//
+//        if (floor_2.getVisibility() == View.GONE) {
+//            if (fg2 == -1) {
+//                AnimUtils.Y(floor_2, top, 0);
+//            } else {
+//                AnimUtils.Y(floor_2, bottom, 0);
+//            }
+//            floor_2.setVisibility(View.VISIBLE);
+//        }
+//
+//        if (floor_3.getVisibility() == View.GONE) {
+//            if (fg3 == -1) {
+//                AnimUtils.Y(floor_3, top, 0);
+//            } else {
+//                AnimUtils.Y(floor_3, bottom, 0);
+//            }
+//            floor_3.setVisibility(View.VISIBLE);
+//        }
+//        if (floor_4.getVisibility() == View.GONE) {
+//            if (fg4 == -1) {
+//                AnimUtils.Y(floor_4, top, 0);
+//            } else {
+//                AnimUtils.Y(floor_4, bottom, 0);
+//            }
+//            floor_4.setVisibility(View.VISIBLE);
+//        }
+//        if (floor_5.getVisibility() == View.GONE) {
+//            if (fg5 == -1) {
+//                AnimUtils.Y(floor_5, top, 0);
+//            } else {
+//                AnimUtils.Y(floor_5, bottom, 0);
+//            }
+//            floor_5.setVisibility(View.VISIBLE);
+//        }
 
         AnimUtils.RX(floor_1, 0, rx);
         AnimUtils.R(floor_1, 0, r);
-        AnimUtils.S(floor_1, 0, 0.7F);
+        AnimUtils.S(floor_1, 0, s);
+        AnimUtils.Y(floor_1, 0, 220);
 
         AnimUtils.RX(floor_2, 0, rx);
         AnimUtils.R(floor_2, 0, r);
-        AnimUtils.S(floor_2, 0, 0.7F);
+        AnimUtils.S(floor_2, 0, s);
         AnimUtils.X(floor_2, 0, f2);
+        AnimUtils.Y(floor_2, 0, 110);
 
         AnimUtils.RX(floor_3, 0, rx);
         AnimUtils.R(floor_3, 0, r);
-        AnimUtils.S(floor_3, 0, 0.7F);
+        AnimUtils.S(floor_3, 0, s);
         AnimUtils.X(floor_3, 0, f3);
 
         AnimUtils.RX(floor_4, 0, rx);
         AnimUtils.R(floor_4, 0, r);
-        AnimUtils.S(floor_4, 0, 0.7F);
+        AnimUtils.S(floor_4, 0, s);
         AnimUtils.X(floor_4, 0, f4);
+        AnimUtils.Y(floor_4, 0, -110);
 
         AnimUtils.RX(floor_5, 0, rx);
         AnimUtils.R(floor_5, 0, r);
-        AnimUtils.S(floor_5, 0, 0.7F);
+        AnimUtils.S(floor_5, 0, s);
         AnimUtils.X(floor_5, 0, f5);
+        AnimUtils.Y(floor_5, 0, -220);
 
         floor_1.setEnabled(true);
         floor_2.setEnabled(true);
         floor_3.setEnabled(true);
         floor_4.setEnabled(true);
         floor_5.setEnabled(true);
+    }
+
+    /**
+     * 楼栋信息
+     * @param bean
+     */
+    public void CallBack_Building(Building_Entity.ResultBean bean){
+        String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个\n今日服务学生(人次): %s 人";
+        item_2_text.setText(String.format(text,"0",bean.getJsUsingTotel(),"0",bean.getKcTotel(),bean.getBjTotel(),bean.getStudentTotel()));
     }
 }

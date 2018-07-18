@@ -9,6 +9,6 @@ package com.jiang.shoolshow.entity;
  */
 public class Const {
 
-    public static String URL = "http://zidtzd.natappfree.cc/teach_app_api/build/buildController/";
+    public static String URL = "http://69djyk.natappfree.cc/teach_app_api/build/buildController/";
 
 }

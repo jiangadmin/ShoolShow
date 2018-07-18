@@ -44,7 +44,11 @@ public class HttpUtil {
             if (TextUtils.isEmpty(entry.getValue())) {
                 continue;
             }
-            paramsStr += (entry.getKey() + "=" + entry.getValue() + "&");
+            try {
+                paramsStr += (entry.getKey() + "=" + URLEncoder.encode(entry.getValue(), "UTF-8") + "&");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
         }
 
         HttpURLConnection conn = null;
@@ -53,6 +57,8 @@ public class HttpUtil {
         try {
 
             URL url = new URL(urls + "?" + paramsStr);
+
+            LogUtil.e(TAG,"发送： "+url);
 
             conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(TIMEOUT_IN_MILLIONS);
