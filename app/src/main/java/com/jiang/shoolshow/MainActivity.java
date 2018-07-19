@@ -3,15 +3,17 @@ package com.jiang.shoolshow;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.entity.Building_Entity;
+import com.jiang.shoolshow.entity.ClassRoom_Entity;
+import com.jiang.shoolshow.entity.Const;
+import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
-import com.jiang.shoolshow.servlet.Get_Classroom_Info;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.utils.AnimUtils;
@@ -24,13 +26,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     RelativeLayout main, floor_1, floor_2, floor_3, floor_4, floor_5;
 
-    ImageView left,right, home, help;
+    ImageView left, right, home, help;
 
     List<RelativeLayout> floor = new ArrayList<>();
 
     LinearLayout main_main;
 
-    TextView item_2_text;
+    TextView item_2_title;
+
+    RelativeLayout item_2_view;
+
     int demo_x = 0, demo_y = 0, demo_r = 0, demo_rx = 0, demo_ry = 0;
 
     /**
@@ -46,16 +51,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initview();
 
         //获取教学楼信息
-        new Get_Building_Info(this).execute("192.168.0.123");
+        new Get_Building_Info(this).execute(Const.IP);
         //获取楼层信息
-//        new Get_Floor_Info().execute("192.168.0.123","2");
+//        new Get_Floor_Info().execute(Const.IP,"2");
         //获取教室信息
-//        new Get_Classroom_Info().execute("192.168.0.123","2"," 教3－203");
+//        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
         //获取天气
         new Get_Weather().execute();
     }
 
-    int rx = 65, r =0;
+    int rx = 65, r = 0;
 
     float s = 0.7F;
 
@@ -78,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         home = findViewById(R.id.home);
         help = findViewById(R.id.help);
 
-        item_2_text = findViewById(R.id.item_2_text);
+        item_2_title = findViewById(R.id.item_2_title);
+        item_2_view = findViewById(R.id.item_2_view);
 
         FW();
         floor_1.setOnClickListener(this);
@@ -106,9 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.left:
                 FW();
                 break;
-
             case R.id.floor_1:
-
                 XZ();
                 ZK(1);
                 break;
@@ -155,6 +159,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param i
      */
     public void ZK(int i) {
+
+        new Get_Floor_Info(this).execute(Const.IP, String.valueOf(i));
 
         floor_1.setEnabled(false);
         floor_2.setEnabled(false);
@@ -284,52 +290,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 e.printStackTrace();
             }
         }
-
     }
 
     /**
      * 初始化  复位
      */
     public void FW() {
-//
-//        if (floor_1.getVisibility() == View.GONE) {
-//            AnimUtils.Y(floor_1, bottom, 0);
-//            floor_1.setVisibility(View.VISIBLE);
-//        }
-//
-//        if (floor_2.getVisibility() == View.GONE) {
-//            if (fg2 == -1) {
-//                AnimUtils.Y(floor_2, top, 0);
-//            } else {
-//                AnimUtils.Y(floor_2, bottom, 0);
-//            }
-//            floor_2.setVisibility(View.VISIBLE);
-//        }
-//
-//        if (floor_3.getVisibility() == View.GONE) {
-//            if (fg3 == -1) {
-//                AnimUtils.Y(floor_3, top, 0);
-//            } else {
-//                AnimUtils.Y(floor_3, bottom, 0);
-//            }
-//            floor_3.setVisibility(View.VISIBLE);
-//        }
-//        if (floor_4.getVisibility() == View.GONE) {
-//            if (fg4 == -1) {
-//                AnimUtils.Y(floor_4, top, 0);
-//            } else {
-//                AnimUtils.Y(floor_4, bottom, 0);
-//            }
-//            floor_4.setVisibility(View.VISIBLE);
-//        }
-//        if (floor_5.getVisibility() == View.GONE) {
-//            if (fg5 == -1) {
-//                AnimUtils.Y(floor_5, top, 0);
-//            } else {
-//                AnimUtils.Y(floor_5, bottom, 0);
-//            }
-//            floor_5.setVisibility(View.VISIBLE);
-//        }
+
+        if (floor_1.getVisibility() == View.GONE) {
+            AnimUtils.Y(floor_1, bottom, 0);
+            floor_1.setVisibility(View.VISIBLE);
+        }
+
+        if (floor_2.getVisibility() == View.GONE) {
+            if (fg2 == -1) {
+                AnimUtils.Y(floor_2, top, 0);
+            } else {
+                AnimUtils.Y(floor_2, bottom, 0);
+            }
+            floor_2.setVisibility(View.VISIBLE);
+        }
+
+        if (floor_3.getVisibility() == View.GONE) {
+            if (fg3 == -1) {
+                AnimUtils.Y(floor_3, top, 0);
+            } else {
+                AnimUtils.Y(floor_3, bottom, 0);
+            }
+            floor_3.setVisibility(View.VISIBLE);
+        }
+        if (floor_4.getVisibility() == View.GONE) {
+            if (fg4 == -1) {
+                AnimUtils.Y(floor_4, top, 0);
+            } else {
+                AnimUtils.Y(floor_4, bottom, 0);
+            }
+            floor_4.setVisibility(View.VISIBLE);
+        }
+        if (floor_5.getVisibility() == View.GONE) {
+            if (fg5 == -1) {
+                AnimUtils.Y(floor_5, top, 0);
+            } else {
+                AnimUtils.Y(floor_5, bottom, 0);
+            }
+            floor_5.setVisibility(View.VISIBLE);
+        }
 
         AnimUtils.RX(floor_1, 0, rx);
         AnimUtils.R(floor_1, 0, r);
@@ -368,10 +373,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 楼栋信息
+     *
      * @param bean
      */
-    public void CallBack_Building(Building_Entity.ResultBean bean){
+    public void CallBack_Building(Building_Entity.ResultBean bean) {
         String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个\n今日服务学生(人次): %s 人";
-        item_2_text.setText(String.format(text,"0",bean.getJsUsingTotel(),"0",bean.getKcTotel(),bean.getBjTotel(),bean.getStudentTotel()));
+
+        TextView textView = new TextView(this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        textView.setLayoutParams(layoutParams);
+        textView.setTextSize(10);
+        textView.setLineSpacing(10,1);
+        textView.setText(String.format(text, "0", bean.getJsUsingTotel(), "0", bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
+        item_2_view.addView(textView);
+        item_2_title.setText("教室分布");
+    }
+
+    /**
+     * 楼层信息
+     *
+     * @param bean
+     */
+    public void CallBack_Floor(Floor_Entity.ResultBean bean) {
+        item_2_title.setText("课程信息");
+
+    }
+
+    /**
+     * 教室信息
+     *
+     * @param entity
+     */
+    public void CallBack_Classroom(ClassRoom_Entity entity) {
+
     }
 }

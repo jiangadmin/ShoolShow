@@ -251,6 +251,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/item_2_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/item_right_top_bg"
@@ -260,18 +261,10 @@
                         android:textColor="@color/white" />
 
                     <RelativeLayout
+                        android:id="@+id/item_2_view"
+                        android:padding="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/item_2_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="7dp"
-                            android:layout_marginLeft="14dp"
-                            android:layout_marginTop="7dp"
-                            android:lineSpacingExtra="7dp"
-                            android:textSize="10sp" />
 
                     </RelativeLayout>
 

@@ -1,9 +1,11 @@
 package com.jiang.shoolshow.servlet;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.jiang.shoolshow.MainActivity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.utils.HttpUtil;
@@ -21,6 +23,12 @@ import java.util.Map;
  */
 public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
     private static final String TAG = "Get_Floor_Info";
+
+    Activity activity;
+
+    public Get_Floor_Info(Activity activity) {
+        this.activity = activity;
+    }
 
     @Override
     protected Floor_Entity doInBackground(String... strings) {
@@ -57,5 +65,8 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
     protected void onPostExecute(Floor_Entity floor_entity) {
         super.onPostExecute(floor_entity);
 
+        if (activity instanceof MainActivity) {
+            ((MainActivity) activity).CallBack_Floor(floor_entity.getResult());
+        }
     }
 }
