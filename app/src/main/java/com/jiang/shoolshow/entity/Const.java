@@ -9,8 +9,10 @@ package com.jiang.shoolshow.entity;
  */
 public class Const {
 
-    public static String URL = "http://69djyk.natappfree.cc/teach_app_api/build/buildController/";
+    public static String URL = "http://yg293a.natappfree.cc/teach_app_api/build/buildController/";
 
     public static String IP = "192.168.0.123";
+
+    public static String Password = "Password";
 
 }

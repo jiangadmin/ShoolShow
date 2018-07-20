@@ -69,11 +69,11 @@ public class Floor_Info_Adapter extends BaseAdapter {
 
         Floor_Entity.ResultBean.SkjsInfoListBean bean = resultBeans.get(position);
 
-        holder.id.setText(bean.getSkdd());
+        holder.id.setText(bean.getSkdd().substring(3));
         holder.project_time.setText(bean.getJc());
         holder.teacher_name.setText(bean.getJsxm());
         holder.project.setText(bean.getKcmc());
-        holder.grade.setText(bean.getKcdm());
+        holder.grade.setText(bean.getSkbjh());
 
         return convertView;
     }

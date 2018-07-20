@@ -23,7 +23,7 @@ import java.util.Map;
 public class Get_Weather extends AsyncTask<String, Integer, Weather_Entity> {
     private static final String TAG = "Get_Weather";
 
-    Activity activity;
+    private Activity activity;
 
     public Get_Weather(Activity activity) {
         this.activity = activity;

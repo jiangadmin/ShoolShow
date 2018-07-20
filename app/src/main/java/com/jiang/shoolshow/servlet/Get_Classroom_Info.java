@@ -57,8 +57,13 @@ public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Ent
     }
 
     @Override
-    protected void onPostExecute(ClassRoom_Entity classRoom_entity) {
-        super.onPostExecute(classRoom_entity);
+    protected void onPostExecute(ClassRoom_Entity entity) {
+        super.onPostExecute(entity);
+
+        switch (entity.getErrorcode()){
+            case 1000:
+                break;
+        }
 
     }
 }

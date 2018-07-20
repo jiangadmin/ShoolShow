@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
+import com.jiang.shoolshow.dialog.PwdDialog;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
 import com.jiang.shoolshow.entity.Const;
@@ -20,6 +21,7 @@ import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.utils.AnimUtils;
+import com.jiang.shoolshow.view.ListViewForScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,6 +114,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         right.setOnClickListener(this);
         home.setOnClickListener(this);
         help.setOnClickListener(this);
+        help.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                new PwdDialog(MainActivity.this).show();
+                return false;
+            }
+        });
 
     }
 
@@ -120,6 +129,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.left:
                 FW();
+                break;
+            case R.id.home:
+                FW();
+
+                //获取教学楼信息
+                new Get_Building_Info(this).execute(Const.IP);
+
                 break;
             case R.id.floor_1:
                 XZ();
@@ -471,10 +487,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void CallBack_Building(Building_Entity.ResultBean bean) {
         String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个\n今日服务学生(人次): %s 人";
-
+        item_2_view.removeAllViews();
         TextView textView = new TextView(this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        textView.setLayoutParams(layoutParams);
         textView.setTextSize(10);
         textView.setLineSpacing(10, 1);
         textView.setText(String.format(text, "0", bean.getJsUsingTotel(), "0", bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
@@ -491,16 +505,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         item_2_title.setText("课程信息");
 
         item_2_view.removeAllViews();
-        ListView listView = new ListView(this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        listView.setLayoutParams(layoutParams);
+
+        ListViewForScrollView listViewForScrollView  = new ListViewForScrollView(this);
 
         Floor_Info_Adapter adapter = new Floor_Info_Adapter(this);
         adapter.setResultBeans(bean.getSkjsInfoList());
 
-        listView.setAdapter(adapter);
+        listViewForScrollView.setAdapter(adapter);
 
-        item_2_view.addView(listView);
+        item_2_view.addView(listViewForScrollView);
 
     }
 

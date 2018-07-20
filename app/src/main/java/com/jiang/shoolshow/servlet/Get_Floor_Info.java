@@ -62,11 +62,15 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
     }
 
     @Override
-    protected void onPostExecute(Floor_Entity floor_entity) {
-        super.onPostExecute(floor_entity);
+    protected void onPostExecute(Floor_Entity entity) {
+        super.onPostExecute(entity);
 
-        if (activity instanceof MainActivity) {
-            ((MainActivity) activity).CallBack_Floor(floor_entity.getResult());
+        switch (entity.getErrorcode()){
+            case 1000:
+                if (activity instanceof MainActivity) {
+                    ((MainActivity) activity).CallBack_Floor(entity.getResult());
+                }
+                break;
         }
     }
 }

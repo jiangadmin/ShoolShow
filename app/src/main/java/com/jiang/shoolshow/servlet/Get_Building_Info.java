@@ -65,13 +65,11 @@ public class Get_Building_Info extends AsyncTask<String, Integer, Building_Entit
         super.onPostExecute(entity);
 
         switch (entity.getErrorcode()) {
-            case 200:
+            case 1000:
                 if (activity instanceof MainActivity) {
                     ((MainActivity) activity).CallBack_Building(entity.getResult());
                 }
                 break;
         }
-
-
     }
 }

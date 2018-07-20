@@ -11,9 +11,10 @@ import java.util.List;
  */
 public class Building_Entity extends Base_Entity {
 
+
     /**
      * errorcode : 1000
-     * result : {"bjTotel":0,"studentTotel":0,"skjsInfoList":[{"id":106,"jc":"第3,4,5节","jscsrq":"1950-03-27","jsgh":"19750006","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李广山","jsyjfx":"","jszc":"工程师","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"","skdd":"教3－102","sksj":"2-18周星期二","xn":"","xq":""},{"id":273,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B171202,B171201","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":988,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B171213,B171214,B171212","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":989,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B170102,B170103,B170101","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":1598,"jc":"第3,4,5节","jscsrq":"1972-11-03","jsgh":"20090010","jslx":"仙林多媒体","jsszlc":"4","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"赵斌","jsyjfx":"","jszc":"教授","jszws":"120","kcdm":"B0701221S","kcmc":"音乐基础 ","skbjh":"","skdd":"教3－404","sksj":"1-18周星期二","xn":"","xq":""},{"id":1706,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B170508,B170509,B170510","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":1727,"jc":"第3,4,5节","jscsrq":"1980-01-03","jsgh":"20100059","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"沈清明","jsyjfx":"","jszc":"","jszws":"120","kcdm":"B1703061S","kcmc":"材料分析技术","skbjh":"","skdd":"教3－203","sksj":"1-16周星期二","xn":"","xq":""}],"kcTotel":70,"jsUsingTotel":7}
+     * result : {"bjTotel":0,"studentTotel":80,"skjsInfoList":[{"id":498,"jc":"第3,4,5节","jscsrq":"1982-06-25","jsgh":"20090015","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"应志领","jsyjfx":"代数学","jszc":"副教授","jszws":"120","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－304","sksj":"2-18周星期五","xn":"","xq":""},{"id":1464,"jc":"第3,4,5节","jscsrq":"1960-01-11","jsgh":"20010005","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"欧阳金丽","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－300","sksj":"2-18周星期五","xn":"","xq":""}],"kcTotel":60,"buildTotel":0,"jsUsingTotel":2,"buildLcTotelList":["1-15","2-16","3-12","4-11"]}
      */
 
     private ResultBean result;
@@ -29,17 +30,21 @@ public class Building_Entity extends Base_Entity {
     public static class ResultBean {
         /**
          * bjTotel : 0
-         * studentTotel : 0
-         * skjsInfoList : [{"id":106,"jc":"第3,4,5节","jscsrq":"1950-03-27","jsgh":"19750006","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李广山","jsyjfx":"","jszc":"工程师","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"","skdd":"教3－102","sksj":"2-18周星期二","xn":"","xq":""},{"id":273,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B171202,B171201","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":988,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B171213,B171214,B171212","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":989,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B170102,B170103,B170101","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":1598,"jc":"第3,4,5节","jscsrq":"1972-11-03","jsgh":"20090010","jslx":"仙林多媒体","jsszlc":"4","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"赵斌","jsyjfx":"","jszc":"教授","jszws":"120","kcdm":"B0701221S","kcmc":"音乐基础 ","skbjh":"","skdd":"教3－404","sksj":"1-18周星期二","xn":"","xq":""},{"id":1706,"jc":"第3,4,5节","jscsrq":"1970-08-27","jsgh":"19940026","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"李玉胜","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0900161C","kcmc":"军事理论","skbjh":"B170508,B170509,B170510","skdd":"教3－101","sksj":"2-18周星期二","xn":"2017-2018","xq":"1"},{"id":1727,"jc":"第3,4,5节","jscsrq":"1980-01-03","jsgh":"20100059","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"沈清明","jsyjfx":"","jszc":"","jszws":"120","kcdm":"B1703061S","kcmc":"材料分析技术","skbjh":"","skdd":"教3－203","sksj":"1-16周星期二","xn":"","xq":""}]
-         * kcTotel : 70
-         * jsUsingTotel : 7
+         * studentTotel : 80
+         * skjsInfoList : [{"id":498,"jc":"第3,4,5节","jscsrq":"1982-06-25","jsgh":"20090015","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"应志领","jsyjfx":"代数学","jszc":"副教授","jszws":"120","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－304","sksj":"2-18周星期五","xn":"","xq":""},{"id":1464,"jc":"第3,4,5节","jscsrq":"1960-01-11","jsgh":"20010005","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"欧阳金丽","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－300","sksj":"2-18周星期五","xn":"","xq":""}]
+         * kcTotel : 60
+         * buildTotel : 0
+         * jsUsingTotel : 2
+         * buildLcTotelList : ["1-15","2-16","3-12","4-11"]
          */
 
         private int bjTotel;
         private int studentTotel;
         private int kcTotel;
+        private int buildTotel;
         private int jsUsingTotel;
         private List<SkjsInfoListBean> skjsInfoList;
+        private List<String> buildLcTotelList;
 
         public int getBjTotel() {
             return bjTotel;
@@ -65,6 +70,14 @@ public class Building_Entity extends Base_Entity {
             this.kcTotel = kcTotel;
         }
 
+        public int getBuildTotel() {
+            return buildTotel;
+        }
+
+        public void setBuildTotel(int buildTotel) {
+            this.buildTotel = buildTotel;
+        }
+
         public int getJsUsingTotel() {
             return jsUsingTotel;
         }
@@ -81,26 +94,34 @@ public class Building_Entity extends Base_Entity {
             this.skjsInfoList = skjsInfoList;
         }
 
+        public List<String> getBuildLcTotelList() {
+            return buildLcTotelList;
+        }
+
+        public void setBuildLcTotelList(List<String> buildLcTotelList) {
+            this.buildLcTotelList = buildLcTotelList;
+        }
+
         public static class SkjsInfoListBean {
             /**
-             * id : 106
+             * id : 498
              * jc : 第3,4,5节
-             * jscsrq : 1950-03-27
-             * jsgh : 19750006
+             * jscsrq : 1982-06-25
+             * jsgh : 20090015
              * jslx : 仙林多媒体
-             * jsszlc : 1
+             * jsszlc : 3
              * jsszlh : 教3
              * jsxb : 男性
              * jsxbm : 1
-             * jsxm : 李广山
-             * jsyjfx :
-             * jszc : 工程师
-             * jszws : 234
-             * kcdm : B0900161C
-             * kcmc : 军事理论
+             * jsxm : 应志领
+             * jsyjfx : 代数学
+             * jszc : 副教授
+             * jszws : 120
+             * kcdm : B0600011S
+             * kcmc : 高等数学A(上)
              * skbjh :
-             * skdd : 教3－102
-             * sksj : 2-18周星期二
+             * skdd : 教3－304
+             * sksj : 2-18周星期五
              * xn :
              * xq :
              */
