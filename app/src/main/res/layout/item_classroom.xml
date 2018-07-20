@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp">
+
+        <TextView
+            android:id="@+id/item_room_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="201"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_project_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="3,4节"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="张明"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="马克思主义"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="通信1701班"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

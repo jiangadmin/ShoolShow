@@ -1,9 +1,11 @@
 package com.jiang.shoolshow.servlet;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.jiang.shoolshow.MainActivity;
 import com.jiang.shoolshow.entity.Weather_Entity;
 import com.jiang.shoolshow.utils.HttpUtil;
 import com.jiang.shoolshow.utils.LogUtil;
@@ -21,12 +23,18 @@ import java.util.Map;
 public class Get_Weather extends AsyncTask<String, Integer, Weather_Entity> {
     private static final String TAG = "Get_Weather";
 
+    Activity activity;
+
+    public Get_Weather(Activity activity) {
+        this.activity = activity;
+    }
+
     @Override
     protected Weather_Entity doInBackground(String... strings) {
         Map map = new HashMap();
         map.put("key", "26e42ff85c1b4");
-        map.put("city", "南京");
-        map.put("province", "江苏");
+        map.put("city", "栖霞");
+        map.put("province", "南京");
         String res = HttpUtil.doGet("http://apicloud.mob.com/v1/weather/query", map);
 
         Weather_Entity entity;
@@ -53,7 +61,9 @@ public class Get_Weather extends AsyncTask<String, Integer, Weather_Entity> {
 
         switch (entity.getRetCode()) {
             case 200:
-
+                if (activity instanceof MainActivity) {
+                    ((MainActivity) activity).CallBack_Weather(entity.getResult().get(0));
+                }
                 break;
         }
     }

@@ -6,13 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
+import com.jiang.shoolshow.entity.Weather_Entity;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
@@ -32,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     LinearLayout main_main;
 
-    TextView item_2_title;
+    ImageView item_1_icon;
+
+    TextView item_1_tianqi, item_1_wendu, item_2_title;
 
     RelativeLayout item_2_view;
 
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //获取教室信息
 //        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
         //获取天气
-        new Get_Weather().execute();
+        new Get_Weather(this).execute();
     }
 
     int rx = 65, r = 0;
@@ -82,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         right = findViewById(R.id.right);
         home = findViewById(R.id.home);
         help = findViewById(R.id.help);
+
+        item_1_icon = findViewById(R.id.weather_icon);
+        item_1_wendu = findViewById(R.id.weather_wendu);
+        item_1_tianqi = findViewById(R.id.weather_tianqi);
 
         item_2_title = findViewById(R.id.item_2_title);
         item_2_view = findViewById(R.id.item_2_view);
@@ -372,6 +381,90 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
+     * 天气返回
+     *
+     * @param bean
+     */
+    public void CallBack_Weather(Weather_Entity.ResultBean bean) {
+
+        item_1_tianqi.setText(bean.getWeather());
+        item_1_wendu.setText(bean.getTemperature());
+
+        int Resource = -1;
+
+        switch (bean.getWeather()) {
+            case "晴":
+                Resource = R.drawable.ic_weacther_1;
+                break;
+            case "阴":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "少云":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "多云":
+                Resource = R.drawable.ic_weacther_04;
+                break;
+            case "小雨":
+                Resource = R.drawable.ic_weacther_05;
+                break;
+            case "中雨":
+                Resource = R.drawable.ic_weacther_06;
+                break;
+            case "大雨":
+                Resource = R.drawable.ic_weacther_07;
+                break;
+            case "阵雨":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "暴雨":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "雾":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "霾":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "霜冻":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "暴风":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "台风":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "暴风雪":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "小雪":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "中雪":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "大雪":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "雨夹雪":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "冰雹":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "浮尘":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+            case "扬沙":
+                Resource = R.drawable.ic_weacther_2;
+                break;
+        }
+
+        item_1_icon.setImageResource(Resource);
+    }
+
+    /**
      * 楼栋信息
      *
      * @param bean
@@ -383,7 +476,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setLayoutParams(layoutParams);
         textView.setTextSize(10);
-        textView.setLineSpacing(10,1);
+        textView.setLineSpacing(10, 1);
         textView.setText(String.format(text, "0", bean.getJsUsingTotel(), "0", bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
         item_2_view.addView(textView);
         item_2_title.setText("教室分布");
@@ -396,6 +489,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void CallBack_Floor(Floor_Entity.ResultBean bean) {
         item_2_title.setText("课程信息");
+
+        item_2_view.removeAllViews();
+        ListView listView = new ListView(this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        listView.setLayoutParams(layoutParams);
+
+        Floor_Info_Adapter adapter = new Floor_Info_Adapter(this);
+        adapter.setResultBeans(bean.getSkjsInfoList());
+
+        listView.setAdapter(adapter);
+
+        item_2_view.addView(listView);
 
     }
 

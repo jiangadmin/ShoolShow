@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class Floor_Entity extends Base_Entity {
 
-
     /**
      * errorcode : 1000
      * result : {"skjsInfoList":[{"id":1727,"jc":"第3,4,5节","jscsrq":"1980-01-03","jsgh":"20100059","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"沈清明","jsyjfx":"","jszc":"","jszws":"120","kcdm":"B1703061S","kcmc":"材料分析技术","skbjh":"","skdd":"教3－203","sksj":"1-16周星期二","xn":"","xq":""}],"skjsTotel":1}
