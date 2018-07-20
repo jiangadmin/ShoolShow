@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Resource = R.drawable.ic_weacther_2;
                 break;
             case "少云":
-                Resource = R.drawable.ic_weacther_04;
+                Resource = R.drawable.ic_weacther_2;
                 break;
             case "多云":
                 Resource = R.drawable.ic_weacther_04;

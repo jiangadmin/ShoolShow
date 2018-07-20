@@ -14,8 +14,8 @@ import com.jiang.shoolshow.MyApplication;
  */
 
 public class SaveUtils {
+    public static String PREFERENCE_NAME = "shoolshow";
 
-    public static String PREFERENCE_NAME = "mengdou";
     private static Context context;
 
     public SaveUtils() {

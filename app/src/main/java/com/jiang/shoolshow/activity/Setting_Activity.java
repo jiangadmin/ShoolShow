@@ -15,13 +15,13 @@ import com.jiang.shoolshow.R;
  * @Phone: 186 6120 1018
  * TODO: 设置页面
  */
-public class Setting_Activity extends AppCompatActivity{
+public class Setting_Activity extends AppCompatActivity {
 
     private static final String TAG = "Setting_Activity";
 
     public static void start(Context context) {
         Intent intent = new Intent();
-        intent.setClass(context,Setting_Activity.class);
+        intent.setClass(context, Setting_Activity.class);
         context.startActivity(intent);
     }
 

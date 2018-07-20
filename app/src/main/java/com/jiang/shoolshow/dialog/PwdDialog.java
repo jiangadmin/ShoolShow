@@ -48,7 +48,6 @@ public class PwdDialog extends Dialog {
         pwd6 = findViewById(R.id.pwd6);
     }
 
-
     public void updatepwdshow(int resid, int npwd) {
         password = password + String.valueOf(npwd);
         switch (password.length()) {

@@ -28,5 +28,4 @@ public class Building_01_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
-
 }
