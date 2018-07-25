@@ -2,8 +2,11 @@ package com.jiang.shoolshow;
 
 import android.app.Application;
 import android.content.Context;
+import android.service.notification.StatusBarNotification;
 
 import com.tencent.bugly.crashreport.CrashReport;
+
+import java.lang.reflect.Method;
 
 /**
  * @author: jiangadmin
@@ -24,9 +27,11 @@ public class MyApplication extends Application {
 
         //崩溃检测
         CrashReport.initCrashReport(getApplicationContext(), "b761f87683", true);
+
     }
 
     public static Context getInstance() {
         return context;
     }
+
 }

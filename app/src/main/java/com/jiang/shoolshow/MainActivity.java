@@ -2,6 +2,7 @@ package com.jiang.shoolshow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setSystemUIVisible(false);
         setContentView(R.layout.activity_main);
 
         initview();
@@ -67,6 +69,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new Get_Weather(this).execute();
     }
 
+    private void setSystemUIVisible(boolean show) {
+        if (show) {
+            int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            uiFlags |= 0x00001000;
+            getWindow().getDecorView().setSystemUiVisibility(uiFlags);
+        } else {
+            int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN;
+            uiFlags |= 0x00001000;
+            getWindow().getDecorView().setSystemUiVisibility(uiFlags);
+        }
+    }
+
     int rx = 65, r = 0;
 
     float s = 0.7F;
@@ -78,6 +96,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initview() {
         main_main = findViewById(R.id.main_main);
+        main_main.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
         main = findViewById(R.id.main);
         floor_1 = findViewById(R.id.floor_1);
         floor_2 = findViewById(R.id.floor_2);
