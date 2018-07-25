@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ShoolShow</string>
+
+    <string name="show_type">模式选择</string>
+    <string name="show_type_0">独立模式</string>
+    <string name="show_type_1">整合模式</string>
+
+    <string name="building_1">教一</string>
+    <string name="building_2">教二</string>
+    <string name="building_3">教三</string>
+    <string name="building_4">教四</string>
+
 </resources>
