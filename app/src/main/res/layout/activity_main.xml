@@ -23,62 +23,17 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <!--<FrameLayout-->
-                <!--android:id="@+id/main"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0dp"-->
-                <!--android:layout_weight="1">-->
-                <!---->
-            <!--</FrameLayout>-->
-
-            <RelativeLayout
+            <FrameLayout
                 android:id="@+id/main"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <include
-                    android:id="@+id/floor_1"
-                    layout="@layout/floor_demo_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-
-                <include
-                    android:id="@+id/floor_2"
-                    layout="@layout/floor_demo_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-
-                <include
-                    android:id="@+id/floor_3"
-                    layout="@layout/floor_demo_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-
-                <include
-                    android:id="@+id/floor_4"
-                    layout="@layout/floor_demo_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-
-                <include
-                    android:id="@+id/floor_5"
-                    layout="@layout/floor_demo_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-
-            </RelativeLayout>
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="286dp"
                 android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
                 android:layout_margin="15dp"
                 android:background="@drawable/item_bottom_bg"
                 android:gravity="center"
@@ -113,8 +68,8 @@
                     android:src="@drawable/ic_help" />
 
             </LinearLayout>
-        </LinearLayout>
 
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -125,7 +80,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -223,6 +177,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>

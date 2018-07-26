@@ -1,5 +1,6 @@
 package com.jiang.shoolshow.servlet;
 
+import android.app.Fragment;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
@@ -8,6 +9,7 @@ import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
+import com.jiang.shoolshow.fragment.Classroom_Fragment;
 import com.jiang.shoolshow.utils.HttpUtil;
 import com.jiang.shoolshow.utils.LogUtil;
 
@@ -24,12 +26,18 @@ import java.util.Map;
 public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Entity> {
     private static final String TAG = "Get_Classroom_Info";
 
+    Fragment fragment;
+
+    public Get_Classroom_Info(Fragment fragment) {
+        this.fragment = fragment;
+    }
+
     @Override
     protected ClassRoom_Entity doInBackground(String... strings) {
         Map map = new HashMap();
-        map.put("ipStr", strings[0]);
-        map.put("jslc", strings[1]);
-        map.put("skjs", strings[2]);
+        map.put("ipStr", "192.168.0.123");
+        map.put("jslc", strings[0]);
+        map.put("skjs", strings[1]);
 
         String res = HttpUtil.doGet(Const.URL + "selectJcInfoBYCodes.do", map);
 
@@ -62,6 +70,9 @@ public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Ent
 
         switch (entity.getErrorcode()){
             case 1000:
+                if (fragment instanceof Classroom_Fragment){
+                    ((Classroom_Fragment) fragment).CallBack(entity.getResult());
+                }
                 break;
         }
 

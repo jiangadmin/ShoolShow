@@ -22,7 +22,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleInstance"
+            android:launchMode="singleTask"
             android:screenOrientation="landscape">
 
             <intent-filter>
@@ -37,7 +37,8 @@
         </activity>
 
         <!--设置-->
-        <activity android:name=".activity.Setting_Activity" />
+        <activity android:name=".activity.Setting_Activity"
+            android:screenOrientation="landscape"/>
 
     </application>
 
