@@ -2,6 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
+    android:layout_gravity="center"
+
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -34,31 +36,32 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/kuang_top" />
+
             <Button
                 android:id="@+id/building_1_4_405"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_gray"
                 android:text="405" />
             <Button
                 android:id="@+id/building_1_4_406"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="406" />
 
             <Button
                 android:id="@+id/building_1_4_407"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="407" />
 
             <Button
                 android:id="@+id/building_1_4_408"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="408" />
 
             <ImageView
@@ -137,7 +140,7 @@
                 android:layout_width="130dp"
                 android:layout_height="185dp"
                 android:layout_marginLeft="25dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="400" />
 
         </LinearLayout>
@@ -172,28 +175,28 @@
                 android:id="@+id/building_1_4_404"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_gray"
                 android:text="404" />
 
             <Button
                 android:id="@+id/building_1_4_403"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="403" />
 
             <Button
                 android:id="@+id/building_1_4_402"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="402" />
 
             <Button
                 android:id="@+id/building_1_4_401"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="401" />
 
             <ImageView

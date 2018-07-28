@@ -26,7 +26,7 @@ public class MyApplication extends Application {
         context = this;
 
         //崩溃检测
-        CrashReport.initCrashReport(getApplicationContext(), "b761f87683", true);
+        CrashReport.initCrashReport(getApplicationContext(), "b761f87683", false);
 
     }
 

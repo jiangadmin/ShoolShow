@@ -2,6 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
+    android:layout_gravity="center"
+
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -39,28 +41,28 @@
                 android:id="@+id/building_1_2_205"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_gray"
                 android:text="205" />
 
             <Button
                 android:id="@+id/building_1_2_206"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="206" />
 
             <Button
                 android:id="@+id/building_1_2_207"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="207" />
 
             <Button
                 android:id="@+id/building_1_2_208"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_gray"
                 android:text="208" />
 
             <ImageView
@@ -175,28 +177,28 @@
                 android:id="@+id/building_1_2_204"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_gray"
                 android:text="204" />
 
             <Button
                 android:id="@+id/building_1_2_203"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="203" />
 
             <Button
                 android:id="@+id/building_1_2_202"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="202" />
 
             <Button
                 android:id="@+id/building_1_2_201"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
-                android:background="@drawable/kuang"
+                android:background="@drawable/kuang_green"
                 android:text="201" />
 
             <ImageView

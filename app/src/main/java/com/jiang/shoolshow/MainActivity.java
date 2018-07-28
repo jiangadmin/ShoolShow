@@ -3,6 +3,7 @@ package com.jiang.shoolshow;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -11,14 +12,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
-import com.jiang.shoolshow.dialog.PwdDialog;
 import com.jiang.shoolshow.entity.Building_Entity;
-import com.jiang.shoolshow.entity.ClassRoom_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.entity.Weather_Entity;
-import com.jiang.shoolshow.fragment.Building_01_Fragment;
+import com.jiang.shoolshow.fragment.Building_Fragment;
 import com.jiang.shoolshow.fragment.Classroom_Fragment;
+import com.jiang.shoolshow.fragment.Floor_Fragment;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.view.ListViewForScrollView;
@@ -38,8 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     RelativeLayout item_2_view;
 
-    Building_01_Fragment building_01_fragment;
+    Building_Fragment building_fragment;
+    Floor_Fragment floor_fragment;
     Classroom_Fragment classroom_fragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         main = findViewById(R.id.main);
 
-
         left = findViewById(R.id.left);
         right = findViewById(R.id.right);
         home = findViewById(R.id.home);
@@ -93,22 +94,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         item_2_title = findViewById(R.id.item_2_title);
         item_2_view = findViewById(R.id.item_2_view);
 
-
         left.setOnClickListener(this);
         right.setOnClickListener(this);
         home.setOnClickListener(this);
         help.setOnClickListener(this);
 
+        ShowFragmet(1, 1);
 
-        ShowFragmet(1);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.left:
+            case R.id.right:
+                ShowFragmet(2,11);
                 break;
             case R.id.home:
+
+                ShowFragmet(1, 1);
 
                 //获取教学楼信息
                 new Get_Building_Info(this).execute(Const.IP);
@@ -241,52 +244,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listViewForScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ShowFragmet(2);
+                ShowFragmet(3, 0);
 
+                item_2_view.removeAllViews();
+
+                View v = View.inflate(MainActivity.this, R.layout.view_teacher, null);
+                ImageView head = v.findViewById(R.id.teacher_head);
+                TextView name = v.findViewById(R.id.teacher_name);
+                TextView gender = v.findViewById(R.id.teacher_gender);
+                TextView number = v.findViewById(R.id.teacher_number);
+                TextView level = v.findViewById(R.id.teacher_level);
+                TextView message = v.findViewById(R.id.message);
+
+                name.setText("姓名：" + bean.getSkjsInfoList().get(position).getJsxm());
+                gender.setText("性别：" + bean.getSkjsInfoList().get(position).getJsxb());
+                number.setText("工号：" + bean.getSkjsInfoList().get(position).getJsgh());
+                level.setText("职称：" + bean.getSkjsInfoList().get(position).getJszc());
+                message.setText("研究方向：\n" + bean.getSkjsInfoList().get(position).getJsyjfx());
+
+                item_2_view.addView(v);
+                item_2_title.setText("教师介绍");
                 classroom_fragment.initeven(bean.getSkjsInfoList().get(position));
             }
+
         });
 
     }
-
 
     /**
      * 控制二级显示
      *
      * @param vid
      */
-    public void ShowFragmet(int vid) {
+    public void ShowFragmet(int vid, int i) {
+
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
-        if (building_01_fragment == null) {
-            building_01_fragment = new Building_01_Fragment();
-            transaction.add(R.id.main, building_01_fragment);
+        if (building_fragment == null) {
+            building_fragment = new Building_Fragment();
+            transaction.add(R.id.main, building_fragment);
+        }
+
+        if (floor_fragment == null) {
+            floor_fragment = new Floor_Fragment();
+            transaction.add(R.id.main, floor_fragment);
         }
         if (classroom_fragment == null) {
             classroom_fragment = new Classroom_Fragment();
             transaction.add(R.id.main, classroom_fragment);
         }
 
-        transaction.hide(building_01_fragment);
+        transaction.hide(building_fragment);
+        transaction.hide(floor_fragment);
         transaction.hide(classroom_fragment);
 
         switch (vid) {
             case 1:
+                Log.e(TAG, "ShowFragmet: 显示楼" );
                 left.setEnabled(false);
                 home.setEnabled(false);
-                transaction.show(building_01_fragment);
-
+                transaction.show(building_fragment);
+                building_fragment.ShowFragmet(i);
                 break;
             case 2:
+                Log.e(TAG, "ShowFragmet: 显示层" );
                 left.setEnabled(true);
                 home.setEnabled(true);
-                transaction.show(classroom_fragment);
+                transaction.show(floor_fragment);
+                floor_fragment.ShowFragmet(i);
 
+                break;
+
+            case 3:
+                Log.e(TAG, "ShowFragmet: 显示教室" );
+                left.setEnabled(true);
+                home.setEnabled(true);
+
+                transaction.show(classroom_fragment);
                 break;
 
         }
 
         transaction.commit();
     }
-
 }

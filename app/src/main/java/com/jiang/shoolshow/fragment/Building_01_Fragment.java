@@ -3,10 +3,12 @@ package com.jiang.shoolshow.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jiang.shoolshow.MainActivity;
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
@@ -60,7 +62,6 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         floor_4 = view.findViewById(R.id.building_1_4);
         floor_5 = view.findViewById(R.id.building_1_5);
 
-
         floor_1.setOnClickListener(this);
         floor_2.setOnClickListener(this);
         floor_3.setOnClickListener(this);
@@ -80,45 +81,23 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.building_1_1:
-                XZ();
-                ZK(1);
+                ZK(11);
                 break;
             case R.id.building_1_2:
-                XZ();
-                ZK(2);
+                ZK(12);
                 break;
             case R.id.building_1_3:
-                XZ();
-                ZK(3);
+                ZK(13);
                 break;
             case R.id.building_1_4:
-                XZ();
-                ZK(4);
+                ZK(14);
                 break;
             case R.id.building_1_5:
-                XZ();
-                ZK(5);
+                ZK(15);
                 break;
         }
     }
 
-    /**
-     * 楼层回正
-     */
-    public void XZ() {
-        AnimUtils.RX(floor_1, rx, 0);
-        AnimUtils.RX(floor_2, rx, 0);
-        AnimUtils.RX(floor_3, rx, 0);
-        AnimUtils.RX(floor_4, rx, 0);
-        AnimUtils.RX(floor_5, rx, 0);
-
-        AnimUtils.R(floor_1, r, 0);
-        AnimUtils.R(floor_2, r, 0);
-        AnimUtils.R(floor_3, r, 0);
-        AnimUtils.R(floor_4, r, 0);
-        AnimUtils.R(floor_5, r, 0);
-
-    }
 
     /**
      * 其他布局走开
@@ -127,136 +106,14 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        new Get_Floor_Info(getActivity()).execute(Const.IP, String.valueOf(i));
+        new Get_Floor_Info(getActivity()).execute(Const.IP, String.valueOf(i%10));
 
-        floor_1.setEnabled(false);
-        floor_2.setEnabled(false);
-        floor_3.setEnabled(false);
-        floor_4.setEnabled(false);
-        floor_5.setEnabled(false);
+        if (getActivity() instanceof MainActivity) {
+            Log.e(TAG, "ZK: " + i);
+            ((MainActivity) getActivity()).ShowFragmet(2, i);
 
-        if (i == 1) {
-            AnimUtils.Y(floor_2, 0, top);
-            AnimUtils.Y(floor_3, 0, top);
-            AnimUtils.Y(floor_4, 0, top);
-            AnimUtils.Y(floor_5, 0, top);
-
-            fg2 = -1;
-            fg3 = -1;
-            fg4 = -1;
-            fg5 = -1;
-
-            AnimUtils.S(floor_1, 0.7F, 1);
-
-            try {
-                Thread.sleep(100);
-
-                floor_2.setVisibility(View.GONE);
-                floor_3.setVisibility(View.GONE);
-                floor_4.setVisibility(View.GONE);
-                floor_5.setVisibility(View.GONE);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
 
-        if (i == 2) {
-            AnimUtils.Y(floor_1, 0, bottom);
-            AnimUtils.Y(floor_3, 0, top);
-            AnimUtils.Y(floor_4, 0, top);
-            AnimUtils.Y(floor_5, 0, top);
-
-            fg1 = 1;
-            fg3 = -1;
-            fg4 = -1;
-            fg5 = -1;
-
-            AnimUtils.S(floor_2, 0.7F, 1);
-
-            try {
-                Thread.sleep(100);
-
-                floor_1.setVisibility(View.GONE);
-                floor_3.setVisibility(View.GONE);
-                floor_4.setVisibility(View.GONE);
-                floor_5.setVisibility(View.GONE);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        if (i == 3) {
-            AnimUtils.Y(floor_1, 0, top);
-            AnimUtils.Y(floor_2, 0, top);
-            AnimUtils.Y(floor_4, 0, bottom);
-            AnimUtils.Y(floor_5, 0, bottom);
-
-            fg1 = -1;
-            fg2 = -1;
-            fg4 = 1;
-            fg5 = 1;
-
-            AnimUtils.S(floor_3, 0.7F, 1);
-
-            try {
-                Thread.sleep(100);
-
-                floor_1.setVisibility(View.GONE);
-                floor_2.setVisibility(View.GONE);
-                floor_4.setVisibility(View.GONE);
-                floor_5.setVisibility(View.GONE);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        if (i == 4) {
-            AnimUtils.Y(floor_1, 0, top);
-            AnimUtils.Y(floor_2, 0, top);
-            AnimUtils.Y(floor_3, 0, top);
-            AnimUtils.Y(floor_5, 0, bottom);
-
-            fg1 = -1;
-            fg2 = -1;
-            fg3 = -1;
-            fg5 = 1;
-
-            AnimUtils.S(floor_4, 0.7F, 1);
-
-            try {
-                Thread.sleep(100);
-
-                floor_1.setVisibility(View.GONE);
-                floor_2.setVisibility(View.GONE);
-                floor_3.setVisibility(View.GONE);
-                floor_5.setVisibility(View.GONE);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        if (i == 5) {
-            AnimUtils.Y(floor_1, 0, bottom);
-            AnimUtils.Y(floor_2, 0, bottom);
-            AnimUtils.Y(floor_3, 0, bottom);
-            AnimUtils.Y(floor_4, 0, bottom);
-
-            fg1 = 1;
-            fg2 = 1;
-            fg3 = 1;
-            fg4 = 1;
-
-            AnimUtils.S(floor_5, 0.7F, 1);
-
-            try {
-                Thread.sleep(100);
-
-                floor_1.setVisibility(View.GONE);
-                floor_2.setVisibility(View.GONE);
-                floor_3.setVisibility(View.GONE);
-                floor_4.setVisibility(View.GONE);
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     /**

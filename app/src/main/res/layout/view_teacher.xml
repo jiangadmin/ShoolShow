@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/teacher_head"
+            android:scaleType="fitXY"
+            android:src="@drawable/teacher_head"
+            android:layout_width="50dp"
+            android:layout_height="65dp" />
+
+        <LinearLayout
+            android:layout_marginLeft="7dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/teacher_name"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/teacher_gender"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/teacher_number"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/teacher_level"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_marginTop="7dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

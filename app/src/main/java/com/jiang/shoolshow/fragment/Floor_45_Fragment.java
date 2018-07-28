@@ -15,8 +15,8 @@ import android.widget.Button;
  * @Phone: 186 6120 1018
  * TODO: 楼层
  */
-public class Floor_22_Fragment extends Fragment {
-    private static final String TAG = "Floor_22_Fragment";
+public class Floor_45_Fragment extends Fragment {
+    private static final String TAG = "Floor_45_Fragment";
 
     Button b_101, b_102, b_103, b_104, b_105, b_106, b_107, b_108, b_109, b_110,
             b_111, b_112, b_113, b_114, b_115, b_116, b_117, b_118, b_119, b_120,
@@ -26,5 +26,7 @@ public class Floor_22_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
+
+
     }
 }
