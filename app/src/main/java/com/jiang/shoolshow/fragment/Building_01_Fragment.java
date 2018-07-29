@@ -1,8 +1,9 @@
 package com.jiang.shoolshow.fragment;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +15,12 @@ import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.utils.AnimUtils;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: jiangadmin
@@ -107,6 +112,10 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     public void ZK(int i) {
 
         new Get_Floor_Info(getActivity()).execute(Const.IP, String.valueOf(i%10));
+
+        Map map = new HashMap();
+        map.put("floor",i);
+        EventBus.getDefault().post(map);
 
         if (getActivity() instanceof MainActivity) {
             Log.e(TAG, "ZK: " + i);

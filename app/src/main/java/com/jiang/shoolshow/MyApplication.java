@@ -6,6 +6,8 @@ import android.service.notification.StatusBarNotification;
 
 import com.tencent.bugly.crashreport.CrashReport;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.lang.reflect.Method;
 
 /**
@@ -27,6 +29,8 @@ public class MyApplication extends Application {
 
         //崩溃检测
         CrashReport.initCrashReport(getApplicationContext(), "b761f87683", false);
+
+
 
     }
 

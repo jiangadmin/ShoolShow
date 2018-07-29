@@ -1,7 +1,8 @@
 package com.jiang.shoolshow;
 
-import android.app.FragmentTransaction;
+
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,13 @@ import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.view.ListViewForScrollView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
 
@@ -42,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Floor_Fragment floor_fragment;
     Classroom_Fragment classroom_fragment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +66,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
         //获取天气
         new Get_Weather(this).execute();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessage(Map map){
+
     }
 
     private void setSystemUIVisible(boolean show) {
@@ -107,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.right:
-                ShowFragmet(2,11);
+                ShowFragmet(2, 11);
                 break;
             case R.id.home:
 
@@ -271,6 +296,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
     /**
      * 控制二级显示
      *
@@ -278,7 +304,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void ShowFragmet(int vid, int i) {
 
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         if (building_fragment == null) {
             building_fragment = new Building_Fragment();
@@ -300,23 +326,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (vid) {
             case 1:
-                Log.e(TAG, "ShowFragmet: 显示楼" );
+                Log.e(TAG, "ShowFragmet: 显示楼");
                 left.setEnabled(false);
                 home.setEnabled(false);
                 transaction.show(building_fragment);
-                building_fragment.ShowFragmet(i);
+
+                Map map = new HashMap();
+                map.put("building", i);
+                EventBus.getDefault().post(map);
+
                 break;
             case 2:
-                Log.e(TAG, "ShowFragmet: 显示层" );
+                Log.e(TAG, "ShowFragmet: 显示层");
                 left.setEnabled(true);
                 home.setEnabled(true);
                 transaction.show(floor_fragment);
-                floor_fragment.ShowFragmet(i);
+//                floor_fragment.ShowFragmet(i);
 
                 break;
 
             case 3:
-                Log.e(TAG, "ShowFragmet: 显示教室" );
+                Log.e(TAG, "ShowFragmet: 显示教室");
                 left.setEnabled(true);
                 home.setEnabled(true);
 
@@ -327,4 +357,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         transaction.commit();
     }
+
 }

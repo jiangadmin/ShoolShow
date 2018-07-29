@@ -1,14 +1,13 @@
 package com.jiang.shoolshow.servlet;
 
-import android.app.Fragment;
+
 import android.os.AsyncTask;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
-import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
 import com.jiang.shoolshow.entity.Const;
-import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.fragment.Classroom_Fragment;
 import com.jiang.shoolshow.utils.HttpUtil;
 import com.jiang.shoolshow.utils.LogUtil;
@@ -68,9 +67,9 @@ public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Ent
     protected void onPostExecute(ClassRoom_Entity entity) {
         super.onPostExecute(entity);
 
-        switch (entity.getErrorcode()){
+        switch (entity.getErrorcode()) {
             case 1000:
-                if (fragment instanceof Classroom_Fragment){
+                if (fragment instanceof Classroom_Fragment) {
                     ((Classroom_Fragment) fragment).CallBack(entity.getResult());
                 }
                 break;

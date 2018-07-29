@@ -1,15 +1,23 @@
 package com.jiang.shoolshow.fragment;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.jiang.shoolshow.R;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.Map;
 
 /**
  * @author: jiangadmin
@@ -50,8 +58,26 @@ public class Floor_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_floor,container,false);
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return inflater.inflate(R.layout.fragment_floor,container,false);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessage(Map map){
+        if (map.get("floor")!=null){
+            ShowFragmet((Integer)map.get("floor"));
+        }
     }
 
     /**
@@ -64,94 +90,94 @@ public class Floor_Fragment extends Fragment {
 
         if (floor_11_fragment == null) {
             floor_11_fragment = new Floor_11_Fragment();
-           floortion.add(R.id.main, floor_11_fragment);
+           floortion.add(R.id.main_floor, floor_11_fragment);
         }
         if (floor_12_fragment == null) {
             floor_12_fragment = new Floor_12_Fragment();
-           floortion.add(R.id.main, floor_12_fragment);
+           floortion.add(R.id.main_floor, floor_12_fragment);
         }
         if (floor_13_fragment == null) {
             floor_13_fragment = new Floor_13_Fragment();
-           floortion.add(R.id.main, floor_13_fragment);
+           floortion.add(R.id.main_floor, floor_13_fragment);
         }
         if (floor_14_fragment == null) {
             floor_14_fragment = new Floor_14_Fragment();
-           floortion.add(R.id.main, floor_14_fragment);
+           floortion.add(R.id.main_floor, floor_14_fragment);
         }
         if (floor_15_fragment == null) {
             floor_15_fragment = new Floor_15_Fragment();
-           floortion.add(R.id.main, floor_15_fragment);
+           floortion.add(R.id.main_floor, floor_15_fragment);
         }
 
         if (floor_21_fragment == null) {
             floor_21_fragment = new Floor_21_Fragment();
-           floortion.add(R.id.main, floor_21_fragment);
+           floortion.add(R.id.main_floor, floor_21_fragment);
         }
         if (floor_22_fragment == null) {
             floor_22_fragment = new Floor_22_Fragment();
-           floortion.add(R.id.main, floor_22_fragment);
+           floortion.add(R.id.main_floor, floor_22_fragment);
         }
         if (floor_23_fragment == null) {
             floor_23_fragment = new Floor_23_Fragment();
-           floortion.add(R.id.main, floor_23_fragment);
+           floortion.add(R.id.main_floor, floor_23_fragment);
         }
         if (floor_24_fragment == null) {
             floor_24_fragment = new Floor_24_Fragment();
-           floortion.add(R.id.main, floor_24_fragment);
+           floortion.add(R.id.main_floor, floor_24_fragment);
         }
         if (floor_25_fragment == null) {
             floor_25_fragment = new Floor_25_Fragment();
-           floortion.add(R.id.main, floor_25_fragment);
+           floortion.add(R.id.main_floor, floor_25_fragment);
         }
 
         if (floor_31_fragment == null) {
             floor_31_fragment = new Floor_31_Fragment();
-           floortion.add(R.id.main, floor_31_fragment);
+           floortion.add(R.id.main_floor, floor_31_fragment);
         }
         if (floor_32_fragment == null) {
             floor_32_fragment = new Floor_32_Fragment();
-           floortion.add(R.id.main, floor_32_fragment);
+           floortion.add(R.id.main_floor, floor_32_fragment);
         }
         if (floor_33_fragment == null) {
             floor_33_fragment = new Floor_33_Fragment();
-           floortion.add(R.id.main, floor_33_fragment);
+           floortion.add(R.id.main_floor, floor_33_fragment);
         }
         if (floor_34_fragment == null) {
             floor_34_fragment = new Floor_34_Fragment();
-           floortion.add(R.id.main, floor_34_fragment);
+           floortion.add(R.id.main_floor, floor_34_fragment);
         }
         if (floor_35_fragment == null) {
             floor_35_fragment = new Floor_35_Fragment();
-           floortion.add(R.id.main, floor_35_fragment);
+           floortion.add(R.id.main_floor, floor_35_fragment);
         }
         if (floor_36_fragment == null) {
             floor_36_fragment = new Floor_36_Fragment();
-           floortion.add(R.id.main, floor_36_fragment);
+           floortion.add(R.id.main_floor, floor_36_fragment);
         }
 
         if (floor_41_fragment == null) {
             floor_41_fragment = new Floor_41_Fragment();
-           floortion.add(R.id.main, floor_41_fragment);
+           floortion.add(R.id.main_floor, floor_41_fragment);
         }
         if (floor_42_fragment == null) {
             floor_42_fragment = new Floor_42_Fragment();
-           floortion.add(R.id.main, floor_42_fragment);
+           floortion.add(R.id.main_floor, floor_42_fragment);
         }
         if (floor_43_fragment == null) {
             floor_43_fragment = new Floor_43_Fragment();
-           floortion.add(R.id.main, floor_43_fragment);
+           floortion.add(R.id.main_floor, floor_43_fragment);
         }
         if (floor_44_fragment == null) {
             floor_44_fragment = new Floor_44_Fragment();
-           floortion.add(R.id.main, floor_44_fragment);
+           floortion.add(R.id.main_floor, floor_44_fragment);
         }
         if (floor_45_fragment == null) {
             floor_45_fragment = new Floor_45_Fragment();
-           floortion.add(R.id.main, floor_45_fragment);
+           floortion.add(R.id.main_floor, floor_45_fragment);
         }
         if (floor_46_fragment == null) {
             floor_46_fragment = new Floor_46_Fragment();
-           floortion.add(R.id.main, floor_46_fragment);
+           floortion.add(R.id.main_floor, floor_46_fragment);
         }
 
        floortion.hide(floor_11_fragment);
