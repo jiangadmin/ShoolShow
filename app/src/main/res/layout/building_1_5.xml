@@ -36,36 +36,36 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/kuang_top" />
 
-            <Button
-                android:id="@+id/building_5_5_106"
+            <TextView
+                android:id="@+id/building_1_5_506"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="506" />
 
-            <Button
-                android:id="@+id/building_5_5_107"
+            <TextView
+                android:id="@+id/building_1_5_507"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="507" />
 
-            <Button
-                android:id="@+id/building_5_5_108"
+            <TextView
+                android:id="@+id/building_1_5_508"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="508" />
 
-            <Button
-                android:id="@+id/building_5_5_109"
+            <TextView
+                android:id="@+id/building_1_5_509"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="509" />
 
-            <Button
-                android:id="@+id/building_5_5_110"
+            <TextView
+                android:id="@+id/building_1_5_510"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
@@ -153,7 +153,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <Button
+            <TextView
                 android:layout_width="32dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
@@ -188,36 +188,36 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/kuang_bottom" />
 
-            <Button
-                android:id="@+id/building_5_5_105"
+            <TextView
+                android:id="@+id/building_1_5_505"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="505" />
 
-            <Button
-                android:id="@+id/building_5_5_104"
+            <TextView
+                android:id="@+id/building_1_5_504"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="504" />
 
-            <Button
-                android:id="@+id/building_5_5_103"
+            <TextView
+                android:id="@+id/building_1_5_503"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="503" />
 
-            <Button
-                android:id="@+id/building_5_5_102"
+            <TextView
+                android:id="@+id/building_1_5_502"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
                 android:text="502" />
 
-            <Button
-                android:id="@+id/building_5_5_101"
+            <TextView
+                android:id="@+id/building_1_5_501"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"

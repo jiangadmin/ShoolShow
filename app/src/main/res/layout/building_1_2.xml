@@ -37,28 +37,32 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/kuang_top" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_205"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
                 android:text="205" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_206"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="206" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_207"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="207" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_208"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
@@ -173,28 +177,31 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/kuang_bottom" />
 
-            <Button
+            <TextView                android:gravity="center"
                 android:id="@+id/building_1_2_204"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
                 android:text="204" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_203"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="203" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_202"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="202" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_2_201"
                 android:layout_width="135dp"
                 android:layout_height="95dp"

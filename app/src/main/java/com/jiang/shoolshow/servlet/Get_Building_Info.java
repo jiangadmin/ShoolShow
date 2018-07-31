@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
-import com.jiang.shoolshow.MainActivity;
+import com.jiang.shoolshow.activity.MainActivity;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.utils.HttpUtil;

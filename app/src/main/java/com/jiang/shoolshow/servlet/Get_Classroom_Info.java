@@ -1,8 +1,8 @@
 package com.jiang.shoolshow.servlet;
 
 
+import android.app.Fragment;
 import android.os.AsyncTask;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;

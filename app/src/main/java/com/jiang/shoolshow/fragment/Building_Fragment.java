@@ -1,23 +1,23 @@
 package com.jiang.shoolshow.fragment;
 
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.utils.LogUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -38,14 +38,20 @@ public class Building_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
         return inflater.inflate(R.layout.fragment_building, container, false);
-//    return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        EventBus.getDefault().register(this);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //发送信息
+        Map map = new HashMap();
+        map.put("building_ready", true);
+        EventBus.getDefault().post(map);
+        LogUtil.e(TAG,"发送信息");
+
     }
 
     @Override
@@ -54,20 +60,15 @@ public class Building_Fragment extends Fragment {
         super.onStop();
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        ShowFragmet(1);
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public void onMessage(Map map) {
-        if (map.get("building")!=null){
-
+        if (map.get("building") != null) {
+            LogUtil.e("building", (Integer) map.get("building"));
+            ShowFragmet((Integer) map.get("building"));
+        } else {
+            LogUtil.e("building", "NULL");
         }
     }
-
 
     /**
      * 控制二级显示

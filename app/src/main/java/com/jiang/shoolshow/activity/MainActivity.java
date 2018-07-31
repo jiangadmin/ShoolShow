@@ -1,8 +1,8 @@
-package com.jiang.shoolshow;
+package com.jiang.shoolshow.activity;
 
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
@@ -22,6 +23,7 @@ import com.jiang.shoolshow.fragment.Classroom_Fragment;
 import com.jiang.shoolshow.fragment.Floor_Fragment;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
+import com.jiang.shoolshow.utils.LogUtil;
 import com.jiang.shoolshow.view.ListViewForScrollView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -53,13 +55,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         setSystemUIVisible(false);
         setContentView(R.layout.activity_main);
 
         initview();
 
-        //获取教学楼信息
-        new Get_Building_Info(this).execute(Const.IP);
         //获取楼层信息
 //        new Get_Floor_Info().execute(Const.IP,"2");
         //获取教室信息
@@ -69,20 +70,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        EventBus.getDefault().register(this);
-
-    }
-
-    @Override
     protected void onDestroy() {
         EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onMessage(Map map){
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    public void onMeaage(Map map) {
+
+        //楼栋加载完毕
+        if (map.get("building_ready") != null) {
+            ShowFragmet(1, 1);
+
+            //获取教学楼信息
+            new Get_Building_Info(this).execute(Const.IP);
+        }
 
     }
 
@@ -124,13 +126,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         home.setOnClickListener(this);
         help.setOnClickListener(this);
 
-        ShowFragmet(1, 1);
+        //初始化操作
+        ShowFragmet(0,0);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.left:
+                break;
             case R.id.right:
                 ShowFragmet(2, 11);
                 break;
@@ -143,9 +148,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
+            case R.id.help:
+                break;
+
         }
     }
-
 
     /**
      * 天气返回
@@ -161,13 +168,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (bean.getWeather()) {
             case "晴":
-                Resource = R.drawable.ic_weacther_1;
+                Resource = R.drawable.ic_weacther_01;
                 break;
             case "阴":
-                Resource = R.drawable.ic_weacther_2;
-                break;
-            case "少云":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "多云":
                 Resource = R.drawable.ic_weacther_04;
@@ -182,49 +186,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Resource = R.drawable.ic_weacther_07;
                 break;
             case "阵雨":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "暴雨":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "雾":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "霾":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "霜冻":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "暴风":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "台风":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "暴风雪":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "小雪":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "中雪":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "大雪":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "雨夹雪":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "冰雹":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "浮尘":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
             case "扬沙":
-                Resource = R.drawable.ic_weacther_2;
+                Resource = R.drawable.ic_weacther_02;
                 break;
         }
 
@@ -245,6 +249,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setText(String.format(text, "0", bean.getJsUsingTotel(), "0", bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
         item_2_view.addView(textView);
         item_2_title.setText("教室分布");
+
+        //发送数据到指定楼栋
+        EventBus.getDefault().post(bean);
     }
 
     /**
@@ -304,7 +311,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void ShowFragmet(int vid, int i) {
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
         if (building_fragment == null) {
             building_fragment = new Building_Fragment();
@@ -315,6 +322,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             floor_fragment = new Floor_Fragment();
             transaction.add(R.id.main, floor_fragment);
         }
+
         if (classroom_fragment == null) {
             classroom_fragment = new Classroom_Fragment();
             transaction.add(R.id.main, classroom_fragment);
@@ -327,8 +335,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (vid) {
             case 1:
                 Log.e(TAG, "ShowFragmet: 显示楼");
-                left.setEnabled(false);
-                home.setEnabled(false);
                 transaction.show(building_fragment);
 
                 Map map = new HashMap();
@@ -338,10 +344,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 2:
                 Log.e(TAG, "ShowFragmet: 显示层");
-                left.setEnabled(true);
-                home.setEnabled(true);
                 transaction.show(floor_fragment);
-//                floor_fragment.ShowFragmet(i);
+
+                Map map2 = new HashMap();
+                map2.put("floor", i);
+                EventBus.getDefault().post(map2);
 
                 break;
 
@@ -351,6 +358,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 home.setEnabled(true);
 
                 transaction.show(classroom_fragment);
+                break;
+            default:
                 break;
 
         }

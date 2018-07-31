@@ -14,7 +14,7 @@ public class Building_Entity extends Base_Entity {
 
     /**
      * errorcode : 1000
-     * result : {"bjTotel":0,"studentTotel":80,"skjsInfoList":[{"id":498,"jc":"第3,4,5节","jscsrq":"1982-06-25","jsgh":"20090015","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"应志领","jsyjfx":"代数学","jszc":"副教授","jszws":"120","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－304","sksj":"2-18周星期五","xn":"","xq":""},{"id":1464,"jc":"第3,4,5节","jscsrq":"1960-01-11","jsgh":"20010005","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"欧阳金丽","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－300","sksj":"2-18周星期五","xn":"","xq":""}],"kcTotel":60,"buildTotel":0,"jsUsingTotel":2,"buildLcTotelList":["1-15","2-16","3-12","4-11"]}
+     * result : {"bjTotel":0,"studentTotel":80,"skjsInfoList":[{"id":627,"jc":"第3,4,5节","jscsrq":"","jsgh":"","jslx":"仙林多媒体","jsszlc":"","jsszlh":"教1","jsxb":"","jsxbm":"","jsxm":"美方教师31","jsyjfx":"","jszc":"","jszws":"116","kcdm":"H1403011S","kcmc":"经济学原理Ⅰ","skbjh":"H170011","skdd":"教1－406","sksj":"1-15周星期三","xn":"2017-2018","xq":"2"},{"id":1593,"jc":"第3,4,5节","jscsrq":"","jsgh":"","jslx":"仙林多媒体","jsszlc":"","jsszlh":"教1","jsxb":"","jsxbm":"","jsxm":"美方教师31","jsyjfx":"","jszc":"","jszws":"116","kcdm":"H1403011S","kcmc":"经济学原理Ⅰ","skbjh":"H170009,H170010","skdd":"教1－406","sksj":"1-15周星期三","xn":"2017-2018","xq":"2"}],"kcTotel":19,"buildTotel":0,"buildCode":"1","jsUsingTotel":2,"buildLcTotelList":["1-15","2-16","3-12","4-11"]}
      */
 
     private ResultBean result;
@@ -31,9 +31,10 @@ public class Building_Entity extends Base_Entity {
         /**
          * bjTotel : 0
          * studentTotel : 80
-         * skjsInfoList : [{"id":498,"jc":"第3,4,5节","jscsrq":"1982-06-25","jsgh":"20090015","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"应志领","jsyjfx":"代数学","jszc":"副教授","jszws":"120","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－304","sksj":"2-18周星期五","xn":"","xq":""},{"id":1464,"jc":"第3,4,5节","jscsrq":"1960-01-11","jsgh":"20010005","jslx":"仙林多媒体","jsszlc":"3","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"欧阳金丽","jsyjfx":"","jszc":"副教授","jszws":"234","kcdm":"B0600011S","kcmc":"高等数学A(上)","skbjh":"","skdd":"教3－300","sksj":"2-18周星期五","xn":"","xq":""}]
-         * kcTotel : 60
+         * skjsInfoList : [{"id":627,"jc":"第3,4,5节","jscsrq":"","jsgh":"","jslx":"仙林多媒体","jsszlc":"","jsszlh":"教1","jsxb":"","jsxbm":"","jsxm":"美方教师31","jsyjfx":"","jszc":"","jszws":"116","kcdm":"H1403011S","kcmc":"经济学原理Ⅰ","skbjh":"H170011","skdd":"教1－406","sksj":"1-15周星期三","xn":"2017-2018","xq":"2"},{"id":1593,"jc":"第3,4,5节","jscsrq":"","jsgh":"","jslx":"仙林多媒体","jsszlc":"","jsszlh":"教1","jsxb":"","jsxbm":"","jsxm":"美方教师31","jsyjfx":"","jszc":"","jszws":"116","kcdm":"H1403011S","kcmc":"经济学原理Ⅰ","skbjh":"H170009,H170010","skdd":"教1－406","sksj":"1-15周星期三","xn":"2017-2018","xq":"2"}]
+         * kcTotel : 19
          * buildTotel : 0
+         * buildCode : 1
          * jsUsingTotel : 2
          * buildLcTotelList : ["1-15","2-16","3-12","4-11"]
          */
@@ -42,6 +43,7 @@ public class Building_Entity extends Base_Entity {
         private int studentTotel;
         private int kcTotel;
         private int buildTotel;
+        private int buildCode;
         private int jsUsingTotel;
         private List<SkjsInfoListBean> skjsInfoList;
         private List<String> buildLcTotelList;
@@ -78,6 +80,14 @@ public class Building_Entity extends Base_Entity {
             this.buildTotel = buildTotel;
         }
 
+        public int getBuildCode() {
+            return buildCode;
+        }
+
+        public void setBuildCode(int buildCode) {
+            this.buildCode = buildCode;
+        }
+
         public int getJsUsingTotel() {
             return jsUsingTotel;
         }
@@ -104,26 +114,26 @@ public class Building_Entity extends Base_Entity {
 
         public static class SkjsInfoListBean {
             /**
-             * id : 498
+             * id : 627
              * jc : 第3,4,5节
-             * jscsrq : 1982-06-25
-             * jsgh : 20090015
+             * jscsrq :
+             * jsgh :
              * jslx : 仙林多媒体
-             * jsszlc : 3
-             * jsszlh : 教3
-             * jsxb : 男性
-             * jsxbm : 1
-             * jsxm : 应志领
-             * jsyjfx : 代数学
-             * jszc : 副教授
-             * jszws : 120
-             * kcdm : B0600011S
-             * kcmc : 高等数学A(上)
-             * skbjh :
-             * skdd : 教3－304
-             * sksj : 2-18周星期五
-             * xn :
-             * xq :
+             * jsszlc :
+             * jsszlh : 教1
+             * jsxb :
+             * jsxbm :
+             * jsxm : 美方教师31
+             * jsyjfx :
+             * jszc :
+             * jszws : 116
+             * kcdm : H1403011S
+             * kcmc : 经济学原理Ⅰ
+             * skbjh : H170011
+             * skdd : 教1－406
+             * sksj : 1-15周星期三
+             * xn : 2017-2018
+             * xq : 2
              */
 
             private int id;

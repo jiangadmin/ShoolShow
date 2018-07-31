@@ -2,8 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_gravity="center"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -36,39 +36,44 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/kuang_top" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_106"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="106" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_107"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="107" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_108"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="108" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_109"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="109" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_110"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="110" />
 
             <ImageView
@@ -180,39 +185,45 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/kuang_bottom" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_105"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="105" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_104"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="104" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_103"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="103" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_102"
+
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="102" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_1_101"
                 android:layout_width="90dp"
                 android:layout_height="75dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="101" />
 
             <ImageView

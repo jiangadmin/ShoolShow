@@ -1,13 +1,13 @@
 package com.jiang.shoolshow.fragment;
 
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
 
@@ -21,11 +21,11 @@ import com.jiang.shoolshow.R;
 public class Floor_14_Fragment extends Fragment {
     private static final String TAG = "Floor_14_Fragment";
 
-    Button b_101, b_102, b_103, b_104, b_105, b_106, b_107, b_108, b_109, b_110;
+    TextView b_101, b_102, b_103, b_104, b_105, b_106, b_107, b_108, b_109, b_110;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.building_1_4,container,false);
+        return inflater.inflate(R.layout.building_1_4, container, false);
     }
 }

@@ -37,27 +37,32 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/kuang_top" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_405"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
                 android:text="405" />
-            <Button
+
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_406"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="406" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_407"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="407" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_408"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
@@ -135,7 +140,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <Button
+            <TextView
                 android:id="@+id/building_1_4_400"
                 android:layout_width="130dp"
                 android:layout_height="185dp"
@@ -171,28 +176,32 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/kuang_bottom" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_404"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
                 android:text="404" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_403"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="403" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_402"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
                 android:text="402" />
 
-            <Button
+            <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_401"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
