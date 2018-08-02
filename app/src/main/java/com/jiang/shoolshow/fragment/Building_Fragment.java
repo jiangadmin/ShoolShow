@@ -65,8 +65,6 @@ public class Building_Fragment extends Fragment {
         if (map.get("building") != null) {
             LogUtil.e("building", (Integer) map.get("building"));
             ShowFragmet((Integer) map.get("building"));
-        } else {
-            LogUtil.e("building", "NULL");
         }
     }
 

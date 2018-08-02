@@ -2,9 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_gravity="center"
+    android:layout_height="wrap_content"
 
-    android:layout_height="wrap_content">
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -38,35 +38,35 @@
                 android:background="@drawable/kuang_top" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_305"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
+                android:gravity="center"
                 android:text="305" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_306"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
+                android:gravity="center"
                 android:text="306" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_307"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
+                android:gravity="center"
                 android:text="307" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_308"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="308" />
 
             <ImageView
@@ -146,6 +146,7 @@
                 android:layout_height="185dp"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="300" />
 
         </LinearLayout>
@@ -177,35 +178,35 @@
                 android:background="@drawable/kuang_bottom" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_304"
                 android:layout_width="45dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_gray"
+                android:gravity="center"
                 android:text="304" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_303"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="303" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_302"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="302" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/building_1_3_301"
                 android:layout_width="135dp"
                 android:layout_height="95dp"
                 android:background="@drawable/kuang_green"
+                android:gravity="center"
                 android:text="301" />
 
             <ImageView

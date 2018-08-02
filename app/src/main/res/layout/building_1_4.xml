@@ -141,6 +141,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:gravity="center"
                 android:id="@+id/building_1_4_400"
                 android:layout_width="130dp"
                 android:layout_height="185dp"

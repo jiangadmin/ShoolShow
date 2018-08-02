@@ -228,17 +228,12 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        new Get_Floor_Info(getActivity()).execute(Const.IP, String.valueOf(i % 10));
+        new Get_Floor_Info(getActivity(),i).execute(Const.IP, String.valueOf(i % 10));
 
-        Map map = new HashMap();
-        map.put("floor", i);
-        EventBus.getDefault().post(map);
-
-        if (getActivity() instanceof MainActivity) {
-            Log.e(TAG, "ZK: " + i);
-            ((MainActivity) getActivity()).ShowFragmet(2, i);
-
-        }
+//        Map map = new HashMap();
+//        map.put("floor", 2);
+//        map.put("room", i);
+//        EventBus.getDefault().post(map);
 
     }
 

@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         help.setOnClickListener(this);
 
         //初始化操作
-        ShowFragmet(0,0);
+        ShowFragmet(0, 0);
 
     }
 
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.left:
                 break;
             case R.id.right:
-                ShowFragmet(2, 11);
+//                ShowFragmet(2, 11);
                 break;
             case R.id.home:
 
@@ -257,17 +257,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * 楼层信息
      *
-     * @param bean
+     * @param entity
      */
-    public void CallBack_Floor(final Floor_Entity.ResultBean bean) {
+    public void CallBack_Floor(final Floor_Entity entity) {
         item_2_title.setText("课程信息");
 
         item_2_view.removeAllViews();
 
+        ShowFragmet(2, entity.getFloor());
+
         ListViewForScrollView listViewForScrollView = new ListViewForScrollView(this);
 
         Floor_Info_Adapter adapter = new Floor_Info_Adapter(this);
-        adapter.setResultBeans(bean.getSkjsInfoList());
+        adapter.setResultBeans(entity.getResult().getSkjsInfoList());
 
         listViewForScrollView.setAdapter(adapter);
 
@@ -288,21 +290,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 TextView level = v.findViewById(R.id.teacher_level);
                 TextView message = v.findViewById(R.id.message);
 
-                name.setText("姓名：" + bean.getSkjsInfoList().get(position).getJsxm());
-                gender.setText("性别：" + bean.getSkjsInfoList().get(position).getJsxb());
-                number.setText("工号：" + bean.getSkjsInfoList().get(position).getJsgh());
-                level.setText("职称：" + bean.getSkjsInfoList().get(position).getJszc());
-                message.setText("研究方向：\n" + bean.getSkjsInfoList().get(position).getJsyjfx());
+                name.setText("姓名：" + entity.getResult().getSkjsInfoList().get(position).getJsxm());
+                gender.setText("性别：" + entity.getResult().getSkjsInfoList().get(position).getJsxb());
+                number.setText("工号：" + entity.getResult().getSkjsInfoList().get(position).getJsgh());
+                level.setText("职称：" + entity.getResult().getSkjsInfoList().get(position).getJszc());
+                message.setText("研究方向：\n" + entity.getResult().getSkjsInfoList().get(position).getJsyjfx());
 
                 item_2_view.addView(v);
                 item_2_title.setText("教师介绍");
-                classroom_fragment.initeven(bean.getSkjsInfoList().get(position));
+                classroom_fragment.initeven(entity.getResult().getSkjsInfoList().get(position));
             }
 
         });
 
-    }
+        EventBus.getDefault().post(entity);
+        LogUtil.e(TAG,"发送数据");
 
+    }
 
     /**
      * 控制二级显示

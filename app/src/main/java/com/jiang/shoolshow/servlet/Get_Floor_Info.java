@@ -25,8 +25,10 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
     private static final String TAG = "Get_Floor_Info";
 
     Activity activity;
+    int floor;
 
-    public Get_Floor_Info(Activity activity) {
+    public Get_Floor_Info(Activity activity,int floor) {
+        this.floor = floor;
         this.activity = activity;
     }
 
@@ -50,6 +52,7 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
         } else {
             try {
                 entity = new Gson().fromJson(res, Floor_Entity.class);
+                entity.setFloor(floor);
 
             } catch (Exception e) {
                 entity = new Floor_Entity();
@@ -68,7 +71,7 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
         switch (entity.getErrorcode()){
             case 1000:
                 if (activity instanceof MainActivity) {
-                    ((MainActivity) activity).CallBack_Floor(entity.getResult());
+                    ((MainActivity) activity).CallBack_Floor(entity);
                 }
                 break;
         }
