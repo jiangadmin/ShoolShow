@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -38,7 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     View main;
 
-    ImageView left, right, home, help;
+    Button home;
+
+//    ImageView left, right, home, help;
 
     LinearLayout main_main;
 
@@ -109,10 +112,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         main = findViewById(R.id.main);
 
-        left = findViewById(R.id.left);
-        right = findViewById(R.id.right);
+//        left = findViewById(R.id.left);
+//        right = findViewById(R.id.right);
         home = findViewById(R.id.home);
-        help = findViewById(R.id.help);
+//        help = findViewById(R.id.help);
 
         item_1_icon = findViewById(R.id.weather_icon);
         item_1_wendu = findViewById(R.id.weather_wendu);
@@ -121,10 +124,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         item_2_title = findViewById(R.id.item_2_title);
         item_2_view = findViewById(R.id.item_2_view);
 
-        left.setOnClickListener(this);
-        right.setOnClickListener(this);
+//        left.setOnClickListener(this);
+//        right.setOnClickListener(this);
         home.setOnClickListener(this);
-        help.setOnClickListener(this);
+//        help.setOnClickListener(this);
 
         //初始化操作
         ShowFragmet(0, 0);
@@ -290,11 +293,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 TextView level = v.findViewById(R.id.teacher_level);
                 TextView message = v.findViewById(R.id.message);
 
-                name.setText("姓名：" + entity.getResult().getSkjsInfoList().get(position).getJsxm());
-                gender.setText("性别：" + entity.getResult().getSkjsInfoList().get(position).getJsxb());
-                number.setText("工号：" + entity.getResult().getSkjsInfoList().get(position).getJsgh());
-                level.setText("职称：" + entity.getResult().getSkjsInfoList().get(position).getJszc());
-                message.setText("研究方向：\n" + entity.getResult().getSkjsInfoList().get(position).getJsyjfx());
+                name.setText(String.format("姓名：%s",entity.getResult().getSkjsInfoList().get(position).getJsxm()));
+                gender.setText(String.format("性别：%s" , entity.getResult().getSkjsInfoList().get(position).getJsxb()));
+                number.setText(String.format("工号：%s" , entity.getResult().getSkjsInfoList().get(position).getJsgh()));
+                level.setText(String.format("职称：%s" , entity.getResult().getSkjsInfoList().get(position).getJszc()));
+                message.setText(String.format("研究方向：\n%s" ,entity.getResult().getSkjsInfoList().get(position).getJsyjfx()));
 
                 item_2_view.addView(v);
                 item_2_title.setText("教师介绍");
@@ -358,7 +361,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case 3:
                 Log.e(TAG, "ShowFragmet: 显示教室");
-                left.setEnabled(true);
+//                left.setEnabled(true);
                 home.setEnabled(true);
 
                 transaction.show(classroom_fragment);
