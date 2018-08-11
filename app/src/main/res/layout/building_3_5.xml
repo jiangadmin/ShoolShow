@@ -46,31 +46,31 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/building_3_5_522"
+                    android:id="@+id/building_3_5_537"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_green"
                     android:gravity="center"
-                    android:text="522" />
+                    android:text="537" />
 
                 <TextView
-                    android:id="@+id/building_3_5_523"
+                    android:id="@+id/building_3_5_538"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_green"
                     android:gravity="center"
-                    android:text="523" />
+                    android:text="538" />
 
                 <TextView
-                    android:id="@+id/building_3_5_524"
+                    android:id="@+id/building_3_5_539"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_green"
                     android:gravity="center"
-                    android:text="524" />
+                    android:text="539" />
 
             </LinearLayout>
 
@@ -433,7 +433,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_gray"
+                    android:background="@drawable/kuang_green"
                     android:gravity="center"
                     android:text="526" />
 

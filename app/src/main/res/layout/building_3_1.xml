@@ -34,7 +34,7 @@
                     android:id="@+id/building_3_1_120"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="120" />
 
@@ -273,7 +273,7 @@
                     android:id="@+id/building_3_1_119"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="119" />
 
@@ -311,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/kuang_gray"
+                        android:background="@drawable/kuang_green"
                         android:gravity="center"
                         android:text="116" />
 
@@ -334,7 +334,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:background="@drawable/kuang_green"
+                        android:background="@drawable/kuang_gray"
                         android:gravity="center"
                         android:text="111" />
 
@@ -343,7 +343,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:background="@drawable/kuang_green"
+                        android:background="@drawable/kuang_gray"
                         android:gravity="center"
                         android:text="110" />
 
