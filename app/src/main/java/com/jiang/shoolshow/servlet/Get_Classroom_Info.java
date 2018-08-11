@@ -34,7 +34,7 @@ public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Ent
     @Override
     protected ClassRoom_Entity doInBackground(String... strings) {
         Map map = new HashMap();
-        map.put("ipStr", "192.168.0.123");
+        map.put("ipStr", Const.IP);
         map.put("jslc", strings[0]);
         map.put("skjs", strings[1]);
 

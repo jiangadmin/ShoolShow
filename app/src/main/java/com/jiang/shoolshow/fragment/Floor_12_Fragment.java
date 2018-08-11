@@ -54,11 +54,11 @@ public class Floor_12_Fragment extends Fragment implements View.OnClickListener 
 
         map = new HashMap();
 
-        map.put("教1-201", b_201);
-        map.put("教1-202", b_202);
-        map.put("教1-203", b_203);
-        map.put("教1-206", b_206);
-        map.put("教1-207", b_207);
+        map.put("教1－201", b_201);
+        map.put("教1－202", b_202);
+        map.put("教1－203", b_203);
+        map.put("教1－206", b_206);
+        map.put("教1－207", b_207);
 
     }
 

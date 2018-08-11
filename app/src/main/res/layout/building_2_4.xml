@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/kuang_w"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/building_2_4_401"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/kuang_green"
+                android:gravity="center"
+                android:text="401" />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_stairs" />
+
+            <LinearLayout
+                android:layout_width="201dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/building_2_4_401"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="401" />
+
+                <TextView
+                    android:id="@+id/building_2_4_401"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="401" />
+
+                <TextView
+                    android:id="@+id/building_2_4_402"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="402" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="284dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/building_2_4_407"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="407" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_stairs" />
+
+                <TextView
+                    android:id="@+id/building_2_4_415"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="415" />
+
+                <TextView
+                    android:id="@+id/building_2_4_414"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="414" />
+
+                <TextView
+                    android:id="@+id/building_2_4_413"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="413" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_stairs" />
+
+                <TextView
+                    android:id="@+id/building_2_4_407"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="407" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/building_2_4_406"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="406" />
+
+                <TextView
+                    android:id="@+id/building_2_4_403"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="403" />
+
+                <TextView
+                    android:id="@+id/building_2_4_404"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="404" />
+
+                <TextView
+                    android:id="@+id/building_2_4_405"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="405" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_stairs" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="12dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="147dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/building_2_4_420"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="420" />
+
+                <TextView
+                    android:id="@+id/building_2_4_421"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="421" />
+
+                <TextView
+                    android:id="@+id/building_2_4_422"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="422" />
+
+                <TextView
+                    android:id="@+id/building_2_4_423"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="423" />
+
+                <TextView
+                    android:id="@+id/building_2_4_424"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="424" />
+
+                <TextView
+                    android:id="@+id/building_2_4_425"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="425" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="159dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:background="@drawable/kuang"
+                android:gravity="center"
+                android:text="内院"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang"
+                    android:gravity="center"
+                    android:text="男厕"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_stairs" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang"
+                    android:gravity="center"
+                    android:text="女厕"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/building_2_4_408"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="408" />
+
+                <TextView
+                    android:id="@+id/building_2_4_409"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="66dp"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="409" />
+
+                <TextView
+                    android:id="@+id/building_2_4_410"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="410" />
+
+                <TextView
+                    android:id="@+id/building_2_4_411"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="411" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang"
+                    android:gravity="center"
+                    android:text="男厕"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_stairs" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang"
+                    android:gravity="center"
+                    android:text="女厕"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/kuang"
+                android:gravity="center"
+                android:text="内院"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/building_2_4_400"
+                android:layout_width="57dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/kuang_green"
+                android:gravity="center"
+                android:text="400" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/building_2_4_401"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/kuang_green"
+                android:gravity="center"
+                android:text="401" />
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_stairs" />
+
+            <LinearLayout
+                android:layout_width="201dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/building_2_4_416"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="416" />
+
+                <TextView
+                    android:id="@+id/building_2_4_417"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="417" />
+
+                <TextView
+                    android:id="@+id/building_2_4_418"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="418" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="264dp"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="201dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/building_2_4_429"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="429" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/building_2_4_427"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="427" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_stairs" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -3,14 +3,11 @@ package com.jiang.shoolshow;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.service.notification.StatusBarNotification;
 
+import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.utils.LogUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import org.greenrobot.eventbus.EventBus;
-
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +33,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         context = this;
+
+        Const.IP = Const.IP_1;
 
         //崩溃检测
         CrashReport.initCrashReport(getApplicationContext(), "b761f87683", false);
@@ -71,8 +70,8 @@ public class MyApplication extends Application {
         try {
             Activity activity = activities.get(activities.size() - 1);
             finishActivity(activity);
-        }catch (Exception e){
-            LogUtil.e(TAG,"出错了");
+        } catch (Exception e) {
+            LogUtil.e(TAG, "出错了");
         }
 
     }
@@ -107,9 +106,10 @@ public class MyApplication extends Application {
 
     /**
      * 查询栈中是否有这个
+     *
      * @param cls
      */
-    public static boolean QueryActivity(Class<?> cls){
+    public static boolean QueryActivity(Class<?> cls) {
         if (activities != null) {
             for (Activity activity : activities) {
                 if (activity.getClass().equals(cls)) {

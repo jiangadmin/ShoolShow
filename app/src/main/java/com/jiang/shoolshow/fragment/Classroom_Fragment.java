@@ -27,7 +27,7 @@ import com.jiang.shoolshow.servlet.Get_Classroom_Info;
 public class Classroom_Fragment extends Fragment {
     private static final String TAG = "Classroom_Fragment";
 
-    TextView name,type,size,have;
+    TextView name, type, size, have;
 
     ImageView img;
 
@@ -52,21 +52,27 @@ public class Classroom_Fragment extends Fragment {
 
     }
 
-    public void initeven(Floor_Entity.ResultBean.SkjsInfoListBean bean){
-        new Get_Classroom_Info(this).execute(bean.getJsszlc(),bean.getSkdd());
+    public void initeven(String floor, String room) {
+        new Get_Classroom_Info(this).execute(floor, room);
     }
 
     /**
      * 数据返回
+     *
      * @param bean
      */
-    public void CallBack(ClassRoom_Entity.ResultBean bean){
+    public void CallBack(ClassRoom_Entity.ResultBean bean) {
 
-        Project_Adapter adapter = new Project_Adapter(getActivity());
-        adapter.setResultBean(bean);
+        if (bean != null && bean.getJsCurrentDayKc().size() > 0) {
+            name.setText(bean.getJsCurrentDayKc().get(0).getSkdd());
+            type.setText(String.format("教室类型: %s", bean.getJsCurrentDayKc().get(0).getJslx()));
+            size.setText(String.format("教室容量: %s 人", bean.getJsCurrentDayKc().get(0).getJszws()));
+            have.setText("教室配备: ");
 
-        project.setAdapter(adapter);
+            Project_Adapter adapter = new Project_Adapter(getActivity());
+            adapter.setResultBean(bean);
 
+            project.setAdapter(adapter);
+        }
     }
-
 }

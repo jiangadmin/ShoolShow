@@ -12,6 +12,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/kuang_w"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,90 +21,89 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="67dp"
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/kuang_no_right"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
             <View
-                android:layout_width="40dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/kuang_top" />
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="32dp"
+                android:background="@color/white" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_506"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="506" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_507"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="507" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_508"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="508" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_509"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="509" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_510"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="510" />
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="75dp"
-                android:background="@drawable/kuang_no_bottom"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="530dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/kuang_left_right">
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="530dp"
-            android:layout_height="270dp"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/kuang_left_right"
+            android:layout_width="match_parent"
+            android:layout_height="167dp"
+            android:layout_marginLeft="67dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="63dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="40dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -114,7 +114,6 @@
                     android:gravity="center"
                     android:text="男厕"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -132,19 +131,17 @@
                     android:gravity="center"
                     android:text="女厕"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
             <TextView
-                android:layout_width="270dp"
+                android:layout_width="211dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang"
                 android:gravity="center"
                 android:text="内院"
                 android:textColor="@color/white"
-                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -155,7 +152,6 @@
                 android:gravity="center"
                 android:text="休息厅"
                 android:textColor="@color/white"
-                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -168,75 +164,76 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="530dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/kuang_left_right">
+            android:layout_width="match_parent"
+            android:layout_height="17dp">
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="67dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="40dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/kuang_no_right"
+                android:layout_height="match_parent"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
             <View
-                android:layout_width="40dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/kuang_bottom" />
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="32dp"
+                android:background="@color/white" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_505"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="505" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_504"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="504" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_503"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="503" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_502"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="502" />
 
             <TextView
+                android:textSize="18sp"
                 android:id="@+id/building_1_5_501"
-                android:layout_width="90dp"
-                android:layout_height="75dp"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="501" />
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="75dp"
-                android:background="@drawable/kuang_no_top"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 

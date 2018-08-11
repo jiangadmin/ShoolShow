@@ -1,5 +1,6 @@
 package com.jiang.shoolshow.utils;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -390,6 +391,7 @@ public class ToolUtils {
      * @return
      */
 
+    @SuppressLint("MissingPermission")
     public static String getMyUUID() {
 
         final TelephonyManager tm = (TelephonyManager) MyApplication.getInstance().getSystemService(Context.TELEPHONY_SERVICE);

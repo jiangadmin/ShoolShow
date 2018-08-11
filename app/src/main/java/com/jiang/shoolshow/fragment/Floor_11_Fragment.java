@@ -58,48 +58,61 @@ public class Floor_11_Fragment extends Fragment implements View.OnClickListener 
 
         map = new HashMap();
 
-        map.put("教1-101", b_101);
-        map.put("教1-102", b_102);
-        map.put("教1-103", b_103);
-        map.put("教1-104", b_104);
-        map.put("教1-105", b_105);
-        map.put("教1-106", b_106);
-        map.put("教1-107", b_107);
-        map.put("教1-108", b_108);
-        map.put("教1-109", b_109);
-        map.put("教1-110", b_110);
+        map.put("教1－101", b_101);
+        map.put("教1－102", b_102);
+        map.put("教1－103", b_103);
+        map.put("教1－104", b_104);
+        map.put("教1－105", b_105);
+        map.put("教1－106", b_106);
+        map.put("教1－107", b_107);
+        map.put("教1－108", b_108);
+        map.put("教1－109", b_109);
+        map.put("教1－110", b_110);
 
     }
 
     @Override
     public void onClick(View v) {
+        Map map = new HashMap();
+        map.put("floor", 1);
         switch (v.getId()) {
             case R.id.building_1_1_101:
+                map.put("room", "教1－101");
                 break;
             case R.id.building_1_1_102:
+                map.put("room", "教1－102");
                 break;
             case R.id.building_1_1_103:
+                map.put("room", "教1－103");
                 break;
             case R.id.building_1_1_104:
+                map.put("room", "教1－104");
                 break;
             case R.id.building_1_1_105:
+                map.put("room", "教1－105");
                 break;
             case R.id.building_1_1_106:
+                map.put("room", "教1－106");
                 break;
             case R.id.building_1_1_107:
+                map.put("room", "教1－107");
                 break;
             case R.id.building_1_1_108:
+                map.put("room", "教1－108");
                 break;
             case R.id.building_1_1_109:
+                map.put("room", "教1－109");
                 break;
             case R.id.building_1_1_110:
+                map.put("room", "教1－110");
                 break;
         }
+        EventBus.getDefault().post(map);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public void onMessage(Floor_Entity entity) {
-        LogUtil.e(TAG,"接收到");
+        LogUtil.e(TAG, "接收到");
         if (entity != null && entity.getFloor() == 11) {
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
                 if (map.get(bean.getSkdd()) != null) {

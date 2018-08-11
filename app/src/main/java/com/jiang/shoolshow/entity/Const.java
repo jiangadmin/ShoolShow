@@ -11,7 +11,12 @@ public class Const {
 
     public static String URL = "http://47.104.81.170:8080/teach_app_api/build/buildController/";
 
-    public static String IP = "192.168.0.123";
+    public static String IP;
+    public static String IP_1 = "192.168.0.123";
+    public static String IP_2 = "192.168.0.124";
+    public static String IP_3 = "192.168.0.125";
+    public static String IP_4 = "192.168.0.126";
+
 
     public static String Password = "Password";
 

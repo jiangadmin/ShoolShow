@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
@@ -25,6 +26,7 @@ import com.jiang.shoolshow.fragment.Floor_Fragment;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.utils.LogUtil;
+import com.jiang.shoolshow.utils.ToolUtils;
 import com.jiang.shoolshow.view.ListViewForScrollView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -70,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
         //获取天气
         new Get_Weather(this).execute();
+
+        LogUtil.e(TAG, ToolUtils.getMyUUID());
     }
 
     @Override
@@ -83,11 +87,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //楼栋加载完毕
         if (map.get("building_ready") != null) {
-            ShowFragmet(1, 1);
+            ShowFragmet(1, 2);
 
             //获取教学楼信息
             new Get_Building_Info(this).execute(Const.IP);
         }
+
+        //获取教室数据
+        if (map.get("floor") != null && map.get("room") != null) {
+            LogUtil.e(TAG,"floor:"+map.get("floor"));
+            LogUtil.e(TAG,"room:"+map.get("room"));
+
+            ShowFragmet(3, 0);
+
+            classroom_fragment.initeven(String.valueOf(map.get("floor")), (String) map.get("room"));
+        }
+
 
     }
 
@@ -144,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.home:
 
-                ShowFragmet(1, 1);
+                ShowFragmet(1, 2);
 
                 //获取教学楼信息
                 new Get_Building_Info(this).execute(Const.IP);
@@ -293,21 +308,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 TextView level = v.findViewById(R.id.teacher_level);
                 TextView message = v.findViewById(R.id.message);
 
-                name.setText(String.format("姓名：%s",entity.getResult().getSkjsInfoList().get(position).getJsxm()));
-                gender.setText(String.format("性别：%s" , entity.getResult().getSkjsInfoList().get(position).getJsxb()));
-                number.setText(String.format("工号：%s" , entity.getResult().getSkjsInfoList().get(position).getJsgh()));
-                level.setText(String.format("职称：%s" , entity.getResult().getSkjsInfoList().get(position).getJszc()));
-                message.setText(String.format("研究方向：\n%s" ,entity.getResult().getSkjsInfoList().get(position).getJsyjfx()));
+                name.setText(String.format("姓名：%s", entity.getResult().getSkjsInfoList().get(position).getJsxm()));
+                gender.setText(String.format("性别：%s", entity.getResult().getSkjsInfoList().get(position).getJsxb()));
+                number.setText(String.format("工号：%s", entity.getResult().getSkjsInfoList().get(position).getJsgh()));
+                level.setText(String.format("职称：%s", entity.getResult().getSkjsInfoList().get(position).getJszc()));
+                message.setText(String.format("研究方向：\n%s", entity.getResult().getSkjsInfoList().get(position).getJsyjfx()));
 
                 item_2_view.addView(v);
                 item_2_title.setText("教师介绍");
-                classroom_fragment.initeven(entity.getResult().getSkjsInfoList().get(position));
+                classroom_fragment.initeven(entity.getResult().getSkjsInfoList().get(position).getJsszlc(),
+                        entity.getResult().getSkjsInfoList().get(position).getSkdd());
             }
 
         });
 
         EventBus.getDefault().post(entity);
-        LogUtil.e(TAG,"发送数据");
+        LogUtil.e(TAG, "发送数据");
 
     }
 
