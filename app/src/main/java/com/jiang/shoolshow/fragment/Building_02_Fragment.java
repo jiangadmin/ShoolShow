@@ -84,40 +84,90 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         floor_5 = view.findViewById(R.id.building_2_5);
 
         //一楼
+        r_100 = view.findViewById(R.id.building_2_1_100);
         r_101 = view.findViewById(R.id.building_2_1_101);
         r_102 = view.findViewById(R.id.building_2_1_102);
         r_103 = view.findViewById(R.id.building_2_1_103);
         r_104 = view.findViewById(R.id.building_2_1_104);
         r_105 = view.findViewById(R.id.building_2_1_105);
         r_106 = view.findViewById(R.id.building_2_1_106);
-
+        r_113 = view.findViewById(R.id.building_2_1_113);
+        r_114 = view.findViewById(R.id.building_2_1_114);
+        r_115 = view.findViewById(R.id.building_2_1_115);
+        r_116 = view.findViewById(R.id.building_2_1_116);
+        r_117 = view.findViewById(R.id.building_2_1_117);
+        r_118 = view.findViewById(R.id.building_2_1_118);
 
         //二楼
         r_201 = view.findViewById(R.id.building_2_2_201);
         r_202 = view.findViewById(R.id.building_2_2_202);
         r_203 = view.findViewById(R.id.building_2_2_203);
-
+        r_204 = view.findViewById(R.id.building_2_2_204);
+        r_205 = view.findViewById(R.id.building_2_2_205);
+        r_208 = view.findViewById(R.id.building_2_2_208);
+        r_209 = view.findViewById(R.id.building_2_2_209);
+        r_211 = view.findViewById(R.id.building_2_2_211);
+        r_212 = view.findViewById(R.id.building_2_2_212);
+        r_213 = view.findViewById(R.id.building_2_2_213);
+        r_214 = view.findViewById(R.id.building_2_2_214);
+        r_215 = view.findViewById(R.id.building_2_2_215);
+        r_216 = view.findViewById(R.id.building_2_2_216);
+        r_225 = view.findViewById(R.id.building_2_2_225);
+        r_226 = view.findViewById(R.id.building_2_2_226);
+        r_227 = view.findViewById(R.id.building_2_2_227);
 
         //三楼
         r_300 = view.findViewById(R.id.building_2_3_300);
         r_301 = view.findViewById(R.id.building_2_3_301);
         r_302 = view.findViewById(R.id.building_2_3_302);
         r_303 = view.findViewById(R.id.building_2_3_303);
+        r_304 = view.findViewById(R.id.building_2_3_304);
+        r_305 = view.findViewById(R.id.building_2_3_305);
         r_308 = view.findViewById(R.id.building_2_3_308);
+        r_309 = view.findViewById(R.id.building_2_3_309);
+        r_311 = view.findViewById(R.id.building_2_3_311);
+        r_312 = view.findViewById(R.id.building_2_3_312);
+        r_313 = view.findViewById(R.id.building_2_3_313);
+        r_315 = view.findViewById(R.id.building_2_3_315);
+        r_316 = view.findViewById(R.id.building_2_3_316);
 
         //四楼
         r_400 = view.findViewById(R.id.building_2_4_400);
         r_401 = view.findViewById(R.id.building_2_4_401);
         r_402 = view.findViewById(R.id.building_2_4_402);
         r_403 = view.findViewById(R.id.building_2_4_403);
+        r_404 = view.findViewById(R.id.building_2_4_404);
+        r_405 = view.findViewById(R.id.building_2_4_405);
+        r_409 = view.findViewById(R.id.building_2_4_409);
+        r_410 = view.findViewById(R.id.building_2_4_410);
+        r_413 = view.findViewById(R.id.building_2_4_413);
+        r_414 = view.findViewById(R.id.building_2_4_414);
+        r_415 = view.findViewById(R.id.building_2_4_415);
+        r_416 = view.findViewById(R.id.building_2_4_416);
+        r_417 = view.findViewById(R.id.building_2_4_417);
+        r_418 = view.findViewById(R.id.building_2_4_418);
+        r_427 = view.findViewById(R.id.building_2_4_427);
+        r_428 = view.findViewById(R.id.building_2_4_428);
+        r_429 = view.findViewById(R.id.building_2_4_429);
 
         //五楼
-
         r_506 = view.findViewById(R.id.building_2_5_506);
         r_507 = view.findViewById(R.id.building_2_5_507);
         r_508 = view.findViewById(R.id.building_2_5_508);
         r_509 = view.findViewById(R.id.building_2_5_509);
         r_510 = view.findViewById(R.id.building_2_5_510);
+        r_512 = view.findViewById(R.id.building_2_5_512);
+        r_516 = view.findViewById(R.id.building_2_5_516);
+        r_518 = view.findViewById(R.id.building_2_5_518);
+        r_519 = view.findViewById(R.id.building_2_5_519);
+        r_520 = view.findViewById(R.id.building_2_5_520);
+        r_521 = view.findViewById(R.id.building_2_5_521);
+        r_522 = view.findViewById(R.id.building_2_5_522);
+        r_523 = view.findViewById(R.id.building_2_5_523);
+        r_532 = view.findViewById(R.id.building_2_5_532);
+        r_533 = view.findViewById(R.id.building_2_5_533);
+        r_534 = view.findViewById(R.id.building_2_5_534);
+        r_535 = view.findViewById(R.id.building_2_5_535);
 
         floor_1.setOnClickListener(this);
         floor_2.setOnClickListener(this);
@@ -154,7 +204,6 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         map.put("教2－401", r_401);
         map.put("教2－402", r_402);
         map.put("教2－403", r_403);
-
 
 
         map.put("教2－506", r_506);

@@ -35,6 +35,7 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
     @Override
     protected Floor_Entity doInBackground(String... strings) {
         Map map = new HashMap();
+
         map.put("ipStr", strings[0]);
         map.put("jslc", strings[1]);
 

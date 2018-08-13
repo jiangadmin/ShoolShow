@@ -39,12 +39,12 @@
                 android:src="@drawable/ic_stairs" />
 
             <TextView
-                android:id="@+id/building_2_2_255"
+                android:id="@+id/building_2_2_225"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="255" />
+                android:text="225" />
 
             <TextView
                 android:id="@+id/building_2_2_226"

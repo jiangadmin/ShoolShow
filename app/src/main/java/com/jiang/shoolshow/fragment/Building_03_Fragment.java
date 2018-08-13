@@ -4,14 +4,12 @@ package com.jiang.shoolshow.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
-import com.jiang.shoolshow.activity.MainActivity;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
@@ -58,10 +56,10 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
             r_201, r_202, r_203, r_204, r_205, r_208, r_209, r_210, r_212, r_213, r_214, r_215, r_216, r_225, r_226, r_227,
             r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_310, r_312, r_313, r_314, r_315, r_316, r_322, r_323, r_324,
             r_400, r_401, r_402, r_403, r_404, r_405, r_408, r_409, r_410, r_412, r_413, r_416, r_417, r_418, r_426, r_427, r_428,
-            r_500,r_501, r_504, r_506, r_507, r_508, r_509, r_510, r_511, r_512, r_513, r_515, r_520, r_526, r_527, r_528, r_537, r_538, r_539,
-            r_601,r_602,r_603,r_606,r_611;
+            r_500, r_501, r_504, r_506, r_507, r_508, r_509, r_510, r_511, r_512, r_513, r_515, r_520, r_526, r_527, r_528, r_537, r_538, r_539,
+            r_601, r_602, r_603, r_606, r_611;
 
-    Map<String,TextView> map = new HashMap();
+    Map<String, TextView> map = new HashMap();
 
     @Nullable
     @Override
@@ -86,7 +84,6 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         floor_4 = view.findViewById(R.id.building_3_4);
         floor_5 = view.findViewById(R.id.building_3_5);
 
-        //一楼
         r_101 = view.findViewById(R.id.building_3_1_101);
         r_102 = view.findViewById(R.id.building_3_1_102);
         r_103 = view.findViewById(R.id.building_3_1_103);
@@ -96,35 +93,82 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         r_107 = view.findViewById(R.id.building_3_1_107);
         r_108 = view.findViewById(R.id.building_3_1_108);
         r_109 = view.findViewById(R.id.building_3_1_109);
+        r_116 = view.findViewById(R.id.building_3_1_116);
+        r_117 = view.findViewById(R.id.building_3_1_117);
+        r_118 = view.findViewById(R.id.building_3_1_118);
 
-
-        //二楼
         r_201 = view.findViewById(R.id.building_3_2_201);
         r_202 = view.findViewById(R.id.building_3_2_202);
         r_203 = view.findViewById(R.id.building_3_2_203);
+        r_204 = view.findViewById(R.id.building_3_2_204);
+        r_205 = view.findViewById(R.id.building_3_2_205);
+        r_208 = view.findViewById(R.id.building_3_2_208);
+        r_209 = view.findViewById(R.id.building_3_2_209);
+        r_210 = view.findViewById(R.id.building_3_2_210);
+        r_212 = view.findViewById(R.id.building_3_2_212);
+        r_213 = view.findViewById(R.id.building_3_2_213);
+        r_214 = view.findViewById(R.id.building_3_2_214);
+        r_215 = view.findViewById(R.id.building_3_2_215);
+        r_216 = view.findViewById(R.id.building_3_2_216);
+        r_225 = view.findViewById(R.id.building_3_2_225);
+        r_226 = view.findViewById(R.id.building_3_2_226);
+        r_227 = view.findViewById(R.id.building_3_2_227);
 
-
-        //三楼
         r_300 = view.findViewById(R.id.building_3_3_300);
         r_301 = view.findViewById(R.id.building_3_3_301);
         r_302 = view.findViewById(R.id.building_3_3_302);
         r_303 = view.findViewById(R.id.building_3_3_303);
+        r_304 = view.findViewById(R.id.building_3_3_304);
+        r_305 = view.findViewById(R.id.building_3_3_305);
         r_308 = view.findViewById(R.id.building_3_3_308);
+        r_309 = view.findViewById(R.id.building_3_3_309);
+        r_310 = view.findViewById(R.id.building_3_3_310);
+        r_312 = view.findViewById(R.id.building_3_3_312);
+        r_313 = view.findViewById(R.id.building_3_3_313);
+        r_314 = view.findViewById(R.id.building_3_3_314);
+        r_315 = view.findViewById(R.id.building_3_3_315);
+        r_316 = view.findViewById(R.id.building_3_3_316);
+        r_322 = view.findViewById(R.id.building_3_3_322);
+        r_323 = view.findViewById(R.id.building_3_3_323);
+        r_324 = view.findViewById(R.id.building_3_3_324);
 
-        //四楼
         r_400 = view.findViewById(R.id.building_3_4_400);
         r_401 = view.findViewById(R.id.building_3_4_401);
         r_402 = view.findViewById(R.id.building_3_4_402);
         r_403 = view.findViewById(R.id.building_3_4_403);
+        r_404 = view.findViewById(R.id.building_3_4_404);
+        r_405 = view.findViewById(R.id.building_3_4_405);
         r_408 = view.findViewById(R.id.building_3_4_408);
+        r_409 = view.findViewById(R.id.building_3_4_409);
+        r_410 = view.findViewById(R.id.building_3_4_410);
+        r_412 = view.findViewById(R.id.building_3_4_412);
+        r_413 = view.findViewById(R.id.building_3_4_413);
+        r_416 = view.findViewById(R.id.building_3_4_416);
+        r_417 = view.findViewById(R.id.building_3_4_417);
+        r_418 = view.findViewById(R.id.building_3_4_418);
+        r_426 = view.findViewById(R.id.building_3_4_426);
+        r_427 = view.findViewById(R.id.building_3_4_427);
+        r_428 = view.findViewById(R.id.building_3_4_428);
 
-        //五楼
+        r_500 = view.findViewById(R.id.building_3_5_500);
         r_501 = view.findViewById(R.id.building_3_5_501);
+        r_504 = view.findViewById(R.id.building_3_5_504);
         r_506 = view.findViewById(R.id.building_3_5_506);
         r_507 = view.findViewById(R.id.building_3_5_507);
         r_508 = view.findViewById(R.id.building_3_5_508);
         r_509 = view.findViewById(R.id.building_3_5_509);
         r_510 = view.findViewById(R.id.building_3_5_510);
+        r_511 = view.findViewById(R.id.building_3_5_511);
+        r_512 = view.findViewById(R.id.building_3_5_512);
+        r_513 = view.findViewById(R.id.building_3_5_513);
+        r_515 = view.findViewById(R.id.building_3_5_515);
+        r_520 = view.findViewById(R.id.building_3_5_520);
+        r_526 = view.findViewById(R.id.building_3_5_526);
+        r_527 = view.findViewById(R.id.building_3_5_527);
+        r_528 = view.findViewById(R.id.building_3_5_528);
+        r_537 = view.findViewById(R.id.building_3_5_537);
+        r_538 = view.findViewById(R.id.building_3_5_538);
+        r_539 = view.findViewById(R.id.building_3_5_539);
 
         floor_1.setOnClickListener(this);
         floor_2.setOnClickListener(this);
@@ -147,23 +191,64 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         map.put("教3－107", r_107);
         map.put("教3－108", r_108);
         map.put("教3－109", r_109);
+        map.put("教3－116", r_116);
+        map.put("教3－117", r_117);
+        map.put("教3－118", r_118);
 
         map.put("教3－201", r_201);
         map.put("教3－202", r_202);
         map.put("教3－203", r_203);
+        map.put("教3－204", r_204);
+        map.put("教3－205", r_205);
+        map.put("教3－208", r_208);
+        map.put("教3－209", r_209);
+        map.put("教3－210", r_210);
+        map.put("教3－212", r_212);
+        map.put("教3－213", r_213);
+        map.put("教3－214", r_214);
+        map.put("教3－215", r_215);
+        map.put("教3－216", r_216);
+        map.put("教3－225", r_225);
+        map.put("教3－226", r_226);
+        map.put("教3－227", r_227);
 
         map.put("教3－300", r_300);
         map.put("教3－301", r_301);
         map.put("教3－302", r_302);
         map.put("教3－303", r_303);
+        map.put("教3－304", r_304);
+        map.put("教3－305", r_305);
         map.put("教3－308", r_308);
+        map.put("教3－309", r_309);
+        map.put("教3－310", r_310);
+        map.put("教3－312", r_312);
+        map.put("教3－313", r_313);
+        map.put("教3－314", r_314);
+        map.put("教3－315", r_315);
+        map.put("教3－316", r_316);
+        map.put("教3－322", r_322);
+        map.put("教3－323", r_323);
+        map.put("教3－324", r_324);
 
         map.put("教3－400", r_400);
         map.put("教3－401", r_401);
         map.put("教3－402", r_402);
         map.put("教3－403", r_403);
+        map.put("教3－404", r_404);
+        map.put("教3－405", r_405);
         map.put("教3－408", r_408);
+        map.put("教3－409", r_409);
+        map.put("教3－410", r_410);
+        map.put("教3－412", r_412);
+        map.put("教3－413", r_413);
+        map.put("教3－416", r_416);
+        map.put("教3－417", r_417);
+        map.put("教3－418", r_418);
+        map.put("教3－426", r_426);
+        map.put("教3－427", r_427);
+        map.put("教3－428", r_428);
 
+        map.put("教3－500", r_500);
         map.put("教3－501", r_501);
         map.put("教3－504", r_504);
         map.put("教3－506", r_506);
@@ -171,6 +256,17 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         map.put("教3－508", r_508);
         map.put("教3－509", r_509);
         map.put("教3－510", r_510);
+        map.put("教3－511", r_511);
+        map.put("教3－512", r_512);
+        map.put("教3－513", r_513);
+        map.put("教3－515", r_515);
+        map.put("教3－520", r_520);
+        map.put("教3－526", r_526);
+        map.put("教3－527", r_527);
+        map.put("教3－528", r_528);
+        map.put("教3－537", r_537);
+        map.put("教3－538", r_538);
+        map.put("教3－539", r_539);
 
         FW();
     }
@@ -200,7 +296,7 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
     public void onMessage(Building_Entity.ResultBean bean) {
         if (bean.getBuildCode() == 1) {
             for (Building_Entity.ResultBean.SkjsInfoListBean listBean : bean.getSkjsInfoList()) {
-                if (map.get(listBean.getSkdd())!=null){
+                if (map.get(listBean.getSkdd()) != null) {
                     map.get(listBean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
                 }
             }
@@ -214,7 +310,7 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        new Get_Floor_Info(getActivity(),i).execute(Const.IP, String.valueOf(i % 10));
+        new Get_Floor_Info(getActivity(), i).execute(Const.IP, String.valueOf(i % 10));
 
 //        Map map = new HashMap();
 //        map.put("floor", 2);

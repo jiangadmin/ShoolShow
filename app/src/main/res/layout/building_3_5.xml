@@ -81,13 +81,13 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/building_3_5_502"
+                android:id="@+id/building_3_5_504"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="38dp"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="502" />
+                android:text="504" />
 
             <TextView
                 android:id="@+id/building_3_5_501"
@@ -260,7 +260,7 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                     <TextView
                         android:id="@+id/building_3_5_516"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

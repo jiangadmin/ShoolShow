@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //楼栋加载完毕
         if (map.get("building_ready") != null) {
-            ShowFragmet(1, 2);
+            ShowFragmet(1, 1);
 
             //获取教学楼信息
             new Get_Building_Info(this).execute(Const.IP);
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.home:
 
-                ShowFragmet(1, 2);
+                ShowFragmet(1, 1);
 
                 //获取教学楼信息
                 new Get_Building_Info(this).execute(Const.IP);
