@@ -181,36 +181,87 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         floor.add(floor_4);
         floor.add(floor_5);
 
+        map.put("教2－100", r_100);
         map.put("教2－101", r_101);
         map.put("教2－102", r_102);
         map.put("教2－103", r_103);
         map.put("教2－104", r_104);
         map.put("教2－105", r_105);
         map.put("教2－106", r_106);
-
+        map.put("教2－113", r_113);
+        map.put("教2－114", r_114);
+        map.put("教2－115", r_115);
+        map.put("教2－116", r_116);
+        map.put("教2－117", r_117);
+        map.put("教2－118", r_118);
 
         map.put("教2－201", r_201);
         map.put("教2－202", r_202);
         map.put("教2－203", r_203);
-
+        map.put("教2－204", r_204);
+        map.put("教2－205", r_205);
+        map.put("教2－208", r_208);
+        map.put("教2－209", r_209);
+        map.put("教2－211", r_211);
+        map.put("教2－212", r_212);
+        map.put("教2－213", r_213);
+        map.put("教2－214", r_214);
+        map.put("教2－215", r_215);
+        map.put("教2－216", r_216);
+        map.put("教2－225", r_225);
+        map.put("教2－226", r_226);
+        map.put("教2－227", r_227);
 
         map.put("教2－300", r_300);
         map.put("教2－301", r_301);
         map.put("教2－302", r_302);
         map.put("教2－303", r_303);
+        map.put("教2－304", r_304);
+        map.put("教2－305", r_305);
         map.put("教2－308", r_308);
+        map.put("教2－309", r_309);
+        map.put("教2－311", r_311);
+        map.put("教2－312", r_312);
+        map.put("教2－313", r_313);
+        map.put("教2－315", r_315);
+        map.put("教2－316", r_316);
 
         map.put("教2－400", r_400);
         map.put("教2－401", r_401);
         map.put("教2－402", r_402);
         map.put("教2－403", r_403);
-
+        map.put("教2－404", r_404);
+        map.put("教2－405", r_405);
+        map.put("教2－409", r_409);
+        map.put("教2－410", r_410);
+        map.put("教2－413", r_413);
+        map.put("教2－414", r_414);
+        map.put("教2－415", r_415);
+        map.put("教2－416", r_416);
+        map.put("教2－417", r_417);
+        map.put("教2－418", r_418);
+        map.put("教2－427", r_427);
+        map.put("教2－428", r_428);
+        map.put("教2－429", r_429);
 
         map.put("教2－506", r_506);
         map.put("教2－507", r_507);
         map.put("教2－508", r_508);
         map.put("教2－509", r_509);
         map.put("教2－510", r_510);
+        map.put("教2－512", r_512);
+        map.put("教2－516", r_516);
+        map.put("教2－518", r_518);
+        map.put("教2－519", r_519);
+        map.put("教2－520", r_520);
+        map.put("教2－521", r_521);
+        map.put("教2－522", r_522);
+        map.put("教2－523", r_523);
+        map.put("教2－532", r_532);
+        map.put("教2－533", r_533);
+        map.put("教2－534", r_534);
+        map.put("教2－535", r_535);
+
 
         FW();
     }

@@ -4,10 +4,14 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
+import com.jiang.shoolshow.entity.Teacher_Entity;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * @author: jiangadmin
@@ -57,22 +61,37 @@ public class Project_Adapter extends BaseAdapter {
             holder.teacher = convertView.findViewById(R.id.project_teacher);
             holder.name = convertView.findViewById(R.id.project_name);
             holder.classname = convertView.findViewById(R.id.project_class);
+            holder.view = convertView.findViewById(R.id.project_view);
 
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        ClassRoom_Entity.ResultBean.JsCurrentDayKcBean bean = resultBean.getJsCurrentDayKc().get(position);
+        final ClassRoom_Entity.ResultBean.JsCurrentDayKcBean bean = resultBean.getJsCurrentDayKc().get(position);
         holder.num.setText(bean.getJc());
         holder.teacher.setText(bean.getJsxm());
         holder.name.setText(bean.getKcmc());
         holder.classname.setText(bean.getSkbjh());
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Teacher_Entity teacher_entity = new Teacher_Entity();
+                teacher_entity.setName(bean.getJsxm());
+                teacher_entity.setGender(bean.getJsxb());
+                teacher_entity.setNumber(bean.getJsgh());
+                teacher_entity.setLevel(bean.getJszc());
+                teacher_entity.setMessage(bean.getJsyjfx());
+
+                EventBus.getDefault().post(teacher_entity);
+            }
+        });
 
         return convertView;
     }
 
     private class ViewHolder {
+        LinearLayout view;
         TextView num, teacher, name, classname;
     }
 }

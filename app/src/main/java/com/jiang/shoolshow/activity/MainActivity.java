@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
@@ -19,6 +18,7 @@ import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
+import com.jiang.shoolshow.entity.Teacher_Entity;
 import com.jiang.shoolshow.entity.Weather_Entity;
 import com.jiang.shoolshow.fragment.Building_Fragment;
 import com.jiang.shoolshow.fragment.Classroom_Fragment;
@@ -95,14 +95,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //获取教室数据
         if (map.get("floor") != null && map.get("room") != null) {
-            LogUtil.e(TAG,"floor:"+map.get("floor"));
-            LogUtil.e(TAG,"room:"+map.get("room"));
+            LogUtil.e(TAG, "floor:" + map.get("floor"));
+            LogUtil.e(TAG, "room:" + map.get("room"));
 
             ShowFragmet(3, 0);
 
             classroom_fragment.initeven(String.valueOf(map.get("floor")), (String) map.get("room"));
         }
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    public void onMeaage(Teacher_Entity entity) {
+
+        item_2_view.removeAllViews();
+
+        View v = View.inflate(MainActivity.this, R.layout.view_teacher, null);
+        ImageView head = v.findViewById(R.id.teacher_head);
+        TextView name = v.findViewById(R.id.teacher_name);
+        TextView gender = v.findViewById(R.id.teacher_gender);
+        TextView number = v.findViewById(R.id.teacher_number);
+        TextView level = v.findViewById(R.id.teacher_level);
+        TextView message = v.findViewById(R.id.message);
+
+        name.setText(String.format("姓名：%s", entity.getName()));
+        gender.setText(String.format("性别：%s", entity.getGender()));
+        number.setText(String.format("工号：%s", entity.getNumber()));
+        level.setText(String.format("职称：%s", entity.getLevel()));
+        message.setText(String.format("研究方向：\n%s", entity.getMessage()));
+
+        item_2_view.addView(v);
+        item_2_title.setText("教师介绍");
 
     }
 
@@ -298,24 +321,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ShowFragmet(3, 0);
 
-                item_2_view.removeAllViews();
+                Teacher_Entity teacher_entity = new Teacher_Entity();
+                teacher_entity.setName(entity.getResult().getSkjsInfoList().get(position).getJsxm());
+                teacher_entity.setGender(entity.getResult().getSkjsInfoList().get(position).getJsxb());
+                teacher_entity.setNumber(entity.getResult().getSkjsInfoList().get(position).getJsgh());
+                teacher_entity.setLevel(entity.getResult().getSkjsInfoList().get(position).getJszc());
+                teacher_entity.setMessage(entity.getResult().getSkjsInfoList().get(position).getJsyjfx());
 
-                View v = View.inflate(MainActivity.this, R.layout.view_teacher, null);
-                ImageView head = v.findViewById(R.id.teacher_head);
-                TextView name = v.findViewById(R.id.teacher_name);
-                TextView gender = v.findViewById(R.id.teacher_gender);
-                TextView number = v.findViewById(R.id.teacher_number);
-                TextView level = v.findViewById(R.id.teacher_level);
-                TextView message = v.findViewById(R.id.message);
-
-                name.setText(String.format("姓名：%s", entity.getResult().getSkjsInfoList().get(position).getJsxm()));
-                gender.setText(String.format("性别：%s", entity.getResult().getSkjsInfoList().get(position).getJsxb()));
-                number.setText(String.format("工号：%s", entity.getResult().getSkjsInfoList().get(position).getJsgh()));
-                level.setText(String.format("职称：%s", entity.getResult().getSkjsInfoList().get(position).getJszc()));
-                message.setText(String.format("研究方向：\n%s", entity.getResult().getSkjsInfoList().get(position).getJsyjfx()));
-
-                item_2_view.addView(v);
-                item_2_title.setText("教师介绍");
+                EventBus.getDefault().post(teacher_entity);
                 classroom_fragment.initeven(entity.getResult().getSkjsInfoList().get(position).getJsszlc(),
                         entity.getResult().getSkjsInfoList().get(position).getSkdd());
             }
