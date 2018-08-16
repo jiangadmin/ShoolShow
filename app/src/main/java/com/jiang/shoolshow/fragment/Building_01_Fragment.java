@@ -42,7 +42,7 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
 
     int rx = 65, r = 0;
 
-    float s = 0.7F;
+    float s = 0.8F;
 
     int f1 = 0, f2 = 0, f3 = 0, f4 = 0, f5 = 0;
 

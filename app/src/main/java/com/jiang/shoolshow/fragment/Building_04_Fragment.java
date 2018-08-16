@@ -34,7 +34,7 @@ import java.util.Map;
 public class Building_04_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Building_04_Fragment";
 
-    View floor_1, floor_2, floor_3, floor_4, floor_5;
+    View floor_1, floor_2, floor_3, floor_4, floor_5,floor_6;
 
     List<View> floor = new ArrayList<>();
 
@@ -82,6 +82,7 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
         floor_3 = view.findViewById(R.id.building_4_3);
         floor_4 = view.findViewById(R.id.building_4_4);
         floor_5 = view.findViewById(R.id.building_4_5);
+        floor_6 = view.findViewById(R.id.building_4_6);
 
         r_101 = view.findViewById(R.id.building_4_1_101);
         r_102 = view.findViewById(R.id.building_4_1_102);
@@ -350,11 +351,18 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.X(floor_5, 0, f5);
         AnimUtils.Y(floor_5, 0, -220);
 
+        AnimUtils.RX(floor_6, 0, rx);
+        AnimUtils.R(floor_6, 0, r);
+        AnimUtils.S(floor_6, 0, s);
+        AnimUtils.X(floor_6, 0, f5);
+        AnimUtils.Y(floor_6, 0, -330);
+
         floor_1.setEnabled(true);
         floor_2.setEnabled(true);
         floor_3.setEnabled(true);
         floor_4.setEnabled(true);
         floor_5.setEnabled(true);
+        floor_6.setEnabled(true);
     }
 
 }

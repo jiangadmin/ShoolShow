@@ -51,6 +51,13 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
 
+        <include
+            android:id="@+id/building_4_6"
+            layout="@layout/building_4_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

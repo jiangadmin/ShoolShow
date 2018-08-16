@@ -2,38 +2,49 @@ package com.jiang.shoolshow.activity;
 
 
 import android.app.FragmentTransaction;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
+import com.jiang.shoolshow.entity.Banner_Entity;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
+import com.jiang.shoolshow.entity.Notice_Entity;
 import com.jiang.shoolshow.entity.Teacher_Entity;
 import com.jiang.shoolshow.entity.Weather_Entity;
 import com.jiang.shoolshow.fragment.Building_Fragment;
 import com.jiang.shoolshow.fragment.Classroom_Fragment;
 import com.jiang.shoolshow.fragment.Floor_Fragment;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
+import com.jiang.shoolshow.servlet.Get_Notice_Info;
 import com.jiang.shoolshow.servlet.Get_Weather;
 import com.jiang.shoolshow.utils.LogUtil;
 import com.jiang.shoolshow.utils.ToolUtils;
+import com.jiang.shoolshow.view.ImageCycleView;
 import com.jiang.shoolshow.view.ListViewForScrollView;
+import com.squareup.picasso.Picasso;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -51,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView item_1_tianqi, item_1_wendu, item_2_title;
 
-    RelativeLayout item_2_view;
+    RelativeLayout item_1_view, item_2_view;
 
     Building_Fragment building_fragment;
     Floor_Fragment floor_fragment;
@@ -71,7 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //获取教室信息
 //        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
         //获取天气
-        new Get_Weather(this).execute();
+        new Get_Weather(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        new Get_Notice_Info().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         LogUtil.e(TAG, ToolUtils.getMyUUID());
     }
@@ -129,6 +142,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    public void onMessage(Notice_Entity.ResultBean bean) {
+
+        switch (bean.getNoticeType()) {
+
+            //文字
+            case 1:
+                LogUtil.e(TAG,"文字"+bean.getContent());
+                break;
+
+            //图片
+            case 2:
+                item_1_view.removeAllViews();
+                List<String> result = Arrays.asList(bean.getImagelist().split(","));
+                ImageCycleView imageCycleView = new ImageCycleView(this);
+
+                //修改一下广告的高度画幅
+                 RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imageCycleView.getLayoutParams();
+                //计算显示比例
+                layoutParams.height = 300;
+                layoutParams.width = 300;
+                imageCycleView.setLayoutParams(layoutParams);
+
+                Banner_Entity banner_entity = new Banner_Entity();
+                for (String s:result){
+                    Banner_Entity.DBean dBean = new Banner_Entity.DBean();
+                    dBean.setPicUrl(s);
+                    banner_entity.getD().add(dBean);
+                }
+
+                imageCycleView.setBeans(banner_entity.getD(), new ImageCycleView.Listener() {
+                    @Override
+                    public void displayImage(String imageURL, ImageView imageView) {
+                        Picasso.with(MainActivity.this).load(imageURL).into(imageView);
+                    }
+
+                    @Override
+                    public void onImageClick(Banner_Entity.DBean bean, View imageView) {
+
+                    }
+                });
+
+                item_1_view.addView(imageCycleView);
+
+
+                break;
+        }
+    }
+
     private void setSystemUIVisible(boolean show) {
         if (show) {
             int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
@@ -158,6 +220,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         item_1_icon = findViewById(R.id.weather_icon);
         item_1_wendu = findViewById(R.id.weather_wendu);
         item_1_tianqi = findViewById(R.id.weather_tianqi);
+
+        item_1_view = findViewById(R.id.item_1_view);
 
         item_2_title = findViewById(R.id.item_2_title);
         item_2_view = findViewById(R.id.item_2_view);
