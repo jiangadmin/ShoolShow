@@ -7,13 +7,10 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -149,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //文字
             case 1:
-                LogUtil.e(TAG,"文字"+bean.getContent());
+                LogUtil.e(TAG, "文字" + bean.getContent());
                 break;
 
             //图片
@@ -159,14 +156,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ImageCycleView imageCycleView = new ImageCycleView(this);
 
                 //修改一下广告的高度画幅
-                 RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imageCycleView.getLayoutParams();
+                RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imageCycleView.getLayoutParams();
                 //计算显示比例
                 layoutParams.height = 300;
                 layoutParams.width = 300;
                 imageCycleView.setLayoutParams(layoutParams);
 
                 Banner_Entity banner_entity = new Banner_Entity();
-                for (String s:result){
+                for (String s : result) {
                     Banner_Entity.DBean dBean = new Banner_Entity.DBean();
                     dBean.setPicUrl(s);
                     banner_entity.getD().add(dBean);
