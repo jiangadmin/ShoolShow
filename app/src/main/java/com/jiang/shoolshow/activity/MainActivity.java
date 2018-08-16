@@ -3,13 +3,13 @@ package com.jiang.shoolshow.activity;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     View main;
 
-    Button home;
+    FloatingActionButton home;
 
 //    ImageView left, right, home, help;
 
-    LinearLayout main_main;
+    ConstraintLayout main_main;
 
     ImageView item_1_icon;
 
@@ -187,9 +187,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //获取教学楼信息
                 new Get_Building_Info(this).execute(Const.IP);
 
-                break;
-
-            case R.id.help:
                 break;
 
         }
