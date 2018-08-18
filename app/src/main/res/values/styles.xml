@@ -13,6 +13,7 @@
     </style>
 
     <style name="StartTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">#70ffffff</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>

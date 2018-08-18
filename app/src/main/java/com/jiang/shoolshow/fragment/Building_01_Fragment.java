@@ -4,14 +4,13 @@ package com.jiang.shoolshow.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
-import com.jiang.shoolshow.activity.MainActivity;
+import com.jiang.shoolshow.activity.Floor_Activity;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
@@ -40,11 +39,13 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
 
     List<View> floor = new ArrayList<>();
 
-    int rx = 65, r = 0;
+    //X轴旋转   中心点旋转
+    int rx = 77, r = 0;
 
-    float s = 0.8F;
+    //缩放大小
+    float s = 0.85F;
 
-    int f1 = 0, f2 = 0, f3 = 0, f4 = 0, f5 = 0;
+    int f1 = -80, f2 = -40, f3 = 0, f4 = 40, f5 = 80;
 
     int top = -1080;
     int bottom = 1080;
@@ -60,7 +61,7 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
             r_400, r_401, r_402, r_403, r_406, r_407, r_408,
             r_501, r_502, r_503, r_504, r_505, r_506, r_507, r_508, r_509, r_510;
 
-    Map<String,TextView> map = new HashMap();
+    Map<String, TextView> map = new HashMap();
 
     @Nullable
     @Override
@@ -214,7 +215,7 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     public void onMessage(Building_Entity.ResultBean bean) {
         if (bean.getBuildCode() == 1) {
             for (Building_Entity.ResultBean.SkjsInfoListBean listBean : bean.getSkjsInfoList()) {
-                if (map.get(listBean.getSkdd())!=null){
+                if (map.get(listBean.getSkdd()) != null) {
                     map.get(listBean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
                 }
             }
@@ -228,7 +229,9 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        new Get_Floor_Info(getActivity(),i).execute(Const.IP, String.valueOf(i % 10));
+        Floor_Activity.start(getActivity(),i);
+
+//        new Get_Floor_Info(getActivity(), i).execute(Const.IP, String.valueOf(i % 10));
 
 //        Map map = new HashMap();
 //        map.put("floor", 2);
@@ -285,6 +288,7 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.R(floor_1, 0, r);
         AnimUtils.S(floor_1, 0, s);
         AnimUtils.Y(floor_1, 0, 220);
+        AnimUtils.X(floor_1, 0, f1);
 
         AnimUtils.RX(floor_2, 0, rx);
         AnimUtils.R(floor_2, 0, r);
@@ -292,10 +296,12 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.X(floor_2, 0, f2);
         AnimUtils.Y(floor_2, 0, 110);
 
+
         AnimUtils.RX(floor_3, 0, rx);
         AnimUtils.R(floor_3, 0, r);
         AnimUtils.S(floor_3, 0, s);
         AnimUtils.X(floor_3, 0, f3);
+
 
         AnimUtils.RX(floor_4, 0, rx);
         AnimUtils.R(floor_4, 0, r);
@@ -303,11 +309,13 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.X(floor_4, 0, f4);
         AnimUtils.Y(floor_4, 0, -110);
 
+
         AnimUtils.RX(floor_5, 0, rx);
         AnimUtils.R(floor_5, 0, r);
         AnimUtils.S(floor_5, 0, s);
         AnimUtils.X(floor_5, 0, f5);
         AnimUtils.Y(floor_5, 0, -220);
+
 
         floor_1.setEnabled(true);
         floor_2.setEnabled(true);

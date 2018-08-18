@@ -9,6 +9,7 @@ import com.jiang.shoolshow.entity.Base_Entity;
 import com.jiang.shoolshow.entity.Notice_Entity;
 import com.jiang.shoolshow.utils.HttpUtil;
 import com.jiang.shoolshow.utils.LogUtil;
+import com.jiang.shoolshow.view.NoticeView;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -24,6 +25,12 @@ import java.util.Map;
  */
 public class Get_Notice_Info extends AsyncTask<String, Integer, Notice_Entity> {
     private static final String TAG = "Get_Notice_Info";
+
+    NoticeView view;
+
+    public Get_Notice_Info(NoticeView view) {
+        this.view = view;
+    }
 
     @Override
     protected Notice_Entity doInBackground(String... strings) {
@@ -60,7 +67,7 @@ public class Get_Notice_Info extends AsyncTask<String, Integer, Notice_Entity> {
         super.onPostExecute(entity);
         switch (entity.getErrorcode()){
             case 1000:
-                EventBus.getDefault().post(entity.getResult());
+                view.Callback(entity.getResult());
                 break;
         }
     }

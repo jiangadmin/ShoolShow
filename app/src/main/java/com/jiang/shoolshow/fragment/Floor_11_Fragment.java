@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.ClassRoom_Acivity;
+import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
+import com.jiang.shoolshow.utils.AnimUtils;
 import com.jiang.shoolshow.utils.LogUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -56,7 +59,18 @@ public class Floor_11_Fragment extends Fragment implements View.OnClickListener 
         b_109 = view.findViewById(R.id.building_1_1_109);
         b_110 = view.findViewById(R.id.building_1_1_110);
 
-        map = new HashMap();
+        b_101.setOnClickListener(this);
+        b_102.setOnClickListener(this);
+        b_103.setOnClickListener(this);
+        b_104.setOnClickListener(this);
+        b_105.setOnClickListener(this);
+        b_106.setOnClickListener(this);
+        b_107.setOnClickListener(this);
+        b_108.setOnClickListener(this);
+        b_109.setOnClickListener(this);
+        b_110.setOnClickListener(this);
+
+        map = new HashMap<>();
 
         map.put("教1－101", b_101);
         map.put("教1－102", b_102);
@@ -69,12 +83,14 @@ public class Floor_11_Fragment extends Fragment implements View.OnClickListener 
         map.put("教1－109", b_109);
         map.put("教1－110", b_110);
 
+        AnimUtils.S(view.findViewById(R.id.floor_view), 0, Const.f_1_s);
+
     }
 
     @Override
     public void onClick(View v) {
-        Map map = new HashMap();
-        map.put("floor", 1);
+        Map<String, String> map = new HashMap<>();
+        map.put("floor", "1");
         switch (v.getId()) {
             case R.id.building_1_1_101:
                 map.put("room", "教1－101");
@@ -107,7 +123,8 @@ public class Floor_11_Fragment extends Fragment implements View.OnClickListener 
                 map.put("room", "教1－110");
                 break;
         }
-        EventBus.getDefault().post(map);
+
+        ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
@@ -117,7 +134,6 @@ public class Floor_11_Fragment extends Fragment implements View.OnClickListener 
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
                 if (map.get(bean.getSkdd()) != null) {
                     map.get(bean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
-                    map.get(bean.getSkdd()).setOnClickListener(this);
                 }
             }
         }

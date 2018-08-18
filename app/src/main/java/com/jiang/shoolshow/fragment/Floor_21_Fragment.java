@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.ClassRoom_Acivity;
 import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.utils.LogUtil;
 
@@ -59,7 +60,21 @@ public class Floor_21_Fragment extends Fragment implements View.OnClickListener 
         r_117 = view.findViewById(R.id.building_2_1_117);
         r_118 = view.findViewById(R.id.building_2_1_118);
 
-        map = new HashMap();
+        r_100.setOnClickListener(this);
+        r_101.setOnClickListener(this);
+        r_102.setOnClickListener(this);
+        r_103.setOnClickListener(this);
+        r_104.setOnClickListener(this);
+        r_105.setOnClickListener(this);
+        r_106.setOnClickListener(this);
+        r_113.setOnClickListener(this);
+        r_114.setOnClickListener(this);
+        r_115.setOnClickListener(this);
+        r_116.setOnClickListener(this);
+        r_117.setOnClickListener(this);
+        r_118.setOnClickListener(this);
+
+        map = new HashMap<>();
         map.put("教2－100", r_100);
         map.put("教2－101", r_101);
         map.put("教2－102", r_102);
@@ -78,8 +93,8 @@ public class Floor_21_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map map = new HashMap();
-        map.put("floor", 1);
+        Map<String,String> map = new HashMap<>();
+        map.put("floor", "1");
         switch (v.getId()) {
 
             case R.id.building_2_1_100:
@@ -123,7 +138,8 @@ public class Floor_21_Fragment extends Fragment implements View.OnClickListener 
                 break;
 
         }
-        EventBus.getDefault().post(map);
+
+        ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
@@ -133,7 +149,7 @@ public class Floor_21_Fragment extends Fragment implements View.OnClickListener 
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
                 if (map.get(bean.getSkdd()) != null) {
                     map.get(bean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
-                    map.get(bean.getSkdd()).setOnClickListener(this);
+
                 }
             }
         }

@@ -156,7 +156,7 @@ public class AnimUtils {
     }
 
  /**
-     * Y 轴缩放
+     * 缩放
      * @param v
      * @param from
      * @param to

@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.jiang.shoolshow.activity.Floor_Activity;
 import com.jiang.shoolshow.activity.MainActivity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
@@ -71,8 +72,9 @@ public class Get_Floor_Info extends AsyncTask<String, Integer, Floor_Entity> {
 
         switch (entity.getErrorcode()){
             case 1000:
-                if (activity instanceof MainActivity) {
-                    ((MainActivity) activity).CallBack_Floor(entity);
+
+                if (activity instanceof Floor_Activity){
+                    ((Floor_Activity) activity).CallBack_Floor(entity);
                 }
                 break;
         }

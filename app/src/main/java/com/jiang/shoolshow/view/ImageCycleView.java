@@ -289,9 +289,10 @@ public class ImageCycleView extends LinearLayout {
             ClickableImageView imageView;
             if (mImageViewCacheList.isEmpty()) {
                 imageView = new ClickableImageView(mContext);
-                imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-                imageView.setScaleType(ScaleType.FIT_XY);
 
+                imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                imageView.setAdjustViewBounds(true);
+                imageView.setScaleType(ScaleType.FIT_XY);
 
             } else {
                 imageView = mImageViewCacheList.remove(0);
