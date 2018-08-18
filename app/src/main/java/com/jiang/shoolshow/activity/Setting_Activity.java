@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.utils.ToolUtils;
 
 /**
  * @author: jiangadmin
@@ -15,9 +18,11 @@ import com.jiang.shoolshow.R;
  * @Phone: 186 6120 1018
  * TODO: 设置页面
  */
-public class Setting_Activity extends AppCompatActivity {
+public class Setting_Activity extends Base_Activity {
 
     private static final String TAG = "Setting_Activity";
+
+    TextView uuid;
 
     public static void start(Context context) {
         Intent intent = new Intent();
@@ -30,10 +35,15 @@ public class Setting_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        initview();
+        uuid = findViewById(R.id.uuid);
+        uuid.setText(ToolUtils.getMyUUID());
+
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    private void initview() {
-
-    }
 }

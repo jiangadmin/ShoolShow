@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.ClassRoom_Acivity;
 import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.utils.LogUtil;
 
@@ -30,22 +31,7 @@ import java.util.Map;
 public class Floor_22_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_201,
-            r_202,
-            r_203,
-            r_204,
-            r_205,
-            r_208,
-            r_209,
-            r_211,
-            r_212,
-            r_213,
-            r_214,
-            r_215,
-            r_216,
-            r_225,
-            r_226,
-            r_227;
+    TextView r_201, r_202, r_203, r_204, r_205, r_208, r_209, r_211, r_212, r_213, r_214, r_215, r_216, r_225, r_226, r_227;
 
     Map<String, TextView> map;
 
@@ -77,7 +63,25 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
         r_226 = view.findViewById(R.id.building_2_2_226);
         r_227 = view.findViewById(R.id.building_2_2_227);
 
-        map = new HashMap();
+
+        r_201.setOnClickListener(this);
+        r_202.setOnClickListener(this);
+        r_203.setOnClickListener(this);
+        r_204.setOnClickListener(this);
+        r_205.setOnClickListener(this);
+        r_208.setOnClickListener(this);
+        r_209.setOnClickListener(this);
+        r_211.setOnClickListener(this);
+        r_212.setOnClickListener(this);
+        r_213.setOnClickListener(this);
+        r_214.setOnClickListener(this);
+        r_215.setOnClickListener(this);
+        r_216.setOnClickListener(this);
+        r_225.setOnClickListener(this);
+        r_226.setOnClickListener(this);
+        r_227.setOnClickListener(this);
+
+        map = new HashMap<>();
 
         map.put("教2－201", r_201);
         map.put("教2－202", r_202);
@@ -100,8 +104,8 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map map = new HashMap();
-        map.put("floor", 2);
+        Map<String,String> map = new HashMap<>();
+        map.put("floor", "2");
         switch (v.getId()) {
             case R.id.building_2_2_201:
                 map.put("room", "教2－201");
@@ -152,7 +156,8 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
                 map.put("room", "教2－227");
                 break;
         }
-        EventBus.getDefault().post(map);
+        ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
@@ -162,7 +167,7 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
                 if (map.get(bean.getSkdd()) != null) {
                     map.get(bean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
-                    map.get(bean.getSkdd()).setOnClickListener(this);
+
                 }
             }
         }

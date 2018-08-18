@@ -20,4 +20,6 @@ public class Const {
 
     public static String Password = "Password";
 
+    public static float f_1_s = 1.25F;
+
 }

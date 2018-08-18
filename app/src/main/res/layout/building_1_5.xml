@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/floor_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="@color/floor_bg">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/kuang_w"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,49 +39,49 @@
                 android:background="@color/white" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_506"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="506" />
+                android:text="506"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_507"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="507" />
+                android:text="507"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_508"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="508" />
+                android:text="508"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_509"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="509" />
+                android:text="509"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_510"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="510" />
+                android:text="510"
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="33dp"
@@ -187,49 +189,49 @@
                 android:background="@color/white" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_505"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="505" />
+                android:text="505"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_504"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="504" />
+                android:text="504"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_503"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="503" />
+                android:text="503"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_502"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="502" />
+                android:text="502"
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
                 android:id="@+id/building_1_5_501"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="501" />
+                android:text="501"
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="33dp"

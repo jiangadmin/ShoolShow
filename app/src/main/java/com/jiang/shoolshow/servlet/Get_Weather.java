@@ -9,6 +9,7 @@ import com.jiang.shoolshow.activity.MainActivity;
 import com.jiang.shoolshow.entity.Weather_Entity;
 import com.jiang.shoolshow.utils.HttpUtil;
 import com.jiang.shoolshow.utils.LogUtil;
+import com.jiang.shoolshow.view.WeatherView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,10 +24,10 @@ import java.util.Map;
 public class Get_Weather extends AsyncTask<String, Integer, Weather_Entity> {
     private static final String TAG = "Get_Weather";
 
-    private Activity activity;
+    private WeatherView view;
 
-    public Get_Weather(Activity activity) {
-        this.activity = activity;
+    public Get_Weather(WeatherView view) {
+        this.view = view;
     }
 
     @Override
@@ -61,9 +62,7 @@ public class Get_Weather extends AsyncTask<String, Integer, Weather_Entity> {
 
         switch (entity.getRetCode()) {
             case 200:
-                if (activity instanceof MainActivity) {
-                    ((MainActivity) activity).CallBack_Weather(entity.getResult().get(0));
-                }
+               view.Callback(entity.getResult().get(0));
                 break;
         }
     }

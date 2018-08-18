@@ -53,7 +53,7 @@ public class Classroom_Fragment extends Fragment {
     }
 
     public void initeven(String floor, String room) {
-        new Get_Classroom_Info(this).execute(floor, room);
+//        new Get_Classroom_Info(this).execute(floor, room);
     }
 
     /**

@@ -73,19 +73,6 @@ public class Project_Adapter extends BaseAdapter {
         holder.teacher.setText(bean.getJsxm());
         holder.name.setText(bean.getKcmc());
         holder.classname.setText(bean.getSkbjh());
-        holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Teacher_Entity teacher_entity = new Teacher_Entity();
-                teacher_entity.setName(bean.getJsxm());
-                teacher_entity.setGender(bean.getJsxb());
-                teacher_entity.setNumber(bean.getJsgh());
-                teacher_entity.setLevel(bean.getJszc());
-                teacher_entity.setMessage(bean.getJsyjfx());
-
-                EventBus.getDefault().post(teacher_entity);
-            }
-        });
 
         return convertView;
     }

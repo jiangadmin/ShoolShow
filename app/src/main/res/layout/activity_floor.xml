@@ -23,23 +23,13 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/main"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="1">
 
-            <FrameLayout
-                android:id="@+id/main"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-            </FrameLayout>
-
-
-        </LinearLayout>
+        </FrameLayout>
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -52,12 +42,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-               <com.jiang.shoolshow.view.NoticeView
-                   android:layout_marginBottom="7dp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
+                <com.jiang.shoolshow.view.NoticeView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp">
 
-               </com.jiang.shoolshow.view.NoticeView>
+                </com.jiang.shoolshow.view.NoticeView>
 
                 <com.jiang.shoolshow.view.WeatherView
                     android:layout_width="match_parent"
@@ -66,24 +56,26 @@
                 </com.jiang.shoolshow.view.WeatherView>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/message_view"
+                    android:layout_width="221dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
                     android:background="@drawable/item_right_bg"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
-                        android:id="@+id/item_2_title"
+                        android:id="@+id/message_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/item_right_top_bg"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="教室分布"
+                        android:text="课程信息"
                         android:textColor="@color/white" />
 
                     <RelativeLayout
-                        android:id="@+id/item_2_view"
+                        android:id="@+id/message_context"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:minHeight="150dp"
@@ -100,24 +92,14 @@
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/home"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_home"
+        android:src="@drawable/ic_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:alpha="0.6"
-        android:id="@+id/sn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

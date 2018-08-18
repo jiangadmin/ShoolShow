@@ -1,11 +1,13 @@
 package com.jiang.shoolshow.servlet;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.jiang.shoolshow.activity.ClassRoom_Acivity;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.fragment.Classroom_Fragment;
@@ -25,10 +27,10 @@ import java.util.Map;
 public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Entity> {
     private static final String TAG = "Get_Classroom_Info";
 
-    Fragment fragment;
+    Activity activity;
 
-    public Get_Classroom_Info(Fragment fragment) {
-        this.fragment = fragment;
+    public Get_Classroom_Info(Activity activity) {
+        this.activity = activity;
     }
 
     @Override
@@ -69,9 +71,9 @@ public class Get_Classroom_Info extends AsyncTask<String, Integer, ClassRoom_Ent
 
         switch (entity.getErrorcode()) {
             case 1000:
-                if (fragment instanceof Classroom_Fragment) {
-                    ((Classroom_Fragment) fragment).CallBack(entity.getResult());
-                }
+              if (activity instanceof ClassRoom_Acivity){
+                  ((ClassRoom_Acivity) activity).CallBack(entity.getResult());
+              }
                 break;
         }
 

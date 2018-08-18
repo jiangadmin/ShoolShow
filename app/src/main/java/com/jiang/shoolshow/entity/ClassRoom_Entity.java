@@ -13,7 +13,7 @@ public class ClassRoom_Entity extends Base_Entity {
 
     /**
      * errorcode : 1000
-     * result : {"jsCurrentDayKc":[{"id":188,"jc":"第3,4,5节","jscsrq":"1973-11-28","jsgh":"20110065","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"刘亮","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"B0708321S","kcmc":"视听语言","skbjh":"","skdd":"教3－204","sksj":"1-18周星期三","xn":"","xq":""},{"id":329,"jc":"第8,9节","jscsrq":"1976-12-13","jsgh":"20040087","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"张凤","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"F0801051C","kcmc":"中国概况Ⅰ","skbjh":"F170101,F170401","skdd":"教3－204","sksj":"3-18周星期三","xn":"2017-2018","xq":"1"},{"id":1290,"jc":"第8,9节","jscsrq":"1976-12-13","jsgh":"20040087","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"张凤","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"F0801051C","kcmc":"中国概况Ⅰ","skbjh":"F171201,F171202","skdd":"教3－204","sksj":"3-18周星期三","xn":"2017-2018","xq":"1"}],"jsInfo":{"id":188,"jc":"第3,4,5节","jscsrq":"1973-11-28","jsgh":"20110065","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"刘亮","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"B0708321S","kcmc":"视听语言","skbjh":"","skdd":"教3－204","sksj":"1-18周星期三","xn":"","xq":""}}
+     * result : {"jsCurrentDayKc":[{"id":30,"jc":"第3,4节","jscsrq":"1980-12-23","jsdmt":"投影仪，电脑","jsgh":"20020058","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教1","jsxb":"女性","jsxbm":"2","jsxm":"金栩","jsyjfx":"计算机通信与网间互连技术","jszc":"讲师（高校）","jszws":"230","kcdm":"H0600031S","kcmc":"线性代数与解析几何","skbjh":"","skdd":"教1－105","skrs":"30","sksj":"3-18周星期五","xn":"","xq":"","zp":"http://imgtu.5011.net/uploads/content/20161219/small78058014821359311482136095.jpg"}],"jsInfo":{"id":30,"jc":"第3,4节","jscsrq":"1980-12-23","jsdmt":"投影仪，电脑","jsgh":"20020058","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教1","jsxb":"女性","jsxbm":"2","jsxm":"金栩","jsyjfx":"计算机通信与网间互连技术","jszc":"讲师（高校）","jszws":"230","kcdm":"H0600031S","kcmc":"线性代数与解析几何","skbjh":"","skdd":"教1－105","skrs":"30","sksj":"3-18周星期五","xn":"","xq":"","zp":"http://imgtu.5011.net/uploads/content/20161219/small78058014821359311482136095.jpg"}}
      */
 
     private ResultBean result;
@@ -28,8 +28,8 @@ public class ClassRoom_Entity extends Base_Entity {
 
     public static class ResultBean {
         /**
-         * jsCurrentDayKc : [{"id":188,"jc":"第3,4,5节","jscsrq":"1973-11-28","jsgh":"20110065","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"刘亮","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"B0708321S","kcmc":"视听语言","skbjh":"","skdd":"教3－204","sksj":"1-18周星期三","xn":"","xq":""},{"id":329,"jc":"第8,9节","jscsrq":"1976-12-13","jsgh":"20040087","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"张凤","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"F0801051C","kcmc":"中国概况Ⅰ","skbjh":"F170101,F170401","skdd":"教3－204","sksj":"3-18周星期三","xn":"2017-2018","xq":"1"},{"id":1290,"jc":"第8,9节","jscsrq":"1976-12-13","jsgh":"20040087","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"女性","jsxbm":"2","jsxm":"张凤","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"F0801051C","kcmc":"中国概况Ⅰ","skbjh":"F171201,F171202","skdd":"教3－204","sksj":"3-18周星期三","xn":"2017-2018","xq":"1"}]
-         * jsInfo : {"id":188,"jc":"第3,4,5节","jscsrq":"1973-11-28","jsgh":"20110065","jslx":"仙林多媒体","jsszlc":"2","jsszlh":"教3","jsxb":"男性","jsxbm":"1","jsxm":"刘亮","jsyjfx":"","jszc":"讲师（高校）","jszws":"120","kcdm":"B0708321S","kcmc":"视听语言","skbjh":"","skdd":"教3－204","sksj":"1-18周星期三","xn":"","xq":""}
+         * jsCurrentDayKc : [{"id":30,"jc":"第3,4节","jscsrq":"1980-12-23","jsdmt":"投影仪，电脑","jsgh":"20020058","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教1","jsxb":"女性","jsxbm":"2","jsxm":"金栩","jsyjfx":"计算机通信与网间互连技术","jszc":"讲师（高校）","jszws":"230","kcdm":"H0600031S","kcmc":"线性代数与解析几何","skbjh":"","skdd":"教1－105","skrs":"30","sksj":"3-18周星期五","xn":"","xq":"","zp":"http://imgtu.5011.net/uploads/content/20161219/small78058014821359311482136095.jpg"}]
+         * jsInfo : {"id":30,"jc":"第3,4节","jscsrq":"1980-12-23","jsdmt":"投影仪，电脑","jsgh":"20020058","jslx":"仙林多媒体","jsszlc":"1","jsszlh":"教1","jsxb":"女性","jsxbm":"2","jsxm":"金栩","jsyjfx":"计算机通信与网间互连技术","jszc":"讲师（高校）","jszws":"230","kcdm":"H0600031S","kcmc":"线性代数与解析几何","skbjh":"","skdd":"教1－105","skrs":"30","sksj":"3-18周星期五","xn":"","xq":"","zp":"http://imgtu.5011.net/uploads/content/20161219/small78058014821359311482136095.jpg"}
          */
 
         private JsInfoBean jsInfo;
@@ -53,31 +53,35 @@ public class ClassRoom_Entity extends Base_Entity {
 
         public static class JsInfoBean {
             /**
-             * id : 188
-             * jc : 第3,4,5节
-             * jscsrq : 1973-11-28
-             * jsgh : 20110065
+             * id : 30
+             * jc : 第3,4节
+             * jscsrq : 1980-12-23
+             * jsdmt : 投影仪，电脑
+             * jsgh : 20020058
              * jslx : 仙林多媒体
-             * jsszlc : 2
-             * jsszlh : 教3
-             * jsxb : 男性
-             * jsxbm : 1
-             * jsxm : 刘亮
-             * jsyjfx :
+             * jsszlc : 1
+             * jsszlh : 教1
+             * jsxb : 女性
+             * jsxbm : 2
+             * jsxm : 金栩
+             * jsyjfx : 计算机通信与网间互连技术
              * jszc : 讲师（高校）
-             * jszws : 120
-             * kcdm : B0708321S
-             * kcmc : 视听语言
+             * jszws : 230
+             * kcdm : H0600031S
+             * kcmc : 线性代数与解析几何
              * skbjh :
-             * skdd : 教3－204
-             * sksj : 1-18周星期三
+             * skdd : 教1－105
+             * skrs : 30
+             * sksj : 3-18周星期五
              * xn :
              * xq :
+             * zp : http://imgtu.5011.net/uploads/content/20161219/small78058014821359311482136095.jpg
              */
 
             private int id;
             private String jc;
             private String jscsrq;
+            private String jsdmt;
             private String jsgh;
             private String jslx;
             private String jsszlc;
@@ -92,9 +96,11 @@ public class ClassRoom_Entity extends Base_Entity {
             private String kcmc;
             private String skbjh;
             private String skdd;
+            private String skrs;
             private String sksj;
             private String xn;
             private String xq;
+            private String zp;
 
             public int getId() {
                 return id;
@@ -118,6 +124,14 @@ public class ClassRoom_Entity extends Base_Entity {
 
             public void setJscsrq(String jscsrq) {
                 this.jscsrq = jscsrq;
+            }
+
+            public String getJsdmt() {
+                return jsdmt;
+            }
+
+            public void setJsdmt(String jsdmt) {
+                this.jsdmt = jsdmt;
             }
 
             public String getJsgh() {
@@ -232,6 +246,14 @@ public class ClassRoom_Entity extends Base_Entity {
                 this.skdd = skdd;
             }
 
+            public String getSkrs() {
+                return skrs;
+            }
+
+            public void setSkrs(String skrs) {
+                this.skrs = skrs;
+            }
+
             public String getSksj() {
                 return sksj;
             }
@@ -254,36 +276,48 @@ public class ClassRoom_Entity extends Base_Entity {
 
             public void setXq(String xq) {
                 this.xq = xq;
+            }
+
+            public String getZp() {
+                return zp;
+            }
+
+            public void setZp(String zp) {
+                this.zp = zp;
             }
         }
 
         public static class JsCurrentDayKcBean {
             /**
-             * id : 188
-             * jc : 第3,4,5节
-             * jscsrq : 1973-11-28
-             * jsgh : 20110065
+             * id : 30
+             * jc : 第3,4节
+             * jscsrq : 1980-12-23
+             * jsdmt : 投影仪，电脑
+             * jsgh : 20020058
              * jslx : 仙林多媒体
-             * jsszlc : 2
-             * jsszlh : 教3
-             * jsxb : 男性
-             * jsxbm : 1
-             * jsxm : 刘亮
-             * jsyjfx :
+             * jsszlc : 1
+             * jsszlh : 教1
+             * jsxb : 女性
+             * jsxbm : 2
+             * jsxm : 金栩
+             * jsyjfx : 计算机通信与网间互连技术
              * jszc : 讲师（高校）
-             * jszws : 120
-             * kcdm : B0708321S
-             * kcmc : 视听语言
+             * jszws : 230
+             * kcdm : H0600031S
+             * kcmc : 线性代数与解析几何
              * skbjh :
-             * skdd : 教3－204
-             * sksj : 1-18周星期三
+             * skdd : 教1－105
+             * skrs : 30
+             * sksj : 3-18周星期五
              * xn :
              * xq :
+             * zp : http://imgtu.5011.net/uploads/content/20161219/small78058014821359311482136095.jpg
              */
 
             private int id;
             private String jc;
             private String jscsrq;
+            private String jsdmt;
             private String jsgh;
             private String jslx;
             private String jsszlc;
@@ -298,9 +332,11 @@ public class ClassRoom_Entity extends Base_Entity {
             private String kcmc;
             private String skbjh;
             private String skdd;
+            private String skrs;
             private String sksj;
             private String xn;
             private String xq;
+            private String zp;
 
             public int getId() {
                 return id;
@@ -324,6 +360,14 @@ public class ClassRoom_Entity extends Base_Entity {
 
             public void setJscsrq(String jscsrq) {
                 this.jscsrq = jscsrq;
+            }
+
+            public String getJsdmt() {
+                return jsdmt;
+            }
+
+            public void setJsdmt(String jsdmt) {
+                this.jsdmt = jsdmt;
             }
 
             public String getJsgh() {
@@ -438,6 +482,14 @@ public class ClassRoom_Entity extends Base_Entity {
                 this.skdd = skdd;
             }
 
+            public String getSkrs() {
+                return skrs;
+            }
+
+            public void setSkrs(String skrs) {
+                this.skrs = skrs;
+            }
+
             public String getSksj() {
                 return sksj;
             }
@@ -461,7 +513,14 @@ public class ClassRoom_Entity extends Base_Entity {
             public void setXq(String xq) {
                 this.xq = xq;
             }
+
+            public String getZp() {
+                return zp;
+            }
+
+            public void setZp(String zp) {
+                this.zp = zp;
+            }
         }
     }
-
 }

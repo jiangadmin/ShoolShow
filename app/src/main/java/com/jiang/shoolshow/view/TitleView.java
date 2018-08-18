@@ -2,12 +2,10 @@ package com.jiang.shoolshow.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Typeface;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -47,7 +45,7 @@ public class TitleView extends RelativeLayout {
 
     public void initTitleView() {
 
-        view = LayoutInflater.from(context).inflate(R.layout.titleview, this, true);
+        view = LayoutInflater.from(context).inflate(R.layout.view_title, this, true);
         tvTime = view.findViewById(R.id.title_bar_hour);
         tvDate = view.findViewById(R.id.title_bar_date);
 

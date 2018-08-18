@@ -7,11 +7,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.ClassRoom_Acivity;
+import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.entity.Floor_Entity;
+import com.jiang.shoolshow.utils.AnimUtils;
 import com.jiang.shoolshow.utils.LogUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -52,7 +54,13 @@ public class Floor_12_Fragment extends Fragment implements View.OnClickListener 
         b_206 = view.findViewById(R.id.building_1_2_206);
         b_207 = view.findViewById(R.id.building_1_2_207);
 
-        map = new HashMap();
+        b_201.setOnClickListener(this);
+        b_202.setOnClickListener(this);
+        b_203.setOnClickListener(this);
+        b_206.setOnClickListener(this);
+        b_207.setOnClickListener(this);
+
+        map = new HashMap<>();
 
         map.put("教1－201", b_201);
         map.put("教1－202", b_202);
@@ -60,39 +68,45 @@ public class Floor_12_Fragment extends Fragment implements View.OnClickListener 
         map.put("教1－206", b_206);
         map.put("教1－207", b_207);
 
+        AnimUtils.S(view.findViewById(R.id.floor_view), 0, Const.f_1_s);
+
     }
 
     @Override
     public void onClick(View v) {
+        Map<String,String> map = new HashMap<>();
+        map.put("floor", "2");
         switch (v.getId()) {
             case R.id.building_1_2_201:
+                map.put("room", "教1－201");
                 break;
             case R.id.building_1_2_202:
+                map.put("room", "教1－202");
                 break;
             case R.id.building_1_2_203:
-                break;
-            case R.id.building_1_2_204:
-                break;
-            case R.id.building_1_2_205:
+                map.put("room", "教1－203");
                 break;
             case R.id.building_1_2_206:
+                map.put("room", "教1－206");
                 break;
             case R.id.building_1_2_207:
+                map.put("room", "教1－207");
                 break;
-            case R.id.building_1_2_208:
-                break;
+
         }
+
+        ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public void onMessage(Floor_Entity entity) {
-        LogUtil.e(TAG,"接收到");
+        LogUtil.e(TAG, "接收到");
         if (entity != null && entity.getFloor() == 12) {
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
                 if (map.get(bean.getSkdd()) != null) {
                     map.get(bean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
-                    map.get(bean.getSkdd()).setOnClickListener(this);
                 }
+                map.get(bean.getSkdd()).setOnClickListener(this);
             }
         }
     }

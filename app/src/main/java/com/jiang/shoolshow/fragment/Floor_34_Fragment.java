@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.ClassRoom_Acivity;
 import com.jiang.shoolshow.entity.Floor_Entity;
 import com.jiang.shoolshow.utils.LogUtil;
 
@@ -30,23 +31,7 @@ import java.util.Map;
 public class Floor_34_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_400,
-            r_401,
-            r_402,
-            r_403,
-            r_404,
-            r_405,
-            r_408,
-            r_409,
-            r_410,
-            r_412,
-            r_413,
-            r_416,
-            r_417,
-            r_418,
-            r_426,
-            r_427,
-            r_428;
+    TextView r_400, r_401, r_402, r_403, r_404, r_405, r_408, r_409, r_410, r_412, r_413, r_416, r_417, r_418, r_426, r_427, r_428;
 
     Map<String, TextView> map;
 
@@ -79,7 +64,25 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
         r_427 = view.findViewById(R.id.building_3_4_427);
         r_428 = view.findViewById(R.id.building_3_4_428);
 
-        map = new HashMap();
+        r_400.setOnClickListener(this);
+        r_401.setOnClickListener(this);
+        r_402.setOnClickListener(this);
+        r_403.setOnClickListener(this);
+        r_404.setOnClickListener(this);
+        r_405.setOnClickListener(this);
+        r_408.setOnClickListener(this);
+        r_409.setOnClickListener(this);
+        r_410.setOnClickListener(this);
+        r_412.setOnClickListener(this);
+        r_413.setOnClickListener(this);
+        r_416.setOnClickListener(this);
+        r_417.setOnClickListener(this);
+        r_418.setOnClickListener(this);
+        r_426.setOnClickListener(this);
+        r_427.setOnClickListener(this);
+        r_428.setOnClickListener(this);
+
+        map = new HashMap<>();
 
         map.put("教3－400", r_400);
         map.put("教3－401", r_401);
@@ -102,8 +105,8 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map map = new HashMap();
-        map.put("floor", 4);
+        Map<String,String> map = new HashMap<>();
+        map.put("floor", "4");
         switch (v.getId()) {
             case R.id.building_3_4_400:
                 map.put("room", "教3－400");
@@ -154,7 +157,9 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
                 map.put("room", "教3－427");
                 break;
         }
-        EventBus.getDefault().post(map);
+
+        ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
@@ -164,7 +169,6 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
                 if (map.get(bean.getSkdd()) != null) {
                     map.get(bean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
-                    map.get(bean.getSkdd()).setOnClickListener(this);
                 }
             }
         }

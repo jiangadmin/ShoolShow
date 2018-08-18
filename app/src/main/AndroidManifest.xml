@@ -38,18 +38,25 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <!--<category android:name="android.intent.category.HOME" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
 
             </intent-filter>
 
         </activity>
 
+        <activity
+            android:name=".activity.Floor_Activity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".activity.ClassRoom_Acivity"
+            android:screenOrientation="landscape" />
+
         <!--设置-->
         <activity
             android:name=".activity.Setting_Activity"
             android:screenOrientation="landscape" />
-
 
         <service
             android:name="com.xiaomi.push.service.XMPushService"
@@ -71,6 +78,7 @@
         <service
             android:name="com.xiaomi.mipush.sdk.MessageHandleService"
             android:enabled="true" /> <!--注：此service必须在2.2.5版本以后（包括2.2.5版本）加入-->
+
         <receiver
             android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
             android:exported="true">
@@ -99,8 +107,8 @@
         </receiver>
 
         <receiver
-            android:exported="true"
-            android:name="com.jiang.shoolshow.receiver.DemoMessageReceiver">
+            android:name="com.jiang.shoolshow.receiver.DemoMessageReceiver"
+            android:exported="true">
             <!--这里com.xiaomi.mipushdemo.DemoMessageRreceiver改成app中定义的完整类名-->
             <intent-filter>
                 <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />

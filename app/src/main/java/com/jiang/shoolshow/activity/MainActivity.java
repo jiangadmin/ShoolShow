@@ -44,7 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends Base_Activity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
 
     View main;
@@ -55,11 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ConstraintLayout main_main;
 
-    ImageView item_1_icon;
+    TextView  item_2_title,sn;
 
-    TextView item_1_tianqi, item_1_wendu, item_2_title;
-
-    RelativeLayout item_1_view, item_2_view;
+    RelativeLayout  item_2_view;
 
     Building_Fragment building_fragment;
     Floor_Fragment floor_fragment;
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EventBus.getDefault().register(this);
-        setSystemUIVisible(false);
+
         setContentView(R.layout.activity_main);
 
         initview();
@@ -78,10 +76,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        new Get_Floor_Info().execute(Const.IP,"2");
         //获取教室信息
 //        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
-        //获取天气
-        new Get_Weather(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-
-        new Get_Notice_Info().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         LogUtil.e(TAG, ToolUtils.getMyUUID());
     }
@@ -115,135 +109,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
-    public void onMeaage(Teacher_Entity entity) {
-
-        item_2_view.removeAllViews();
-
-        View v = View.inflate(MainActivity.this, R.layout.view_teacher, null);
-        ImageView head = v.findViewById(R.id.teacher_head);
-        TextView name = v.findViewById(R.id.teacher_name);
-        TextView gender = v.findViewById(R.id.teacher_gender);
-        TextView number = v.findViewById(R.id.teacher_number);
-        TextView level = v.findViewById(R.id.teacher_level);
-        TextView message = v.findViewById(R.id.message);
-
-        name.setText(String.format("姓名：%s", entity.getName()));
-        gender.setText(String.format("性别：%s", entity.getGender()));
-        number.setText(String.format("工号：%s", entity.getNumber()));
-        level.setText(String.format("职称：%s", entity.getLevel()));
-        message.setText(String.format("研究方向：\n%s", entity.getMessage()));
-
-        item_2_view.addView(v);
-        item_2_title.setText("教师介绍");
-
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
-    public void onMessage(Notice_Entity.ResultBean bean) {
-
-        switch (bean.getNoticeType()) {
-
-            //文字
-            case 1:
-                LogUtil.e(TAG, "文字" + bean.getContent());
-                break;
-
-            //图片
-            case 2:
-                item_1_view.removeAllViews();
-                List<String> result = Arrays.asList(bean.getImagelist().split(","));
-                ImageCycleView imageCycleView = new ImageCycleView(this);
-
-                //修改一下广告的高度画幅
-                RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imageCycleView.getLayoutParams();
-                //计算显示比例
-                layoutParams.height = 300;
-                layoutParams.width = 300;
-                imageCycleView.setLayoutParams(layoutParams);
-
-                Banner_Entity banner_entity = new Banner_Entity();
-                for (String s : result) {
-                    Banner_Entity.DBean dBean = new Banner_Entity.DBean();
-                    dBean.setPicUrl(s);
-                    banner_entity.getD().add(dBean);
-                }
-
-                imageCycleView.setBeans(banner_entity.getD(), new ImageCycleView.Listener() {
-                    @Override
-                    public void displayImage(String imageURL, ImageView imageView) {
-                        Picasso.with(MainActivity.this).load(imageURL).into(imageView);
-                    }
-
-                    @Override
-                    public void onImageClick(Banner_Entity.DBean bean, View imageView) {
-
-                    }
-                });
-
-                item_1_view.addView(imageCycleView);
-
-
-                break;
-        }
-    }
-
-    private void setSystemUIVisible(boolean show) {
-        if (show) {
-            int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            uiFlags |= 0x00001000;
-            getWindow().getDecorView().setSystemUiVisibility(uiFlags);
-        } else {
-            int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN;
-            uiFlags |= 0x00001000;
-            getWindow().getDecorView().setSystemUiVisibility(uiFlags);
-        }
-    }
-
     private void initview() {
         main_main = findViewById(R.id.main_main);
 
         main = findViewById(R.id.main);
+        sn = findViewById(R.id.sn);
 
-//        left = findViewById(R.id.left);
-//        right = findViewById(R.id.right);
         home = findViewById(R.id.home);
-//        help = findViewById(R.id.help);
-
-        item_1_icon = findViewById(R.id.weather_icon);
-        item_1_wendu = findViewById(R.id.weather_wendu);
-        item_1_tianqi = findViewById(R.id.weather_tianqi);
-
-        item_1_view = findViewById(R.id.item_1_view);
 
         item_2_title = findViewById(R.id.item_2_title);
         item_2_view = findViewById(R.id.item_2_view);
 
-//        left.setOnClickListener(this);
-//        right.setOnClickListener(this);
         home.setOnClickListener(this);
-//        help.setOnClickListener(this);
 
         //初始化操作
         ShowFragmet(0, 0);
+
+        sn.setText(String.format("ID:%s",ToolUtils.getMyUUID().substring(28)));
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.left:
-                break;
-            case R.id.right:
-//                ShowFragmet(2, 11);
-                break;
+
             case R.id.home:
 
-                ShowFragmet(1, 1);
+
 
                 //获取教学楼信息
                 new Get_Building_Info(this).execute(Const.IP);
@@ -253,86 +145,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    /**
-     * 天气返回
-     *
-     * @param bean
-     */
-    public void CallBack_Weather(Weather_Entity.ResultBean bean) {
-
-        item_1_tianqi.setText(bean.getWeather());
-        item_1_wendu.setText(bean.getTemperature());
-
-        int Resource = -1;
-
-        switch (bean.getWeather()) {
-            case "晴":
-                Resource = R.drawable.ic_weacther_01;
-                break;
-            case "阴":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "多云":
-                Resource = R.drawable.ic_weacther_04;
-                break;
-            case "小雨":
-                Resource = R.drawable.ic_weacther_05;
-                break;
-            case "中雨":
-                Resource = R.drawable.ic_weacther_06;
-                break;
-            case "大雨":
-                Resource = R.drawable.ic_weacther_07;
-                break;
-            case "阵雨":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "暴雨":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "雾":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "霾":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "霜冻":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "暴风":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "台风":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "暴风雪":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "小雪":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "中雪":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "大雪":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "雨夹雪":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "冰雹":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "浮尘":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "扬沙":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-        }
-
-        item_1_icon.setImageResource(Resource);
-    }
 
     /**
      * 楼栋信息
@@ -340,6 +152,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param bean
      */
     public void CallBack_Building(Building_Entity.ResultBean bean) {
+
+        ShowFragmet(1,bean.getBuildCode());
+
         String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个\n今日服务学生(人次): %s 人";
         item_2_view.removeAllViews();
         TextView textView = new TextView(this);
@@ -359,6 +174,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param entity
      */
     public void CallBack_Floor(final Floor_Entity entity) {
+
+        Floor_Activity.start(this,entity.getFloor());
         item_2_title.setText("课程信息");
 
         item_2_view.removeAllViews();
