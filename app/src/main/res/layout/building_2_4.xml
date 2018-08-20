@@ -7,10 +7,11 @@
     android:layout_gravity="center">
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:background="@drawable/kuang_w"
+        android:background="@drawable/kuang_no_bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +115,6 @@
                     android:background="@drawable/kuang_green"
                     android:gravity="center"
                     android:text="415" />
-
 
 
                 <ImageView
@@ -313,6 +313,7 @@
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="411" />
+
                 <TextView
                     android:id="@+id/building_2_4_410"
                     android:layout_width="67dp"
@@ -331,6 +332,7 @@
                     android:background="@drawable/kuang_green"
                     android:gravity="center"
                     android:text="409" />
+
                 <TextView
                     android:id="@+id/building_2_4_408"
                     android:layout_width="20dp"
@@ -422,6 +424,7 @@
             <ImageView
                 android:layout_width="19dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/kuang_bottom"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
@@ -458,15 +461,28 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="264dp"
                 android:layout_height="match_parent">
 
-            </LinearLayout>
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_bottom"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/kuang_bottom"
+                    android:gravity="center" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="201dp"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/kuang_bottom">
 
                 <TextView
                     android:id="@+id/building_2_4_402"
@@ -497,10 +513,25 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/kuang_bottom"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="134dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/kuang_no_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout6">
 
     </LinearLayout>
 

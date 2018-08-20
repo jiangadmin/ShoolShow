@@ -38,8 +38,6 @@
                 android:gravity="center"
                 android:textSize="22sp" />
 
-          
-
             <TextView
                 android:layout_weight="7"
                 android:id="@+id/building_4_6_606"

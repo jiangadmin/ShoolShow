@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/floor_bg"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="@color/floor_bg">
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/kuang_w"
+        android:layout_margin="15dp"
+        android:background="@drawable/kuang_no_top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -25,17 +26,18 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textSize="10sp"
                 android:id="@+id/building_3_2_224"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="224" />
+                android:text="224"
+                android:textSize="10sp" />
 
             <ImageView
                 android:layout_width="19dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/kuang_top"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
@@ -73,32 +75,61 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="277dp"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/kuang_top"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/kuang_top"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/kuang_top">
+
+                <TextView
+                    android:id="@+id/building_3_2_202"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="202" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/building_3_2_201"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="201" />
+
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/building_3_2_202"
-                android:layout_width="67dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="38dp"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="202" />
-
-            <TextView
-                android:id="@+id/building_3_2_201"
-                android:layout_width="67dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="201" />
 
             <ImageView
                 android:layout_width="21dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/kuang_top"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs" />
 
@@ -121,64 +152,64 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_223"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="223" />
+                    android:text="223"
+                    android:textSize="10sp" />
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_222"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="222" />
+                    android:text="222"
+                    android:textSize="10sp" />
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_221"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="221" />
+                    android:text="221"
+                    android:textSize="10sp" />
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_220"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="220" />
+                    android:text="220"
+                    android:textSize="10sp" />
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_219"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="219" />
+                    android:text="219"
+                    android:textSize="10sp" />
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_218"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="218" />
+                    android:text="218"
+                    android:textSize="10sp" />
 
             </LinearLayout>
 
@@ -236,14 +267,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:textSize="10sp"
                     android:id="@+id/building_3_2_211"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="211" />
+                    android:text="211"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/building_3_2_212"
@@ -333,13 +364,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textSize="10sp"
                 android:id="@+id/building_3_2_217"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="217" />
+                android:text="217"
+                android:textSize="10sp" />
 
             <ImageView
                 android:layout_width="19dp"
@@ -480,6 +511,20 @@
                 android:src="@drawable/ic_stairs" />
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="230dp"
+        android:layout_height="134dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/kuang_no_top"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout7"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp">
 
     </LinearLayout>
 
