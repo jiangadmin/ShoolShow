@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.jiang.shoolshow"
         minSdkVersion 19
-        targetSdkVersion 27
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -48,5 +48,5 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation files('libs/MiPush_SDK_Client_3_6_9.jar')
     implementation 'com.android.support:design:27.1.1'
-    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

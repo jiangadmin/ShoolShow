@@ -106,6 +106,7 @@ public class ClassRoom_Acivity extends Base_Activity {
             project.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    message_context.removeAllViews();
                     View v = View.inflate(ClassRoom_Acivity.this, R.layout.view_teacher, null);
 
                     ImageView head = v.findViewById(R.id.teacher_head);

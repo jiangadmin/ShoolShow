@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
@@ -35,6 +36,8 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
     private static final String TAG = "Building_02_Fragment";
 
     View floor_1, floor_2, floor_3, floor_4, floor_5;
+
+    Button floor_btn_1, floor_btn_2, floor_btn_3, floor_btn_4, floor_btn_5, floor_btn_6;
 
     List<View> floor = new ArrayList<>();
 
@@ -82,6 +85,22 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         floor_3 = view.findViewById(R.id.building_2_3);
         floor_4 = view.findViewById(R.id.building_2_4);
         floor_5 = view.findViewById(R.id.building_2_5);
+
+        floor_btn_1 = view.findViewById(R.id.btn_f1);
+        floor_btn_2 = view.findViewById(R.id.btn_f2);
+        floor_btn_3 = view.findViewById(R.id.btn_f3);
+        floor_btn_4 = view.findViewById(R.id.btn_f4);
+        floor_btn_5 = view.findViewById(R.id.btn_f5);
+        floor_btn_6 = view.findViewById(R.id.btn_f6);
+
+        floor_btn_6.setVisibility(View.GONE);
+
+        floor_btn_1.setOnClickListener(this);
+        floor_btn_2.setOnClickListener(this);
+        floor_btn_3.setOnClickListener(this);
+        floor_btn_4.setOnClickListener(this);
+        floor_btn_5.setOnClickListener(this);
+        floor_btn_6.setOnClickListener(this);
 
         //一楼
         r_100 = view.findViewById(R.id.building_2_1_100);
@@ -270,18 +289,23 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.building_2_1:
+            case R.id.btn_f1:
                 ZK(21);
                 break;
             case R.id.building_2_2:
+            case R.id.btn_f2:
                 ZK(22);
                 break;
             case R.id.building_2_3:
+            case R.id.btn_f3:
                 ZK(23);
                 break;
             case R.id.building_2_4:
+            case R.id.btn_f4:
                 ZK(24);
                 break;
             case R.id.building_2_5:
+            case R.id.btn_f5:
                 ZK(25);
                 break;
         }

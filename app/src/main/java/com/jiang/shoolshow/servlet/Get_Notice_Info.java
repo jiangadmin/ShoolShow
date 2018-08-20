@@ -37,7 +37,7 @@ public class Get_Notice_Info extends AsyncTask<String, Integer, Notice_Entity> {
 
         Map map  = new HashMap();
 
-        String res = HttpUtil.doGet("http://47.104.81.170:8080/teach_app_api/cms/noticeController/queryCurrtNotice.do", map);
+        String res = HttpUtil.doGet("http://202.119.226.230:8080/teach_app_api/cms/noticeController/queryCurrtNotice.do", map);
 
         LogUtil.e(TAG, res);
 
@@ -67,7 +67,7 @@ public class Get_Notice_Info extends AsyncTask<String, Integer, Notice_Entity> {
         super.onPostExecute(entity);
         switch (entity.getErrorcode()){
             case 1000:
-                view.Callback(entity.getResult());
+                view.Callback(entity);
                 break;
         }
     }

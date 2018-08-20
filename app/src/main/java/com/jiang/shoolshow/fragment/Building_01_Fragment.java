@@ -7,13 +7,12 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.activity.Floor_Activity;
 import com.jiang.shoolshow.entity.Building_Entity;
-import com.jiang.shoolshow.entity.Const;
-import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.utils.AnimUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -36,16 +35,20 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     private static final String TAG = "Building_01_Fragment";
 
     View floor_1, floor_2, floor_3, floor_4, floor_5;
+    Button floor_btn_1, floor_btn_2, floor_btn_3, floor_btn_4, floor_btn_5, floor_btn_6;
 
     List<View> floor = new ArrayList<>();
 
     //X轴旋转   中心点旋转
-    int rx = 77, r = 0;
+    int rx = 77, r = 00;
 
     //缩放大小
     float s = 0.85F;
 
-    int f1 = -80, f2 = -40, f3 = 0, f4 = 40, f5 = 80;
+    int x1 = -80, x2 = -40, x3 = 0, x4 = 40, x5 = 80;
+
+    int y1 = 250, y2 = 100, y3 = -50, y4 = -200, y5 = -350;
+
 
     int top = -1080;
     int bottom = 1080;
@@ -61,7 +64,7 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
             r_400, r_401, r_402, r_403, r_406, r_407, r_408,
             r_501, r_502, r_503, r_504, r_505, r_506, r_507, r_508, r_509, r_510;
 
-    Map<String, TextView> map = new HashMap();
+    Map<String, TextView> map = new HashMap<>();
 
     @Nullable
     @Override
@@ -85,6 +88,15 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         floor_3 = view.findViewById(R.id.building_1_3);
         floor_4 = view.findViewById(R.id.building_1_4);
         floor_5 = view.findViewById(R.id.building_1_5);
+
+        floor_btn_1 = view.findViewById(R.id.btn_f1);
+        floor_btn_2 = view.findViewById(R.id.btn_f2);
+        floor_btn_3 = view.findViewById(R.id.btn_f3);
+        floor_btn_4 = view.findViewById(R.id.btn_f4);
+        floor_btn_5 = view.findViewById(R.id.btn_f5);
+        floor_btn_6 = view.findViewById(R.id.btn_f6);
+
+        floor_btn_6.setVisibility(View.GONE);
 
         //一楼
         r_101 = view.findViewById(R.id.building_1_1_101);
@@ -138,6 +150,13 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         floor_3.setOnClickListener(this);
         floor_4.setOnClickListener(this);
         floor_5.setOnClickListener(this);
+
+        floor_btn_1.setOnClickListener(this);
+        floor_btn_2.setOnClickListener(this);
+        floor_btn_3.setOnClickListener(this);
+        floor_btn_4.setOnClickListener(this);
+        floor_btn_5.setOnClickListener(this);
+        floor_btn_6.setOnClickListener(this);
 
         floor.add(floor_1);
         floor.add(floor_2);
@@ -194,18 +213,23 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.building_1_1:
+            case R.id.btn_f1:
                 ZK(11);
                 break;
             case R.id.building_1_2:
+            case R.id.btn_f2:
                 ZK(12);
                 break;
             case R.id.building_1_3:
+            case R.id.btn_f3:
                 ZK(13);
                 break;
             case R.id.building_1_4:
+            case R.id.btn_f4:
                 ZK(14);
                 break;
             case R.id.building_1_5:
+            case R.id.btn_f5:
                 ZK(15);
                 break;
         }
@@ -229,7 +253,7 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        Floor_Activity.start(getActivity(),i);
+        Floor_Activity.start(getActivity(), i);
 
 //        new Get_Floor_Info(getActivity(), i).execute(Const.IP, String.valueOf(i % 10));
 
@@ -287,35 +311,33 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.RX(floor_1, 0, rx);
         AnimUtils.R(floor_1, 0, r);
         AnimUtils.S(floor_1, 0, s);
-        AnimUtils.Y(floor_1, 0, 220);
-        AnimUtils.X(floor_1, 0, f1);
+        AnimUtils.Y(floor_1, 0, y1);
+        AnimUtils.X(floor_1, 0, x1);
 
         AnimUtils.RX(floor_2, 0, rx);
         AnimUtils.R(floor_2, 0, r);
         AnimUtils.S(floor_2, 0, s);
-        AnimUtils.X(floor_2, 0, f2);
-        AnimUtils.Y(floor_2, 0, 110);
-
+        AnimUtils.X(floor_2, 0, x2);
+        AnimUtils.Y(floor_2, 0, y2);
 
         AnimUtils.RX(floor_3, 0, rx);
         AnimUtils.R(floor_3, 0, r);
         AnimUtils.S(floor_3, 0, s);
-        AnimUtils.X(floor_3, 0, f3);
-
+        AnimUtils.X(floor_3, 0, x3);
+        AnimUtils.Y(floor_3, 0, y3);
 
         AnimUtils.RX(floor_4, 0, rx);
         AnimUtils.R(floor_4, 0, r);
         AnimUtils.S(floor_4, 0, s);
-        AnimUtils.X(floor_4, 0, f4);
-        AnimUtils.Y(floor_4, 0, -110);
+        AnimUtils.X(floor_4, 0, x4);
+        AnimUtils.Y(floor_4, 0, y4);
 
 
         AnimUtils.RX(floor_5, 0, rx);
         AnimUtils.R(floor_5, 0, r);
         AnimUtils.S(floor_5, 0, s);
-        AnimUtils.X(floor_5, 0, f5);
-        AnimUtils.Y(floor_5, 0, -220);
-
+        AnimUtils.X(floor_5, 0, x5);
+        AnimUtils.Y(floor_5, 0, y5);
 
         floor_1.setEnabled(true);
         floor_2.setEnabled(true);

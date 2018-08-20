@@ -12,4 +12,7 @@
     <dimen name="setting_small_w">180dp</dimen>
     <dimen name="setting_small_h">120dp</dimen>
 
+
+    <dimen name="btn_floor">60dp</dimen>
+
 </resources>

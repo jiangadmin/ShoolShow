@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.jiang.shoolshow.view.SlidingLayout;
+
 import org.greenrobot.eventbus.EventBus;
 
 /**
@@ -22,7 +24,6 @@ public class Base_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setSystemUIVisible(false);
-
     }
 
     public void setSystemUIVisible(boolean show) {
@@ -39,5 +40,11 @@ public class Base_Activity extends AppCompatActivity {
             uiFlags |= 0x00001000;
             getWindow().getDecorView().setSystemUiVisibility(uiFlags);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        setSystemUIVisible(false);
+        super.onResume();
     }
 }

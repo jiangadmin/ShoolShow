@@ -48,11 +48,13 @@ public class Floor_13_Fragment extends Fragment implements View.OnClickListener 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        b_300 = view.findViewById(R.id.building_1_3_300);
         b_301 = view.findViewById(R.id.building_1_3_301);
         b_302 = view.findViewById(R.id.building_1_3_302);
         b_303 = view.findViewById(R.id.building_1_3_303);
         b_308 = view.findViewById(R.id.building_1_3_308);
 
+        b_300.setOnClickListener(this);
         b_301.setOnClickListener(this);
         b_302.setOnClickListener(this);
         b_303.setOnClickListener(this);
@@ -99,9 +101,10 @@ public class Floor_13_Fragment extends Fragment implements View.OnClickListener 
         LogUtil.e(TAG, "接收到");
         if (entity != null && entity.getFloor() == 13) {
             for (Floor_Entity.ResultBean.SkjsInfoListBean bean : entity.getResult().getSkjsInfoList()) {
+                LogUtil.e(TAG, "接收到"+bean.getSkdd());
                 if (map.get(bean.getSkdd()) != null) {
                     map.get(bean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
-
+                    LogUtil.e(TAG, "变色");
                 }
             }
         }

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
@@ -23,6 +23,7 @@ public class Setting_Activity extends Base_Activity {
     private static final String TAG = "Setting_Activity";
 
     TextView uuid;
+    Button setting1,setting2;
 
     public static void start(Context context) {
         Intent intent = new Intent();
@@ -36,12 +37,26 @@ public class Setting_Activity extends Base_Activity {
         setContentView(R.layout.activity_setting);
 
         uuid = findViewById(R.id.uuid);
+        setting1 = findViewById(R.id.settinng_1);
+        setting2 = findViewById(R.id.settinng_2);
         uuid.setText(ToolUtils.getMyUUID());
 
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        setting1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("com.teamhd.settings")));
+            }
+        });
+        setting2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getPackageManager().getLaunchIntentForPackage("com.android.settings")));
             }
         });
     }

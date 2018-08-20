@@ -53,6 +53,11 @@
             android:name=".activity.ClassRoom_Acivity"
             android:screenOrientation="landscape" />
 
+        <activity
+            android:theme="@style/StartTheme1"
+            android:name=".activity.Web_Acivity"
+            android:screenOrientation="landscape" />
+
         <!--设置-->
         <activity
             android:name=".activity.Setting_Activity"

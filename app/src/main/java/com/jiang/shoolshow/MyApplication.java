@@ -6,6 +6,7 @@ import android.content.Context;
 
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.utils.LogUtil;
+import com.jiang.shoolshow.utils.ToolUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ public class MyApplication extends Application {
         super.onCreate();
         context = this;
 
-        Const.IP = Const.IP_1;
+//        Const.IP = Const.IP_1;
+        Const.IP = ToolUtils.getMyUUID();
 
         //崩溃检测
         CrashReport.initCrashReport(getApplicationContext(), "b761f87683", false);

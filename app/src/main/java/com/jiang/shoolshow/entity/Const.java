@@ -9,7 +9,7 @@ package com.jiang.shoolshow.entity;
  */
 public class Const {
 
-    public static String URL = "http://47.104.81.170:8080/teach_app_api/build/buildController/";
+    public static String URL = "http://202.119.226.230:8080/teach_app_api/build/buildController/";
 
     public static String IP;
     public static String IP_1 = "192.168.0.123";

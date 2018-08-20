@@ -24,6 +24,16 @@
             android:layout_height="wrap_content"
             android:textSize="30sp" />
 
+        <Button
+            android:id="@+id/settinng_1"
+            android:text="导航栏设置"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/settinng_2"
+            android:text="系统设置"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

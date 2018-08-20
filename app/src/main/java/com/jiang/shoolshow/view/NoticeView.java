@@ -4,29 +4,22 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.activity.Setting_Activity;
+import com.jiang.shoolshow.activity.Web_Acivity;
 import com.jiang.shoolshow.entity.Banner_Entity;
 import com.jiang.shoolshow.entity.Notice_Entity;
 import com.jiang.shoolshow.servlet.Get_Notice_Info;
-import com.jiang.shoolshow.utils.LogUtil;
-import com.jiang.shoolshow.utils.ToolUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NoticeView extends RelativeLayout {
@@ -77,55 +70,45 @@ public class NoticeView extends RelativeLayout {
     /**
      * 天气数据返回
      *
-     * @param bean
+     * @param entity
      */
-    public void Callback(Notice_Entity.ResultBean bean) {
+    public void Callback(Notice_Entity entity) {
 
-        switch (bean.getNoticeType()) {
+        tvContext.removeAllViews();
+        ImageCycleView imageCycleView = new ImageCycleView(context);
 
-            //文字
-            case 1:
-                TextView textView = new TextView(context);
-                textView.setText(bean.getContent());
-                tvContext.addView(textView);
-                break;
-
-            //图片
-            case 2:
-                tvContext.removeAllViews();
-                List<String> result = Arrays.asList(bean.getImagelist().split(","));
-                ImageCycleView imageCycleView = new ImageCycleView(context);
-
-                Banner_Entity banner_entity = new Banner_Entity();
-                List<Banner_Entity.DBean> dBeans = new ArrayList<>();
-                banner_entity.setD(dBeans);
-                for (String s : result) {
-                    Banner_Entity.DBean dBean = new Banner_Entity.DBean();
-                    dBean.setPicUrl(s);
-                    dBean.setDesc(bean.getContent());
-                    dBeans.add(dBean);
-                }
-
-                imageCycleView.setBeans(banner_entity.getD(), new ImageCycleView.Listener() {
-                    @Override
-                    public void displayImage(String imageURL, ImageView imageView) {
-                        Picasso.with(context).load(imageURL).into(imageView);
-                    }
-
-                    @Override
-                    public void onImageClick(Banner_Entity.DBean bean, View imageView) {
-                        if (bean.getDesc().equals("<Setting>")){
-
-                        }
-                        Setting_Activity.start(context);
-                        LogUtil.e(TAG,bean.getDesc());
-                    }
-                });
-
-                tvContext.addView(imageCycleView);
-
-                break;
+        Banner_Entity banner_entity = new Banner_Entity();
+        List<Banner_Entity.DBean> dBeans = new ArrayList<>();
+        banner_entity.setD(dBeans);
+        for (int i = 0; i < entity.getResult().size(); i++) {
+            Banner_Entity.DBean dBean = new Banner_Entity.DBean();
+            dBean.setPicUrl(entity.getResult().get(i).getImagelist());
+            dBean.setUrl(entity.getResult().get(i).getLinkUrl());
+            dBean.setDesc(entity.getResult().get(i).getTitle());
+            dBean.setId(entity.getResult().get(i).getNoticeType());
+            dBeans.add(dBean);
         }
+
+        imageCycleView.setBeans(banner_entity.getD(), new ImageCycleView.Listener() {
+            @Override
+            public void displayImage(String imageURL, ImageView imageView) {
+
+                Picasso.with(context).load(imageURL).into(imageView);
+            }
+
+            @Override
+            public void onImageClick(Banner_Entity.DBean bean, View imageView) {
+                if (bean.getId() == -1) {
+                    Setting_Activity.start(context);
+                } else {
+                    Web_Acivity.start(context, bean.getUrl());
+
+                }
+            }
+        });
+
+        tvContext.addView(imageCycleView);
+
     }
 
     @Override
