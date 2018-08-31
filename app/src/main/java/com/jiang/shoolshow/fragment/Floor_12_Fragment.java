@@ -33,8 +33,8 @@ import java.util.Map;
 public class Floor_12_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_12_Fragment";
 
-    TextView b_201, b_202, b_203, b_206, b_207;
-
+    TextView r_202, r_206;
+    
     Map<String, TextView> map;
 
     @Nullable
@@ -48,25 +48,16 @@ public class Floor_12_Fragment extends Fragment implements View.OnClickListener 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        b_201 = view.findViewById(R.id.building_1_2_201);
-        b_202 = view.findViewById(R.id.building_1_2_202);
-        b_203 = view.findViewById(R.id.building_1_2_203);
-        b_206 = view.findViewById(R.id.building_1_2_206);
-        b_207 = view.findViewById(R.id.building_1_2_207);
+        r_202 = view.findViewById(R.id.building_1_2_202);
+        r_206 = view.findViewById(R.id.building_1_2_206);
 
-        b_201.setOnClickListener(this);
-        b_202.setOnClickListener(this);
-        b_203.setOnClickListener(this);
-        b_206.setOnClickListener(this);
-        b_207.setOnClickListener(this);
+        r_202.setOnClickListener(this);
+        r_206.setOnClickListener(this);
 
         map = new HashMap<>();
 
-        map.put("教1－201", b_201);
-        map.put("教1－202", b_202);
-        map.put("教1－203", b_203);
-        map.put("教1－206", b_206);
-        map.put("教1－207", b_207);
+        map.put("教1－202", r_202);
+        map.put("教1－206", r_206);
 
         AnimUtils.S(view.findViewById(R.id.floor_view), 0, Const.f_1_s);
 

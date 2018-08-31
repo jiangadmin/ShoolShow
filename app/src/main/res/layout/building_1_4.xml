@@ -42,7 +42,7 @@
                 android:id="@+id/building_1_4_405"
                 android:layout_width="62dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_gray"
+                android:background="@drawable/kuang_green"
                 android:gravity="center"
                 android:text="405"
                 android:textSize="18sp" />

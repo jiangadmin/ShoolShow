@@ -31,7 +31,7 @@ import java.util.Map;
 public class Floor_42_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_201, r_202, r_204, r_205, r_206, r_208, r_209, r_211, r_214, r_225;
+    TextView r_201, r_202, r_204, r_205, r_208, r_209, r_211;
 
     Map<String, TextView> map;
 
@@ -50,23 +50,17 @@ public class Floor_42_Fragment extends Fragment implements View.OnClickListener 
         r_202 = view.findViewById(R.id.building_4_2_202);
         r_204 = view.findViewById(R.id.building_4_2_204);
         r_205 = view.findViewById(R.id.building_4_2_205);
-        r_206 = view.findViewById(R.id.building_4_2_206);
         r_208 = view.findViewById(R.id.building_4_2_208);
         r_209 = view.findViewById(R.id.building_4_2_209);
         r_211 = view.findViewById(R.id.building_4_2_211);
-        r_214 = view.findViewById(R.id.building_4_2_214);
-        r_225 = view.findViewById(R.id.building_4_2_225);
 
         r_201.setOnClickListener(this);
         r_202.setOnClickListener(this);
         r_204.setOnClickListener(this);
         r_205.setOnClickListener(this);
-        r_206.setOnClickListener(this);
         r_208.setOnClickListener(this);
         r_209.setOnClickListener(this);
         r_211.setOnClickListener(this);
-        r_214.setOnClickListener(this);
-        r_225.setOnClickListener(this);
 
         map = new HashMap<>();
 
@@ -74,18 +68,15 @@ public class Floor_42_Fragment extends Fragment implements View.OnClickListener 
         map.put("教4－202", r_202);
         map.put("教4－204", r_204);
         map.put("教4－205", r_205);
-        map.put("教4－206", r_206);
         map.put("教4－208", r_208);
         map.put("教4－209", r_209);
         map.put("教4－211", r_211);
-        map.put("教4－214", r_214);
-        map.put("教4－225", r_225);
 
     }
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "2");
         switch (v.getId()) {
             case R.id.building_4_2_201:

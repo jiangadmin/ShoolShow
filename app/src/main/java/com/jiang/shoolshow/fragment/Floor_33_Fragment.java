@@ -31,8 +31,7 @@ import java.util.Map;
 public class Floor_33_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_310, r_312, r_313, r_314, r_315, r_316, r_322, r_323, r_324;
-
+    TextView            r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_310, r_312, r_313, r_322, r_323;
     Map<String, TextView> map;
 
     @Nullable
@@ -57,12 +56,8 @@ public class Floor_33_Fragment extends Fragment implements View.OnClickListener 
         r_310 = view.findViewById(R.id.building_3_3_310);
         r_312 = view.findViewById(R.id.building_3_3_312);
         r_313 = view.findViewById(R.id.building_3_3_313);
-        r_314 = view.findViewById(R.id.building_3_3_314);
-        r_315 = view.findViewById(R.id.building_3_3_315);
-        r_316 = view.findViewById(R.id.building_3_3_316);
         r_322 = view.findViewById(R.id.building_3_3_322);
         r_323 = view.findViewById(R.id.building_3_3_323);
-        r_324 = view.findViewById(R.id.building_3_3_324);
 
         r_300.setOnClickListener(this);
         r_301.setOnClickListener(this);
@@ -75,12 +70,8 @@ public class Floor_33_Fragment extends Fragment implements View.OnClickListener 
         r_310.setOnClickListener(this);
         r_312.setOnClickListener(this);
         r_313.setOnClickListener(this);
-        r_314.setOnClickListener(this);
-        r_315.setOnClickListener(this);
-        r_316.setOnClickListener(this);
         r_322.setOnClickListener(this);
         r_323.setOnClickListener(this);
-        r_324.setOnClickListener(this);
 
         map = new HashMap<>();
 
@@ -95,12 +86,8 @@ public class Floor_33_Fragment extends Fragment implements View.OnClickListener 
         map.put("教3－310", r_310);
         map.put("教3－312", r_312);
         map.put("教3－313", r_313);
-        map.put("教3－314", r_314);
-        map.put("教3－315", r_315);
-        map.put("教3－316", r_316);
         map.put("教3－322", r_322);
         map.put("教3－323", r_323);
-        map.put("教3－324", r_324);
 
     }
 

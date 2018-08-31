@@ -135,7 +135,7 @@
                     android:id="@+id/building_4_3_303"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="303" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="304" />
 
@@ -153,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="305" />
 

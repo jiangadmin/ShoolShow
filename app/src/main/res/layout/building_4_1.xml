@@ -257,7 +257,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:layout_marginRight="66dp"
-                    android:background="@drawable/kuang_gray"
+                    android:background="@drawable/kuang_green"
                     android:gravity="center"
                     android:text="110" />
 
@@ -266,7 +266,7 @@
                     android:layout_width="67dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/kuang_gray"
+                    android:background="@drawable/kuang_green"
                     android:gravity="center"
                     android:text="109" />
 

@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class Building_Entity extends Base_Entity {
 
-
     /**
      * errorcode : 1000
      * result : {"bjTotel":0,"studentTotel":80,"skjsInfoList":[{"id":627,"jc":"第3,4,5节","jscsrq":"","jsgh":"","jslx":"仙林多媒体","jsszlc":"","jsszlh":"教1","jsxb":"","jsxbm":"","jsxm":"美方教师31","jsyjfx":"","jszc":"","jszws":"116","kcdm":"H1403011S","kcmc":"经济学原理Ⅰ","skbjh":"H170011","skdd":"教1－406","sksj":"1-15周星期三","xn":"2017-2018","xq":"2"},{"id":1593,"jc":"第3,4,5节","jscsrq":"","jsgh":"","jslx":"仙林多媒体","jsszlc":"","jsszlh":"教1","jsxb":"","jsxbm":"","jsxm":"美方教师31","jsyjfx":"","jszc":"","jszws":"116","kcdm":"H1403011S","kcmc":"经济学原理Ⅰ","skbjh":"H170009,H170010","skdd":"教1－406","sksj":"1-15周星期三","xn":"2017-2018","xq":"2"}],"kcTotel":19,"buildTotel":0,"buildCode":"1","jsUsingTotel":2,"buildLcTotelList":["1-15","2-16","3-12","4-11"]}

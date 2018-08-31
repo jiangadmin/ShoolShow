@@ -37,8 +37,6 @@ public class Get_Building_Info extends AsyncTask<String, Integer, Building_Entit
 
         String res = HttpUtil.doGet(Const.URL + "selectBuildingInfoByIp.do", map);
 
-        LogUtil.e(TAG, res);
-
         Building_Entity entity;
 
         if (TextUtils.isEmpty(res)) {

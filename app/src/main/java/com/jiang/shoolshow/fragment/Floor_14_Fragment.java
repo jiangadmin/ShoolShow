@@ -33,7 +33,7 @@ import java.util.Map;
 public class Floor_14_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_14_Fragment";
 
-    TextView b_401, b_402, b_403, b_406, b_407, b_408, b_400;
+    TextView r_400, r_401, r_402, r_403, r_405, r_406, r_407, r_408;
 
     Map<String, TextView> map;
 
@@ -48,31 +48,31 @@ public class Floor_14_Fragment extends Fragment implements View.OnClickListener 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        b_400 = view.findViewById(R.id.building_1_4_400);
-        b_401 = view.findViewById(R.id.building_1_4_401);
-        b_402 = view.findViewById(R.id.building_1_4_402);
-        b_403 = view.findViewById(R.id.building_1_4_403);
-        b_406 = view.findViewById(R.id.building_1_4_406);
-        b_407 = view.findViewById(R.id.building_1_4_407);
-        b_408 = view.findViewById(R.id.building_1_4_408);
+        r_400 = view.findViewById(R.id.building_1_4_400);
+        r_401 = view.findViewById(R.id.building_1_4_401);
+        r_402 = view.findViewById(R.id.building_1_4_402);
+        r_403 = view.findViewById(R.id.building_1_4_403);
+        r_406 = view.findViewById(R.id.building_1_4_406);
+        r_407 = view.findViewById(R.id.building_1_4_407);
+        r_408 = view.findViewById(R.id.building_1_4_408);
 
-        b_400.setOnClickListener(this);
-        b_401.setOnClickListener(this);
-        b_402.setOnClickListener(this);
-        b_403.setOnClickListener(this);
-        b_406.setOnClickListener(this);
-        b_407.setOnClickListener(this);
-        b_408.setOnClickListener(this);
+        r_400.setOnClickListener(this);
+        r_401.setOnClickListener(this);
+        r_402.setOnClickListener(this);
+        r_403.setOnClickListener(this);
+        r_406.setOnClickListener(this);
+        r_407.setOnClickListener(this);
+        r_408.setOnClickListener(this);
 
         map = new HashMap<>();
 
-        map.put("教1－400", b_400);
-        map.put("教1－401", b_401);
-        map.put("教1－402", b_402);
-        map.put("教1－403", b_403);
-        map.put("教1－406", b_406);
-        map.put("教1－407", b_407);
-        map.put("教1－408", b_408);
+        map.put("教1－400", r_400);
+        map.put("教1－401", r_401);
+        map.put("教1－402", r_402);
+        map.put("教1－403", r_403);
+        map.put("教1－406", r_406);
+        map.put("教1－407", r_407);
+        map.put("教1－408", r_408);
 
         AnimUtils.S(view.findViewById(R.id.floor_view), 0, Const.f_1_s);
 
@@ -80,7 +80,7 @@ public class Floor_14_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "4");
         switch (v.getId()) {
             case R.id.building_1_4_400:

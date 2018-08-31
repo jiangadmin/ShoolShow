@@ -40,7 +40,6 @@ public class ClassRoom_Acivity extends Base_Activity {
     TextView message_title;
     RelativeLayout message_context;
 
-
     public static void start(Context context, String floor, String room) {
         Intent intent = new Intent();
         intent.setClass(context, ClassRoom_Acivity.class);
@@ -65,6 +64,7 @@ public class ClassRoom_Acivity extends Base_Activity {
         message_title = findViewById(R.id.message_title);
         message_context = findViewById(R.id.message_context);
 
+        //获取教室信息
         new Get_Classroom_Info(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getIntent().getStringExtra(FLOOR), getIntent().getStringExtra(ROOM));
 
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {

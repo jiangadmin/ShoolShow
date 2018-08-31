@@ -31,7 +31,7 @@ import java.util.Map;
 public class Floor_43_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_300, r_301, r_302, r_304, r_306, r_308, r_309, r_311, r_312, r_313, r_314, r_315, r_316, r_325, r_326, r_327;
+    TextView r_300, r_301, r_302, r_306, r_308, r_309, r_311, r_312, r_313, r_315, r_316, r_327;
 
     Map<String, TextView> map;
 
@@ -49,35 +49,27 @@ public class Floor_43_Fragment extends Fragment implements View.OnClickListener 
         r_300 = view.findViewById(R.id.building_4_3_300);
         r_301 = view.findViewById(R.id.building_4_3_301);
         r_302 = view.findViewById(R.id.building_4_3_302);
-        r_304 = view.findViewById(R.id.building_4_3_304);
         r_306 = view.findViewById(R.id.building_4_3_306);
         r_308 = view.findViewById(R.id.building_4_3_308);
         r_309 = view.findViewById(R.id.building_4_3_309);
         r_311 = view.findViewById(R.id.building_4_3_311);
         r_312 = view.findViewById(R.id.building_4_3_312);
         r_313 = view.findViewById(R.id.building_4_3_313);
-        r_314 = view.findViewById(R.id.building_4_3_314);
         r_315 = view.findViewById(R.id.building_4_3_315);
         r_316 = view.findViewById(R.id.building_4_3_316);
-        r_325 = view.findViewById(R.id.building_4_3_325);
-        r_326 = view.findViewById(R.id.building_4_3_326);
         r_327 = view.findViewById(R.id.building_4_3_327);
 
         r_300.setOnClickListener(this);
         r_301.setOnClickListener(this);
         r_302.setOnClickListener(this);
-        r_304.setOnClickListener(this);
         r_306.setOnClickListener(this);
         r_308.setOnClickListener(this);
         r_309.setOnClickListener(this);
         r_311.setOnClickListener(this);
         r_312.setOnClickListener(this);
         r_313.setOnClickListener(this);
-        r_314.setOnClickListener(this);
         r_315.setOnClickListener(this);
         r_316.setOnClickListener(this);
-        r_325.setOnClickListener(this);
-        r_326.setOnClickListener(this);
         r_327.setOnClickListener(this);
 
         map = new HashMap<>();
@@ -85,24 +77,20 @@ public class Floor_43_Fragment extends Fragment implements View.OnClickListener 
         map.put("教4－300", r_300);
         map.put("教4－301", r_301);
         map.put("教4－302", r_302);
-        map.put("教4－304", r_304);
         map.put("教4－306", r_306);
         map.put("教4－308", r_308);
         map.put("教4－309", r_309);
         map.put("教4－311", r_311);
         map.put("教4－312", r_312);
         map.put("教4－313", r_313);
-        map.put("教4－314", r_314);
         map.put("教4－315", r_315);
         map.put("教4－316", r_316);
-        map.put("教4－325", r_325);
-        map.put("教4－326", r_326);
         map.put("教4－327", r_327);
     }
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "3");
         switch (v.getId()) {
             case R.id.building_4_3_300:
@@ -170,8 +158,8 @@ public class Floor_43_Fragment extends Fragment implements View.OnClickListener 
     }
 
     @Override
-    public void onStop() {
+    public void onDestroy() {
         EventBus.getDefault().unregister(this);
-        super.onStop();
+        super.onDestroy();
     }
 }

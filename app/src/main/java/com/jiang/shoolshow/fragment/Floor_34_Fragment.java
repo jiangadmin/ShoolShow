@@ -31,7 +31,7 @@ import java.util.Map;
 public class Floor_34_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_400, r_401, r_402, r_403, r_404, r_405, r_408, r_409, r_410, r_412, r_413, r_416, r_417, r_418, r_426, r_427, r_428;
+    TextView             r_400, r_401, r_402, r_403, r_404, r_405, r_408, r_409, r_410, r_412, r_413, r_417, r_418;
 
     Map<String, TextView> map;
 
@@ -57,12 +57,8 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
         r_410 = view.findViewById(R.id.building_3_4_410);
         r_412 = view.findViewById(R.id.building_3_4_412);
         r_413 = view.findViewById(R.id.building_3_4_413);
-        r_416 = view.findViewById(R.id.building_3_4_416);
         r_417 = view.findViewById(R.id.building_3_4_417);
         r_418 = view.findViewById(R.id.building_3_4_418);
-        r_426 = view.findViewById(R.id.building_3_4_426);
-        r_427 = view.findViewById(R.id.building_3_4_427);
-        r_428 = view.findViewById(R.id.building_3_4_428);
 
         r_400.setOnClickListener(this);
         r_401.setOnClickListener(this);
@@ -75,12 +71,8 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
         r_410.setOnClickListener(this);
         r_412.setOnClickListener(this);
         r_413.setOnClickListener(this);
-        r_416.setOnClickListener(this);
         r_417.setOnClickListener(this);
         r_418.setOnClickListener(this);
-        r_426.setOnClickListener(this);
-        r_427.setOnClickListener(this);
-        r_428.setOnClickListener(this);
 
         map = new HashMap<>();
 
@@ -95,12 +87,9 @@ public class Floor_34_Fragment extends Fragment implements View.OnClickListener 
         map.put("教3－410", r_410);
         map.put("教3－412", r_412);
         map.put("教3－413", r_413);
-        map.put("教3－416", r_416);
         map.put("教3－417", r_417);
         map.put("教3－418", r_418);
-        map.put("教3－426", r_426);
-        map.put("教3－427", r_427);
-        map.put("教3－428", r_428);
+
     }
 
     @Override

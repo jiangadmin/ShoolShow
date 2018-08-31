@@ -31,7 +31,7 @@ import java.util.Map;
 public class Floor_46_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_46_Fragment";
 
-    TextView b_101, b_102, b_103, b_104, b_105, b_106, b_107, b_108, b_109, b_110;
+    TextView r_602, r_607, r_608, r_609;
 
     Map<String, TextView> map;
 
@@ -39,85 +39,47 @@ public class Floor_46_Fragment extends Fragment implements View.OnClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         EventBus.getDefault().register(this);
-        return inflater.inflate(R.layout.building_1_1, container, false);
+        return inflater.inflate(R.layout.building_4_6, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        b_101 = view.findViewById(R.id.building_1_1_101);
-        b_102 = view.findViewById(R.id.building_1_1_102);
-        b_103 = view.findViewById(R.id.building_1_1_103);
-        b_104 = view.findViewById(R.id.building_1_1_104);
-        b_105 = view.findViewById(R.id.building_1_1_105);
-        b_106 = view.findViewById(R.id.building_1_1_106);
-        b_107 = view.findViewById(R.id.building_1_1_107);
-        b_108 = view.findViewById(R.id.building_1_1_108);
-        b_109 = view.findViewById(R.id.building_1_1_109);
-        b_110 = view.findViewById(R.id.building_1_1_110);
+        r_602 = view.findViewById(R.id.building_4_6_602);
+        r_607 = view.findViewById(R.id.building_4_6_607);
+        r_608 = view.findViewById(R.id.building_4_6_608);
+        r_609 = view.findViewById(R.id.building_4_6_609);
 
-        b_101.setOnClickListener(this);
-        b_102.setOnClickListener(this);
-        b_103.setOnClickListener(this);
-        b_104.setOnClickListener(this);
-        b_105.setOnClickListener(this);
-        b_106.setOnClickListener(this);
-        b_107.setOnClickListener(this);
-        b_108.setOnClickListener(this);
-        b_109.setOnClickListener(this);
-        b_110.setOnClickListener(this);
+        r_602.setOnClickListener(this);
+        r_607.setOnClickListener(this);
+        r_608.setOnClickListener(this);
+        r_609.setOnClickListener(this);
 
         map = new HashMap<>();
 
-        map.put("教1－101", b_101);
-        map.put("教1－102", b_102);
-        map.put("教1－103", b_103);
-        map.put("教1－104", b_104);
-        map.put("教1－105", b_105);
-        map.put("教1－106", b_106);
-        map.put("教1－107", b_107);
-        map.put("教1－108", b_108);
-        map.put("教1－109", b_109);
-        map.put("教1－110", b_110);
+        map.put("教4－602", r_602);
+        map.put("教4－607", r_607);
+        map.put("教4－608", r_608);
+        map.put("教4－609", r_609);
 
     }
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "6");
         switch (v.getId()) {
-            case R.id.building_1_1_101:
-                map.put("room", "教1－101");
-                break;
-            case R.id.building_1_1_102:
-                map.put("room", "教1－102");
-                break;
-            case R.id.building_1_1_103:
-                map.put("room", "教1－103");
-                break;
-            case R.id.building_1_1_104:
-                map.put("room", "教1－104");
-                break;
-            case R.id.building_1_1_105:
-                map.put("room", "教1－105");
-                break;
-            case R.id.building_1_1_106:
-                map.put("room", "教1－106");
-                break;
-            case R.id.building_1_1_107:
-                map.put("room", "教1－107");
-                break;
-            case R.id.building_1_1_108:
-                map.put("room", "教1－108");
-                break;
-            case R.id.building_1_1_109:
-                map.put("room", "教1－109");
-                break;
-            case R.id.building_1_1_110:
-                map.put("room", "教1－110");
-                break;
+            case R.id.building_4_6_602: map.put("room", "教4－602");
+            break;
+            case R.id.building_4_6_607: map.put("room", "教4－607");
+            break;
+            case R.id.building_4_6_608: map.put("room", "教4－608");
+            break;
+
+            case R.id.building_4_6_609: map.put("room", "教4－609");
+            break;
+
         }
         ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));
 

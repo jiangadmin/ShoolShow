@@ -49,7 +49,6 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
 
     int y1 = 250, y2 = 100, y3 = -50, y4 = -200, y5 = -350;
 
-
     int top = -1080;
     int bottom = 1080;
 
@@ -58,11 +57,11 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
      */
     int fg1 = 0, fg2 = 0, fg3 = 0, fg4 = 0, fg5 = 0;
 
-    TextView r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_108, r_109, r_110,
-            r_201, r_202, r_203, r_206, r_207,
-            r_300, r_301, r_302, r_303, r_308,
-            r_400, r_401, r_402, r_403, r_406, r_407, r_408,
-            r_501, r_502, r_503, r_504, r_505, r_506, r_507, r_508, r_509, r_510;
+  TextView r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_108, r_109, r_110,
+          r_202, r_206,
+          r_300, r_301, r_302, r_303,
+          r_400, r_401, r_402, r_403, r_405, r_406, r_407, r_408,
+          r_501, r_502, r_503, r_504, r_505, r_506, r_507, r_508, r_509, r_510;
 
     Map<String, TextView> map = new HashMap<>();
 
@@ -74,9 +73,9 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onStop() {
+    public void onDestroy() {
         EventBus.getDefault().unregister(this);
-        super.onStop();
+        super.onDestroy();
     }
 
     @Override
@@ -111,24 +110,21 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         r_110 = view.findViewById(R.id.building_1_1_110);
 
         //二楼
-        r_201 = view.findViewById(R.id.building_1_2_201);
         r_202 = view.findViewById(R.id.building_1_2_202);
-        r_203 = view.findViewById(R.id.building_1_2_203);
         r_206 = view.findViewById(R.id.building_1_2_206);
-        r_207 = view.findViewById(R.id.building_1_2_207);
 
         //三楼
         r_300 = view.findViewById(R.id.building_1_3_300);
         r_301 = view.findViewById(R.id.building_1_3_301);
         r_302 = view.findViewById(R.id.building_1_3_302);
         r_303 = view.findViewById(R.id.building_1_3_303);
-        r_308 = view.findViewById(R.id.building_1_3_308);
 
         //四楼
         r_400 = view.findViewById(R.id.building_1_4_400);
         r_401 = view.findViewById(R.id.building_1_4_401);
         r_402 = view.findViewById(R.id.building_1_4_402);
         r_403 = view.findViewById(R.id.building_1_4_403);
+        r_405 = view.findViewById(R.id.building_1_4_405);
         r_406 = view.findViewById(R.id.building_1_4_406);
         r_407 = view.findViewById(R.id.building_1_4_407);
         r_408 = view.findViewById(R.id.building_1_4_408);
@@ -175,22 +171,19 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
         map.put("教1－109", r_109);
         map.put("教1－110", r_110);
 
-        map.put("教1－201", r_201);
         map.put("教1－202", r_202);
-        map.put("教1－203", r_203);
         map.put("教1－206", r_206);
-        map.put("教1－207", r_207);
 
         map.put("教1－300", r_300);
         map.put("教1－301", r_301);
         map.put("教1－302", r_302);
         map.put("教1－303", r_303);
-        map.put("教1－308", r_308);
 
         map.put("教1－400", r_400);
         map.put("教1－401", r_401);
         map.put("教1－402", r_402);
         map.put("教1－403", r_403);
+        map.put("教1－405", r_405);
         map.put("教1－406", r_406);
         map.put("教1－407", r_407);
         map.put("教1－408", r_408);
@@ -254,14 +247,6 @@ public class Building_01_Fragment extends Fragment implements View.OnClickListen
     public void ZK(int i) {
 
         Floor_Activity.start(getActivity(), i);
-
-//        new Get_Floor_Info(getActivity(), i).execute(Const.IP, String.valueOf(i % 10));
-
-//        Map map = new HashMap();
-//        map.put("floor", 2);
-//        map.put("room", i);
-//        EventBus.getDefault().post(map);
-
     }
 
     /**

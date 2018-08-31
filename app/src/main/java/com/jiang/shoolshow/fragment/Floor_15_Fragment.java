@@ -33,8 +33,8 @@ import java.util.Map;
 public class Floor_15_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_15_Fragment";
 
-    TextView b_501, b_502, b_503, b_504, b_505, b_506, b_507, b_508, b_509, b_510;
-
+    TextView  r_501, r_502, r_503, r_504, r_505, r_506, r_507, r_508, r_509, r_510;
+    
     Map<String, TextView> map;
 
     @Nullable
@@ -48,40 +48,40 @@ public class Floor_15_Fragment extends Fragment implements View.OnClickListener 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        b_501 = view.findViewById(R.id.building_1_5_501);
-        b_502 = view.findViewById(R.id.building_1_5_502);
-        b_503 = view.findViewById(R.id.building_1_5_503);
-        b_504 = view.findViewById(R.id.building_1_5_504);
-        b_505 = view.findViewById(R.id.building_1_5_505);
-        b_506 = view.findViewById(R.id.building_1_5_506);
-        b_507 = view.findViewById(R.id.building_1_5_507);
-        b_508 = view.findViewById(R.id.building_1_5_508);
-        b_509 = view.findViewById(R.id.building_1_5_509);
-        b_510 = view.findViewById(R.id.building_1_5_510);
+        r_501 = view.findViewById(R.id.building_1_5_501);
+        r_502 = view.findViewById(R.id.building_1_5_502);
+        r_503 = view.findViewById(R.id.building_1_5_503);
+        r_504 = view.findViewById(R.id.building_1_5_504);
+        r_505 = view.findViewById(R.id.building_1_5_505);
+        r_506 = view.findViewById(R.id.building_1_5_506);
+        r_507 = view.findViewById(R.id.building_1_5_507);
+        r_508 = view.findViewById(R.id.building_1_5_508);
+        r_509 = view.findViewById(R.id.building_1_5_509);
+        r_510 = view.findViewById(R.id.building_1_5_510);
 
-        b_501.setOnClickListener(this);
-        b_502.setOnClickListener(this);
-        b_503.setOnClickListener(this);
-        b_504.setOnClickListener(this);
-        b_505.setOnClickListener(this);
-        b_506.setOnClickListener(this);
-        b_507.setOnClickListener(this);
-        b_508.setOnClickListener(this);
-        b_509.setOnClickListener(this);
-        b_510.setOnClickListener(this);
+        r_501.setOnClickListener(this);
+        r_502.setOnClickListener(this);
+        r_503.setOnClickListener(this);
+        r_504.setOnClickListener(this);
+        r_505.setOnClickListener(this);
+        r_506.setOnClickListener(this);
+        r_507.setOnClickListener(this);
+        r_508.setOnClickListener(this);
+        r_509.setOnClickListener(this);
+        r_510.setOnClickListener(this);
 
         map = new HashMap<>();
 
-        map.put("教1－501", b_501);
-        map.put("教1－502", b_502);
-        map.put("教1－503", b_503);
-        map.put("教1－504", b_504);
-        map.put("教1－505", b_505);
-        map.put("教1－506", b_506);
-        map.put("教1－507", b_507);
-        map.put("教1－508", b_508);
-        map.put("教1－509", b_509);
-        map.put("教1－510", b_510);
+        map.put("教1－501", r_501);
+        map.put("教1－502", r_502);
+        map.put("教1－503", r_503);
+        map.put("教1－504", r_504);
+        map.put("教1－505", r_505);
+        map.put("教1－506", r_506);
+        map.put("教1－507", r_507);
+        map.put("教1－508", r_508);
+        map.put("教1－509", r_509);
+        map.put("教1－510", r_510);
 
         AnimUtils.S(view.findViewById(R.id.floor_view), 0, Const.f_1_s);
 

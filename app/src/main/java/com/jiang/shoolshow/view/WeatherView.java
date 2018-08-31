@@ -32,7 +32,7 @@ public class WeatherView extends RelativeLayout {
             //获取天气
             new Get_Weather(WeatherView.this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
-            timeHandle.postDelayed(this, 60*1000);
+            timeHandle.postDelayed(this, 60*60*1000);
         }
 
     };

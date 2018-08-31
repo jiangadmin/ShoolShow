@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.Floor_Activity;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.servlet.Get_Floor_Info;
@@ -41,11 +42,13 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
 
     List<View> floor = new ArrayList<>();
 
-    int rx = 65, r = 0;
+    int rx = 77, r = 0;
 
-    float s = 0.7F;
+    float s = 0.85F;
 
-    int f1 = 0, f2 = 0, f3 = 0, f4 = 0, f5 = 0;
+    int x1 = -80, x2 = -40, x3 = 0, x4 = 40, x5 = 80;
+
+    int y1 = 250, y2 = 100, y3 = -50, y4 = -200, y5 = -350;
 
     int top = -1080;
     int bottom = 1080;
@@ -55,13 +58,13 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
      */
     int fg1 = 0, fg2 = 0, fg3 = 0, fg4 = 0, fg5 = 0;
 
-    TextView r_100, r_101, r_102, r_103, r_104, r_105, r_106, r_113, r_114, r_115, r_116, r_117, r_118,
-            r_201, r_202, r_203, r_204, r_205, r_208, r_209, r_211, r_212, r_213, r_214, r_215, r_216, r_225, r_226, r_227,
-            r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_311, r_312, r_313, r_315, r_316,
-            r_400, r_401, r_402, r_403, r_404, r_405, r_409, r_410, r_413, r_414, r_415, r_416, r_417, r_418, r_427, r_428, r_429,
-            r_506, r_507, r_508, r_509, r_510, r_512, r_516, r_518, r_519, r_520, r_521, r_522, r_523, r_532, r_533, r_534, r_535;
+    TextView r_100, r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_113, r_114, r_115, r_116, r_117, r_118,
+            r_201, r_202, r_203, r_204, r_205, r_208, r_209, r_211, r_212, r_213, r_214_1, r_215_1, r_216_1, r_225_1, r_226_1, r_227_1, r_214_2, r_215_2, r_216_2, r_225_2, r_226_2, r_227_2,
+            r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_311, r_312, r_313, r_327,
+            r_400, r_401, r_402, r_403, r_404, r_405, r_409, r_410, r_413, r_414, r_415,
+            r_506, r_507, r_508, r_509, r_510, r_512, r_516, r_518, r_519, r_520;
 
-    Map<String, TextView> map = new HashMap();
+    Map<String, TextView> map = new HashMap<>();
 
     @Nullable
     @Override
@@ -71,9 +74,9 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onStop() {
+    public void onDestroy() {
         EventBus.getDefault().unregister(this);
-        super.onStop();
+        super.onDestroy();
     }
 
     @Override
@@ -110,6 +113,7 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         r_104 = view.findViewById(R.id.building_2_1_104);
         r_105 = view.findViewById(R.id.building_2_1_105);
         r_106 = view.findViewById(R.id.building_2_1_106);
+        r_107 = view.findViewById(R.id.building_2_1_107);
         r_113 = view.findViewById(R.id.building_2_1_113);
         r_114 = view.findViewById(R.id.building_2_1_114);
         r_115 = view.findViewById(R.id.building_2_1_115);
@@ -128,12 +132,18 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         r_211 = view.findViewById(R.id.building_2_2_211);
         r_212 = view.findViewById(R.id.building_2_2_212);
         r_213 = view.findViewById(R.id.building_2_2_213);
-        r_214 = view.findViewById(R.id.building_2_2_214);
-        r_215 = view.findViewById(R.id.building_2_2_215);
-        r_216 = view.findViewById(R.id.building_2_2_216);
-        r_225 = view.findViewById(R.id.building_2_2_225);
-        r_226 = view.findViewById(R.id.building_2_2_226);
-        r_227 = view.findViewById(R.id.building_2_2_227);
+        r_214_1 = view.findViewById(R.id.building_2_2_214_1);
+        r_215_1 = view.findViewById(R.id.building_2_2_215_1);
+        r_216_1 = view.findViewById(R.id.building_2_2_216_1);
+        r_225_1 = view.findViewById(R.id.building_2_2_225_1);
+        r_226_1 = view.findViewById(R.id.building_2_2_226_1);
+        r_227_1 = view.findViewById(R.id.building_2_2_227_1);
+        r_214_2 = view.findViewById(R.id.building_2_2_214_2);
+        r_215_2 = view.findViewById(R.id.building_2_2_215_2);
+        r_216_2 = view.findViewById(R.id.building_2_2_216_2);
+        r_225_2 = view.findViewById(R.id.building_2_2_225_2);
+        r_226_2 = view.findViewById(R.id.building_2_2_226_2);
+        r_227_2 = view.findViewById(R.id.building_2_2_227_2);
 
         //三楼
         r_300 = view.findViewById(R.id.building_2_3_300);
@@ -147,8 +157,7 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         r_311 = view.findViewById(R.id.building_2_3_311);
         r_312 = view.findViewById(R.id.building_2_3_312);
         r_313 = view.findViewById(R.id.building_2_3_313);
-        r_315 = view.findViewById(R.id.building_2_3_315);
-        r_316 = view.findViewById(R.id.building_2_3_316);
+        r_327 = view.findViewById(R.id.building_2_3_327);
 
         //四楼
         r_400 = view.findViewById(R.id.building_2_4_400);
@@ -162,12 +171,6 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         r_413 = view.findViewById(R.id.building_2_4_413);
         r_414 = view.findViewById(R.id.building_2_4_414);
         r_415 = view.findViewById(R.id.building_2_4_415);
-        r_416 = view.findViewById(R.id.building_2_4_416);
-        r_417 = view.findViewById(R.id.building_2_4_417);
-        r_418 = view.findViewById(R.id.building_2_4_418);
-        r_427 = view.findViewById(R.id.building_2_4_427);
-        r_428 = view.findViewById(R.id.building_2_4_428);
-        r_429 = view.findViewById(R.id.building_2_4_429);
 
         //五楼
         r_506 = view.findViewById(R.id.building_2_5_506);
@@ -180,13 +183,6 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         r_518 = view.findViewById(R.id.building_2_5_518);
         r_519 = view.findViewById(R.id.building_2_5_519);
         r_520 = view.findViewById(R.id.building_2_5_520);
-        r_521 = view.findViewById(R.id.building_2_5_521);
-        r_522 = view.findViewById(R.id.building_2_5_522);
-        r_523 = view.findViewById(R.id.building_2_5_523);
-        r_532 = view.findViewById(R.id.building_2_5_532);
-        r_533 = view.findViewById(R.id.building_2_5_533);
-        r_534 = view.findViewById(R.id.building_2_5_534);
-        r_535 = view.findViewById(R.id.building_2_5_535);
 
         floor_1.setOnClickListener(this);
         floor_2.setOnClickListener(this);
@@ -224,12 +220,18 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         map.put("教2－211", r_211);
         map.put("教2－212", r_212);
         map.put("教2－213", r_213);
-        map.put("教2－214", r_214);
-        map.put("教2－215", r_215);
-        map.put("教2－216", r_216);
-        map.put("教2－225", r_225);
-        map.put("教2－226", r_226);
-        map.put("教2－227", r_227);
+        map.put("教2－214(1)", r_214_1);
+        map.put("教2－215(1)", r_215_1);
+        map.put("教2－216(1)", r_216_1);
+        map.put("教2－225(1)", r_225_1);
+        map.put("教2－226(1)", r_226_1);
+        map.put("教2－227(1)", r_227_1);
+        map.put("教2－214(2)", r_214_2);
+        map.put("教2－215(2)", r_215_2);
+        map.put("教2－216(2)", r_216_2);
+        map.put("教2－225(2)", r_225_2);
+        map.put("教2－226(2)", r_226_2);
+        map.put("教2－227(2)", r_227_2);
 
         map.put("教2－300", r_300);
         map.put("教2－301", r_301);
@@ -242,8 +244,7 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         map.put("教2－311", r_311);
         map.put("教2－312", r_312);
         map.put("教2－313", r_313);
-        map.put("教2－315", r_315);
-        map.put("教2－316", r_316);
+        map.put("教2－327", r_327);
 
         map.put("教2－400", r_400);
         map.put("教2－401", r_401);
@@ -256,12 +257,6 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         map.put("教2－413", r_413);
         map.put("教2－414", r_414);
         map.put("教2－415", r_415);
-        map.put("教2－416", r_416);
-        map.put("教2－417", r_417);
-        map.put("教2－418", r_418);
-        map.put("教2－427", r_427);
-        map.put("教2－428", r_428);
-        map.put("教2－429", r_429);
 
         map.put("教2－506", r_506);
         map.put("教2－507", r_507);
@@ -273,14 +268,6 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         map.put("教2－518", r_518);
         map.put("教2－519", r_519);
         map.put("教2－520", r_520);
-        map.put("教2－521", r_521);
-        map.put("教2－522", r_522);
-        map.put("教2－523", r_523);
-        map.put("教2－532", r_532);
-        map.put("教2－533", r_533);
-        map.put("教2－534", r_534);
-        map.put("教2－535", r_535);
-
 
         FW();
     }
@@ -313,7 +300,7 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public void onMessage(Building_Entity.ResultBean bean) {
-        if (bean.getBuildCode() == 1) {
+        if (bean.getBuildCode() == 2) {
             for (Building_Entity.ResultBean.SkjsInfoListBean listBean : bean.getSkjsInfoList()) {
                 if (map.get(listBean.getSkdd()) != null) {
                     map.get(listBean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
@@ -329,12 +316,7 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        new Get_Floor_Info(getActivity(), i).execute(Const.IP, String.valueOf(i % 10));
-
-//        Map map = new HashMap();
-//        map.put("floor", 2);
-//        map.put("room", i);
-//        EventBus.getDefault().post(map);
+        Floor_Activity.start(getActivity(), i);
 
     }
 
@@ -385,30 +367,32 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.RX(floor_1, 0, rx);
         AnimUtils.R(floor_1, 0, r);
         AnimUtils.S(floor_1, 0, s);
-        AnimUtils.Y(floor_1, 0, 220);
+        AnimUtils.X(floor_1, 0, x1);
+        AnimUtils.Y(floor_1, 0, y1);
 
         AnimUtils.RX(floor_2, 0, rx);
         AnimUtils.R(floor_2, 0, r);
         AnimUtils.S(floor_2, 0, s);
-        AnimUtils.X(floor_2, 0, f2);
-        AnimUtils.Y(floor_2, 0, 110);
+        AnimUtils.X(floor_2, 0, x2);
+        AnimUtils.Y(floor_2, 0, y2);
 
         AnimUtils.RX(floor_3, 0, rx);
         AnimUtils.R(floor_3, 0, r);
         AnimUtils.S(floor_3, 0, s);
-        AnimUtils.X(floor_3, 0, f3);
+        AnimUtils.X(floor_3, 0, x3);
+        AnimUtils.Y(floor_3, 0, y3);
 
         AnimUtils.RX(floor_4, 0, rx);
         AnimUtils.R(floor_4, 0, r);
         AnimUtils.S(floor_4, 0, s);
-        AnimUtils.X(floor_4, 0, f4);
-        AnimUtils.Y(floor_4, 0, -110);
+        AnimUtils.X(floor_4, 0, x4);
+        AnimUtils.Y(floor_4, 0, y4);
 
         AnimUtils.RX(floor_5, 0, rx);
         AnimUtils.R(floor_5, 0, r);
         AnimUtils.S(floor_5, 0, s);
-        AnimUtils.X(floor_5, 0, f5);
-        AnimUtils.Y(floor_5, 0, -220);
+        AnimUtils.X(floor_5, 0, x5);
+        AnimUtils.Y(floor_5, 0, y5);
 
         floor_1.setEnabled(true);
         floor_2.setEnabled(true);
@@ -416,5 +400,4 @@ public class Building_02_Fragment extends Fragment implements View.OnClickListen
         floor_4.setEnabled(true);
         floor_5.setEnabled(true);
     }
-
 }

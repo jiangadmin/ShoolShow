@@ -31,8 +31,7 @@ import java.util.Map;
 public class Floor_23_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_311, r_312, r_313, r_315, r_316;
-
+    TextView r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_311, r_312, r_313, r_327;
     Map<String, TextView> map;
 
     @Nullable
@@ -57,8 +56,7 @@ public class Floor_23_Fragment extends Fragment implements View.OnClickListener 
         r_311 = view.findViewById(R.id.building_2_3_311);
         r_312 = view.findViewById(R.id.building_2_3_312);
         r_313 = view.findViewById(R.id.building_2_3_313);
-        r_315 = view.findViewById(R.id.building_2_3_315);
-        r_316 = view.findViewById(R.id.building_2_3_316);
+        r_327 = view.findViewById(R.id.building_2_3_327);
 
         r_300.setOnClickListener(this);
         r_301.setOnClickListener(this);
@@ -71,8 +69,7 @@ public class Floor_23_Fragment extends Fragment implements View.OnClickListener 
         r_311.setOnClickListener(this);
         r_312.setOnClickListener(this);
         r_313.setOnClickListener(this);
-        r_315.setOnClickListener(this);
-        r_316.setOnClickListener(this);
+        r_327.setOnClickListener(this);
 
         map = new HashMap<>();
 
@@ -87,14 +84,13 @@ public class Floor_23_Fragment extends Fragment implements View.OnClickListener 
         map.put("教2－311", r_311);
         map.put("教2－312", r_312);
         map.put("教2－313", r_313);
-        map.put("教2－315", r_315);
-        map.put("教2－316", r_316);
+        map.put("教2－327", r_327);
 
     }
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "3");
         switch (v.getId()) {
             case R.id.building_2_3_300:
@@ -130,11 +126,8 @@ public class Floor_23_Fragment extends Fragment implements View.OnClickListener 
             case R.id.building_2_3_313:
                 map.put("room", "教2－313");
                 break;
-            case R.id.building_2_3_315:
-                map.put("room", "教2－315");
-                break;
-            case R.id.building_2_3_316:
-                map.put("room", "教2－316");
+            case R.id.building_2_3_327:
+                map.put("room", "教2－327");
                 break;
 
         }

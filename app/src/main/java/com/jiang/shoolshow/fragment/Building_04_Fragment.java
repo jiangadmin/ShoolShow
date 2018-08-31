@@ -1,6 +1,5 @@
 package com.jiang.shoolshow.fragment;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
+import com.jiang.shoolshow.activity.Floor_Activity;
 import com.jiang.shoolshow.entity.Building_Entity;
-import com.jiang.shoolshow.entity.Const;
-import com.jiang.shoolshow.servlet.Get_Floor_Info;
 import com.jiang.shoolshow.utils.AnimUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -41,11 +39,13 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
 
     List<View> floor = new ArrayList<>();
 
-    int rx = 65, r = 0;
+    int rx = 77, r = 0;
 
-    float s = 0.7F;
+    float s = 0.85F;
 
-    int f1 = 0, f2 = 0, f3 = 0, f4 = 0, f5 = 0;
+    int x1 = -80, x2 = -40, x3 = 0, x4 = 40, x5 = 80, x6 = 120;
+
+    int y1 = 250, y2 = 100, y3 = -50, y4 = -200, y5 = -350, y6 = -500;
 
     int top = -1080;
     int bottom = 1080;
@@ -56,12 +56,13 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
     int fg1 = 0, fg2 = 0, fg3 = 0, fg4 = 0, fg5 = 0;
 
     TextView r_101, r_102, r_103, r_104, r_105, r_106, r_109, r_110,
-            r_201, r_202, r_204, r_205, r_206, r_208, r_209, r_211, r_214, r_225,
-            r_300, r_301, r_302, r_304, r_306, r_308, r_309, r_311, r_312, r_313, r_314, r_315, r_316, r_325, r_326, r_327,
-            r_400, r_401, r_402, r_405, r_406, r_407, r_409, r_410, r_413, r_414, r_415, r_417a, r_417b, r_427, r_428, r_429,
-            r_506, r_507, r_508, r_509, r_510, r_521, r_522, r_523, r_532, r_533, r_534;
+            r_201, r_202, r_204, r_205, r_208, r_209, r_211,
+            r_300, r_301, r_302, r_306, r_308, r_309, r_311, r_312, r_313, r_315, r_316, r_327,
+            r_405, r_406, r_409, r_410, r_413, r_414, r_415,
+            r_507,
+            r_602, r_607, r_608, r_609;
 
-    Map<String, TextView> map = new HashMap();
+    Map<String, TextView> map = new HashMap<>();
 
     @Nullable
     @Override
@@ -71,9 +72,9 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onStop() {
+    public void onDestroy() {
         EventBus.getDefault().unregister(this);
-        super.onStop();
+        super.onDestroy();
     }
 
     @Override
@@ -107,58 +108,37 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
         r_202 = view.findViewById(R.id.building_4_2_202);
         r_204 = view.findViewById(R.id.building_4_2_204);
         r_205 = view.findViewById(R.id.building_4_2_205);
-        r_206 = view.findViewById(R.id.building_4_2_206);
         r_208 = view.findViewById(R.id.building_4_2_208);
         r_209 = view.findViewById(R.id.building_4_2_209);
         r_211 = view.findViewById(R.id.building_4_2_211);
-        r_214 = view.findViewById(R.id.building_4_2_214);
-        r_225 = view.findViewById(R.id.building_4_2_225);
 
         r_300 = view.findViewById(R.id.building_4_3_300);
         r_301 = view.findViewById(R.id.building_4_3_301);
         r_302 = view.findViewById(R.id.building_4_3_302);
-        r_304 = view.findViewById(R.id.building_4_3_304);
         r_306 = view.findViewById(R.id.building_4_3_306);
         r_308 = view.findViewById(R.id.building_4_3_308);
         r_309 = view.findViewById(R.id.building_4_3_309);
         r_311 = view.findViewById(R.id.building_4_3_311);
         r_312 = view.findViewById(R.id.building_4_3_312);
         r_313 = view.findViewById(R.id.building_4_3_313);
-        r_314 = view.findViewById(R.id.building_4_3_314);
         r_315 = view.findViewById(R.id.building_4_3_315);
         r_316 = view.findViewById(R.id.building_4_3_316);
-        r_325 = view.findViewById(R.id.building_4_3_325);
-        r_326 = view.findViewById(R.id.building_4_3_326);
         r_327 = view.findViewById(R.id.building_4_3_327);
 
-        r_400 = view.findViewById(R.id.building_4_4_400);
-        r_401 = view.findViewById(R.id.building_4_4_401);
-        r_402 = view.findViewById(R.id.building_4_4_402);
         r_405 = view.findViewById(R.id.building_4_4_405);
         r_406 = view.findViewById(R.id.building_4_4_406);
-        r_407 = view.findViewById(R.id.building_4_4_407);
         r_409 = view.findViewById(R.id.building_4_4_409);
         r_410 = view.findViewById(R.id.building_4_4_410);
         r_413 = view.findViewById(R.id.building_4_4_413);
         r_414 = view.findViewById(R.id.building_4_4_414);
         r_415 = view.findViewById(R.id.building_4_4_415);
-        r_417a = view.findViewById(R.id.building_4_4_417a);
-        r_417b = view.findViewById(R.id.building_4_4_417b);
-        r_427 = view.findViewById(R.id.building_4_4_427);
-        r_428 = view.findViewById(R.id.building_4_4_428);
-        r_429 = view.findViewById(R.id.building_4_4_429);
 
-        r_506 = view.findViewById(R.id.building_4_5_506);
         r_507 = view.findViewById(R.id.building_4_5_507);
-        r_508 = view.findViewById(R.id.building_4_5_508);
-        r_509 = view.findViewById(R.id.building_4_5_509);
-        r_510 = view.findViewById(R.id.building_4_5_510);
-        r_521 = view.findViewById(R.id.building_4_5_521);
-        r_522 = view.findViewById(R.id.building_4_5_522);
-        r_523 = view.findViewById(R.id.building_4_5_523);
-        r_532 = view.findViewById(R.id.building_4_5_532);
-        r_533 = view.findViewById(R.id.building_4_5_533);
-        r_534 = view.findViewById(R.id.building_4_5_534);
+
+        r_602 = view.findViewById(R.id.building_4_6_602);
+        r_607 = view.findViewById(R.id.building_4_6_607);
+        r_608 = view.findViewById(R.id.building_4_6_608);
+        r_609 = view.findViewById(R.id.building_4_6_609);
 
         floor_1.setOnClickListener(this);
         floor_2.setOnClickListener(this);
@@ -192,58 +172,37 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
         map.put("教4－202", r_202);
         map.put("教4－204", r_204);
         map.put("教4－205", r_205);
-        map.put("教4－206", r_206);
         map.put("教4－208", r_208);
         map.put("教4－209", r_209);
         map.put("教4－211", r_211);
-        map.put("教4－214", r_214);
-        map.put("教4－225", r_225);
 
         map.put("教4－300", r_300);
         map.put("教4－301", r_301);
         map.put("教4－302", r_302);
-        map.put("教4－304", r_304);
         map.put("教4－306", r_306);
         map.put("教4－308", r_308);
         map.put("教4－309", r_309);
         map.put("教4－311", r_311);
         map.put("教4－312", r_312);
         map.put("教4－313", r_313);
-        map.put("教4－314", r_314);
         map.put("教4－315", r_315);
         map.put("教4－316", r_316);
-        map.put("教4－325", r_325);
-        map.put("教4－326", r_326);
         map.put("教4－327", r_327);
 
-        map.put("教4－400", r_400);
-        map.put("教4－401", r_401);
-        map.put("教4－402", r_402);
         map.put("教4－405", r_405);
         map.put("教4－406", r_406);
-        map.put("教4－407", r_407);
         map.put("教4－409", r_409);
         map.put("教4－410", r_410);
         map.put("教4－413", r_413);
         map.put("教4－414", r_414);
         map.put("教4－415", r_415);
-        map.put("教4－417a", r_417a);
-        map.put("教4－417b", r_417b);
-        map.put("教4－427", r_427);
-        map.put("教4－428", r_428);
-        map.put("教4－429", r_429);
 
-        map.put("教4－506", r_506);
         map.put("教4－507", r_507);
-        map.put("教4－508", r_508);
-        map.put("教4－509", r_509);
-        map.put("教4－510", r_510);
-        map.put("教4－521", r_521);
-        map.put("教4－522", r_522);
-        map.put("教4－523", r_523);
-        map.put("教4－532", r_532);
-        map.put("教4－533", r_533);
-        map.put("教4－534", r_534);
+
+        map.put("教4－602", r_602);
+        map.put("教4－607", r_607);
+        map.put("教4－608", r_608);
+        map.put("教4－609", r_609);
 
         FW();
     }
@@ -280,7 +239,7 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public void onMessage(Building_Entity.ResultBean bean) {
-        if (bean.getBuildCode() == 1) {
+        if (bean.getBuildCode() == 4) {
             for (Building_Entity.ResultBean.SkjsInfoListBean listBean : bean.getSkjsInfoList()) {
                 if (map.get(listBean.getSkdd()) != null) {
                     map.get(listBean.getSkdd()).setBackgroundResource(R.drawable.kuang_red);
@@ -296,12 +255,7 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
      */
     public void ZK(int i) {
 
-        new Get_Floor_Info(getActivity(), i).execute(Const.IP, String.valueOf(i % 10));
-
-//        Map map = new HashMap();
-//        map.put("floor", 2);
-//        map.put("room", i);
-//        EventBus.getDefault().post(map);
+        Floor_Activity.start(getActivity(), i);
 
     }
 
@@ -352,36 +306,38 @@ public class Building_04_Fragment extends Fragment implements View.OnClickListen
         AnimUtils.RX(floor_1, 0, rx);
         AnimUtils.R(floor_1, 0, r);
         AnimUtils.S(floor_1, 0, s);
-        AnimUtils.Y(floor_1, 0, 220);
+        AnimUtils.X(floor_1, 0, x1);
+        AnimUtils.Y(floor_1, 0, y1);
 
         AnimUtils.RX(floor_2, 0, rx);
         AnimUtils.R(floor_2, 0, r);
         AnimUtils.S(floor_2, 0, s);
-        AnimUtils.X(floor_2, 0, f2);
-        AnimUtils.Y(floor_2, 0, 110);
+        AnimUtils.X(floor_2, 0, x2);
+        AnimUtils.Y(floor_2, 0, y2);
 
         AnimUtils.RX(floor_3, 0, rx);
         AnimUtils.R(floor_3, 0, r);
         AnimUtils.S(floor_3, 0, s);
-        AnimUtils.X(floor_3, 0, f3);
+        AnimUtils.X(floor_3, 0, x3);
+        AnimUtils.Y(floor_3, 0, y3);
 
         AnimUtils.RX(floor_4, 0, rx);
         AnimUtils.R(floor_4, 0, r);
         AnimUtils.S(floor_4, 0, s);
-        AnimUtils.X(floor_4, 0, f4);
-        AnimUtils.Y(floor_4, 0, -110);
+        AnimUtils.X(floor_4, 0, x4);
+        AnimUtils.Y(floor_4, 0, y4);
 
         AnimUtils.RX(floor_5, 0, rx);
         AnimUtils.R(floor_5, 0, r);
         AnimUtils.S(floor_5, 0, s);
-        AnimUtils.X(floor_5, 0, f5);
-        AnimUtils.Y(floor_5, 0, -220);
+        AnimUtils.X(floor_5, 0, x5);
+        AnimUtils.Y(floor_5, 0, y5);
 
         AnimUtils.RX(floor_6, 0, rx);
         AnimUtils.R(floor_6, 0, r);
         AnimUtils.S(floor_6, 0, s);
-        AnimUtils.X(floor_6, 0, f5);
-        AnimUtils.Y(floor_6, 0, -330);
+        AnimUtils.X(floor_6, 0, x6);
+        AnimUtils.Y(floor_6, 0, y6);
 
         floor_1.setEnabled(true);
         floor_2.setEnabled(true);

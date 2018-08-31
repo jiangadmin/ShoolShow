@@ -1,8 +1,8 @@
 package com.jiang.shoolshow.activity;
 
-
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
@@ -60,12 +60,6 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
         initview();
 
-        //获取楼层信息
-//        new Get_Floor_Info().execute(Const.IP,"2");
-        //获取教室信息
-//        new Get_Classroom_Info().execute(Const.IP,"2"," 教3－203");
-
-        LogUtil.e(TAG, ToolUtils.getMyUUID());
     }
 
     @Override
@@ -73,6 +67,8 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
         EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
+
+    TimeCount timeCount;
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     public void onMeaage(Map map) {
@@ -83,6 +79,11 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
             //获取教学楼信息
             new Get_Building_Info(this).execute(Const.IP);
+
+            if (timeCount == null) {
+                timeCount = new TimeCount(5 * 60 * 1000, 1000);
+                timeCount.start();
+            }
         }
 
         //获取教室数据
@@ -94,7 +95,27 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
             classroom_fragment.initeven(String.valueOf(map.get("floor")), (String) map.get("room"));
         }
+    }
 
+    /**
+     * 计时器
+     */
+    class TimeCount extends CountDownTimer {
+        public TimeCount(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);//参数依次为总时长,和计时的时间间隔
+        }
+
+        //倒计时完成
+        @Override
+        public void onFinish() {
+            //再次启动
+            new Get_Building_Info(MainActivity.this).execute(Const.IP);
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {//计时过程显示
+
+        }
     }
 
     private void initview() {
@@ -123,15 +144,12 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
             case R.id.home:
 
-
                 //获取教学楼信息
                 new Get_Building_Info(this).execute(Const.IP);
 
                 break;
-
         }
     }
-
 
     /**
      * 楼栋信息
@@ -141,15 +159,16 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
     public void CallBack_Building(Building_Entity.ResultBean bean) {
 
         ShowFragmet(1, bean.getBuildCode());
+        LogUtil.e(TAG, "楼：" + bean.getBuildCode());
 
         String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个\n今日服务学生(人次): %s 人";
         item_2_view.removeAllViews();
         TextView textView = new TextView(this);
         textView.setTextSize(10);
         textView.setLineSpacing(10, 1);
-        textView.setText(String.format(text, bean.getBuildTotel(), bean.getJsUsingTotel(), (bean.getBuildTotel()-bean.getJsUsingTotel()), bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
+        textView.setText(String.format(text, bean.getBuildTotel(), bean.getJsUsingTotel(), (bean.getBuildTotel() - bean.getJsUsingTotel()), bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
         item_2_view.addView(textView);
-        item_2_title.setText("教室分布");
+        item_2_title.setText(String.format("教%s-分布", bean.getBuildCode()));
 
         //发送数据到指定楼栋
         EventBus.getDefault().post(bean);
@@ -202,6 +221,8 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
     }
 
+    //TODO:dasdh
+
     /**
      * 控制二级显示
      *
@@ -252,9 +273,6 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
             case 3:
                 Log.e(TAG, "ShowFragmet: 显示教室");
-//                left.setEnabled(true);
-                home.setEnabled(true);
-
                 transaction.show(classroom_fragment);
                 break;
             default:
@@ -264,7 +282,7 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
 
         try {
             transaction.commit();
-        }catch (IllegalStateException e){
+        } catch (IllegalStateException e) {
             e.getMessage();
         }
     }

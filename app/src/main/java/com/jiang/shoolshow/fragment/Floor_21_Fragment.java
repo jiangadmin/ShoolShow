@@ -31,7 +31,7 @@ import java.util.Map;
 public class Floor_21_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_21_Fragment";
 
-    TextView r_100, r_101, r_102, r_103, r_104, r_105, r_106, r_113, r_114, r_115, r_116, r_117, r_118;
+    TextView r_100, r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_113, r_114, r_115, r_116, r_117, r_118;
 
     Map<String, TextView> map;
 
@@ -93,7 +93,7 @@ public class Floor_21_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "1");
         switch (v.getId()) {
 

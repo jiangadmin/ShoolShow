@@ -31,8 +31,7 @@ import java.util.Map;
 public class Floor_25_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_506, r_507, r_508, r_509, r_510, r_512, r_516, r_518, r_519, r_520, r_521, r_522, r_523, r_532, r_533, r_534, r_535;
-
+    TextView r_506, r_507, r_508, r_509, r_510, r_512, r_516, r_518, r_519, r_520;
     Map<String, TextView> map;
 
     @Nullable
@@ -56,13 +55,7 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
         r_518 = view.findViewById(R.id.building_2_5_518);
         r_519 = view.findViewById(R.id.building_2_5_519);
         r_520 = view.findViewById(R.id.building_2_5_520);
-        r_521 = view.findViewById(R.id.building_2_5_521);
-        r_522 = view.findViewById(R.id.building_2_5_522);
-        r_523 = view.findViewById(R.id.building_2_5_523);
-        r_532 = view.findViewById(R.id.building_2_5_532);
-        r_533 = view.findViewById(R.id.building_2_5_533);
-        r_534 = view.findViewById(R.id.building_2_5_534);
-        r_535 = view.findViewById(R.id.building_2_5_535);
+
 
         r_506.setOnClickListener(this);
         r_507.setOnClickListener(this);
@@ -74,13 +67,7 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
         r_518.setOnClickListener(this);
         r_519.setOnClickListener(this);
         r_520.setOnClickListener(this);
-        r_521.setOnClickListener(this);
-        r_522.setOnClickListener(this);
-        r_523.setOnClickListener(this);
-        r_532.setOnClickListener(this);
-        r_533.setOnClickListener(this);
-        r_534.setOnClickListener(this);
-        r_535.setOnClickListener(this);
+
 
         map = new HashMap<>();
 
@@ -94,19 +81,13 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
         map.put("教2－518", r_518);
         map.put("教2－519", r_519);
         map.put("教2－520", r_520);
-        map.put("教2－521", r_521);
-        map.put("教2－522", r_522);
-        map.put("教2－523", r_523);
-        map.put("教2－532", r_532);
-        map.put("教2－533", r_533);
-        map.put("教2－534", r_534);
-        map.put("教2－535", r_535);
+
 
     }
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "5");
         switch (v.getId()) {
             case R.id.building_2_5_506:
@@ -139,27 +120,7 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
             case R.id.building_2_5_520:
                 map.put("room", "教2－520");
                 break;
-            case R.id.building_2_5_521:
-                map.put("room", "教2－521");
-                break;
-            case R.id.building_2_5_522:
-                map.put("room", "教2－522");
-                break;
-            case R.id.building_2_5_523:
-                map.put("room", "教2－523");
-                break;
-            case R.id.building_2_5_532:
-                map.put("room", "教2－532");
-                break;
-            case R.id.building_2_5_533:
-                map.put("room", "教2－533");
-                break;
-            case R.id.building_2_5_534:
-                map.put("room", "教2－534");
-                break;
-            case R.id.building_2_5_535:
-                map.put("room", "教2－535");
-                break;
+
         }
 
         ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));

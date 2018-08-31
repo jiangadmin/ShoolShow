@@ -398,7 +398,7 @@
                 android:id="@+id/building_2_3_316"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
                 android:text="316" />
 
@@ -406,7 +406,7 @@
                 android:id="@+id/building_2_3_315"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
                 android:text="315" />
 

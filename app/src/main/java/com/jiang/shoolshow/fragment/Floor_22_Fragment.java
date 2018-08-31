@@ -1,6 +1,5 @@
 package com.jiang.shoolshow.fragment;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -31,7 +30,7 @@ import java.util.Map;
 public class Floor_22_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_201, r_202, r_203, r_204, r_205, r_208, r_209, r_211, r_212, r_213, r_214, r_215, r_216, r_225, r_226, r_227;
+    TextView r_201, r_202, r_203, r_204, r_205, r_208, r_209, r_211, r_212, r_213, r_214_1, r_215_1, r_216_1, r_225_1, r_226_1, r_227_1, r_214_2, r_215_2, r_216_2, r_225_2, r_226_2, r_227_2;
 
     Map<String, TextView> map;
 
@@ -56,13 +55,18 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
         r_211 = view.findViewById(R.id.building_2_2_211);
         r_212 = view.findViewById(R.id.building_2_2_212);
         r_213 = view.findViewById(R.id.building_2_2_213);
-        r_214 = view.findViewById(R.id.building_2_2_214);
-        r_215 = view.findViewById(R.id.building_2_2_215);
-        r_216 = view.findViewById(R.id.building_2_2_216);
-        r_225 = view.findViewById(R.id.building_2_2_225);
-        r_226 = view.findViewById(R.id.building_2_2_226);
-        r_227 = view.findViewById(R.id.building_2_2_227);
-
+        r_214_1 = view.findViewById(R.id.building_2_2_214_1);
+        r_215_1 = view.findViewById(R.id.building_2_2_215_1);
+        r_216_1 = view.findViewById(R.id.building_2_2_216_1);
+        r_225_1 = view.findViewById(R.id.building_2_2_225_1);
+        r_226_1 = view.findViewById(R.id.building_2_2_226_1);
+        r_227_1 = view.findViewById(R.id.building_2_2_227_1);
+        r_214_2 = view.findViewById(R.id.building_2_2_214_2);
+        r_215_2 = view.findViewById(R.id.building_2_2_215_2);
+        r_216_2 = view.findViewById(R.id.building_2_2_216_2);
+        r_225_2 = view.findViewById(R.id.building_2_2_225_2);
+        r_226_2 = view.findViewById(R.id.building_2_2_226_2);
+        r_227_2 = view.findViewById(R.id.building_2_2_227_2);
 
         r_201.setOnClickListener(this);
         r_202.setOnClickListener(this);
@@ -74,12 +78,18 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
         r_211.setOnClickListener(this);
         r_212.setOnClickListener(this);
         r_213.setOnClickListener(this);
-        r_214.setOnClickListener(this);
-        r_215.setOnClickListener(this);
-        r_216.setOnClickListener(this);
-        r_225.setOnClickListener(this);
-        r_226.setOnClickListener(this);
-        r_227.setOnClickListener(this);
+        r_214_1.setOnClickListener(this);
+        r_215_1.setOnClickListener(this);
+        r_216_1.setOnClickListener(this);
+        r_225_1.setOnClickListener(this);
+        r_226_1.setOnClickListener(this);
+        r_227_1.setOnClickListener(this);
+        r_214_2.setOnClickListener(this);
+        r_215_2.setOnClickListener(this);
+        r_216_2.setOnClickListener(this);
+        r_225_2.setOnClickListener(this);
+        r_226_2.setOnClickListener(this);
+        r_227_2.setOnClickListener(this);
 
         map = new HashMap<>();
 
@@ -93,18 +103,24 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
         map.put("教2－211", r_211);
         map.put("教2－212", r_212);
         map.put("教2－213", r_213);
-        map.put("教2－214", r_214);
-        map.put("教2－215", r_215);
-        map.put("教2－216", r_216);
-        map.put("教2－225", r_225);
-        map.put("教2－226", r_226);
-        map.put("教2－227", r_227);
+        map.put("教2－214(1)", r_214_1);
+        map.put("教2－215(1)", r_215_1);
+        map.put("教2－216(1)", r_216_1);
+        map.put("教2－225(1)", r_225_1);
+        map.put("教2－226(1)", r_226_1);
+        map.put("教2－227(1)", r_227_1);
+        map.put("教2－214(2)", r_214_2);
+        map.put("教2－215(2)", r_215_2);
+        map.put("教2－216(2)", r_216_2);
+        map.put("教2－225(2)", r_225_2);
+        map.put("教2－226(2)", r_226_2);
+        map.put("教2－227(2)", r_227_2);
 
     }
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "2");
         switch (v.getId()) {
             case R.id.building_2_2_201:
@@ -137,23 +153,41 @@ public class Floor_22_Fragment extends Fragment implements View.OnClickListener 
             case R.id.building_2_2_213:
                 map.put("room", "教2－213");
                 break;
-            case R.id.building_2_2_214:
+            case R.id.building_2_2_214_1:
+                map.put("room", "教2－214(1)");
+                break;
+            case R.id.building_2_2_214_2:
                 map.put("room", "教2－214");
                 break;
-            case R.id.building_2_2_215:
-                map.put("room", "教2－215");
+            case R.id.building_2_2_215_1:
+                map.put("room", "教2－215(1)");
                 break;
-            case R.id.building_2_2_216:
-                map.put("room", "教2－216");
+            case R.id.building_2_2_215_2:
+                map.put("room", "教2－215(2)");
                 break;
-            case R.id.building_2_2_225:
-                map.put("room", "教2－225");
+            case R.id.building_2_2_216_1:
+                map.put("room", "教2－216(1)");
                 break;
-            case R.id.building_2_2_226:
-                map.put("room", "教2－226");
+            case R.id.building_2_2_216_2:
+                map.put("room", "教2－216(2)");
                 break;
-            case R.id.building_2_2_227:
-                map.put("room", "教2－227");
+            case R.id.building_2_2_225_1:
+                map.put("room", "教2－225(1)");
+                break;
+            case R.id.building_2_2_225_2:
+                map.put("room", "教2－225(2)");
+                break;
+            case R.id.building_2_2_226_1:
+                map.put("room", "教2－226(1)");
+                break;
+            case R.id.building_2_2_226_2:
+                map.put("room", "教2－226(2)");
+                break;
+            case R.id.building_2_2_227_1:
+                map.put("room", "教2－227(1)");
+                break;
+            case R.id.building_2_2_227_2:
+                map.put("room", "教2－227(2)");
                 break;
         }
         ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));

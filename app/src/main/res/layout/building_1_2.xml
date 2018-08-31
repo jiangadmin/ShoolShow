@@ -60,7 +60,7 @@
                 android:id="@+id/building_1_2_207"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
                 android:text="207"
                 android:textSize="18sp" />
@@ -175,7 +175,7 @@
                 android:id="@+id/building_1_2_203"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
                 android:text="203" />
 
@@ -191,7 +191,7 @@
                 android:id="@+id/building_1_2_201"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
                 android:text="201" />
 

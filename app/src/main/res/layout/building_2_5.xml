@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="532" />
 
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="533" />
 
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="534" />
 
@@ -481,7 +481,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="523" />
 
@@ -490,7 +490,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="522" />
 
@@ -499,7 +499,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_green"
+                    android:background="@drawable/kuang_gray"
                     android:gravity="center"
                     android:text="521" />
 

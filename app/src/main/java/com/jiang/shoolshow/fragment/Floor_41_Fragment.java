@@ -79,7 +79,7 @@ public class Floor_41_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "1");
         switch (v.getId()) {
             case R.id.building_4_1_101:

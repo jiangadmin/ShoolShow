@@ -55,9 +55,9 @@ public class Building_Fragment extends Fragment {
     }
 
     @Override
-    public void onStop() {
+    public void onDestroy() {
         EventBus.getDefault().unregister(this);
-        super.onStop();
+        super.onDestroy();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)

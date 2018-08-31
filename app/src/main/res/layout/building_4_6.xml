@@ -40,33 +40,33 @@
 
             <TextView
                 android:layout_weight="7"
-                android:id="@+id/building_4_6_606"
+                android:id="@+id/building_4_6_608"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="606"
+                android:text="608"
                 android:textSize="22sp" />
 
             <TextView
                 android:layout_weight="7"
-                android:id="@+id/building_4_6_602"
+                android:id="@+id/building_4_6_601"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="602"
+                android:text="601"
                 android:textSize="22sp" />
 
 
             <TextView
                 android:layout_weight="7"
-                android:id="@+id/building_4_6_611"
+                android:id="@+id/building_4_6_609"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="611"
+                android:text="609"
                 android:textSize="22sp" />
             <ImageView
                 android:scaleType="center"
@@ -120,12 +120,12 @@
 
             <TextView
                 android:layout_weight="7"
-                android:id="@+id/building_4_6_603"
+                android:id="@+id/building_4_6_607"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="603"
+                android:text="607"
                 android:textSize="22sp" />
 
             <TextView
@@ -137,12 +137,12 @@
 
             <TextView
                 android:layout_weight="7"
-                android:id="@+id/building_4_6_601"
+                android:id="@+id/building_4_6_602"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_green"
                 android:gravity="center"
-                android:text="601"
+                android:text="602"
                 android:textSize="22sp" />
 
             <TextView
