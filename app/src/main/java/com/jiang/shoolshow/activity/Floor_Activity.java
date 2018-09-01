@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
@@ -96,6 +97,8 @@ public class Floor_Activity extends Base_Activity {
 
         new Get_Floor_Info(this, floor).execute(Const.IP, String.valueOf(floor % 10));
 
+        new TimeCount(5*60*1000,1000).start();
+
         message_view = findViewById(R.id.message_view);
         message_title = findViewById(R.id.message_title);
         message_context = findViewById(R.id.message_context);
@@ -113,6 +116,27 @@ public class Floor_Activity extends Base_Activity {
         intent.setClass(context, Floor_Activity.class);
         intent.putExtra(FLOOR, vid);
         context.startActivity(intent);
+    }
+
+    /**
+     * 计时器
+     */
+    class TimeCount extends CountDownTimer {
+        public TimeCount(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);//参数依次为总时长,和计时的时间间隔
+        }
+
+        //倒计时完成
+        @Override
+        public void onFinish() {
+            //再次启动
+            new Get_Floor_Info(Floor_Activity.this, floor).execute(Const.IP, String.valueOf(floor % 10));
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {//计时过程显示
+
+        }
     }
 
     /**

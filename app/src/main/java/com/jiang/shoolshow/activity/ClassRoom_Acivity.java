@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.adapter.Project_Adapter;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
+import com.jiang.shoolshow.entity.Const;
+import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Classroom_Info;
 
 /**
@@ -39,6 +42,8 @@ public class ClassRoom_Acivity extends Base_Activity {
     LinearLayout message_view;
     TextView message_title;
     RelativeLayout message_context;
+
+    TimeCount timeCount;
 
     public static void start(Context context, String floor, String room) {
         Intent intent = new Intent();
@@ -67,6 +72,9 @@ public class ClassRoom_Acivity extends Base_Activity {
         //获取教室信息
         new Get_Classroom_Info(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getIntent().getStringExtra(FLOOR), getIntent().getStringExtra(ROOM));
 
+        timeCount = new TimeCount(5*60*1000,1000);
+        timeCount.start();
+
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +83,26 @@ public class ClassRoom_Acivity extends Base_Activity {
         });
     }
 
+    /**
+     * 计时器
+     */
+    class TimeCount extends CountDownTimer {
+        public TimeCount(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);//参数依次为总时长,和计时的时间间隔
+        }
+
+        //倒计时完成
+        @Override
+        public void onFinish() {
+            //再次启动
+            new Get_Classroom_Info(ClassRoom_Acivity.this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getIntent().getStringExtra(FLOOR), getIntent().getStringExtra(ROOM));
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {//计时过程显示
+
+        }
+    }
     /**
      * 数据返回
      *

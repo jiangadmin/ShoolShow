@@ -175,55 +175,6 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
     }
 
     /**
-     * 楼层信息
-     *
-     * @param entity
-     */
-    public void CallBack_Floor(final Floor_Entity entity) {
-
-        Floor_Activity.start(this, entity.getFloor());
-        item_2_title.setText("课程信息");
-
-        item_2_view.removeAllViews();
-
-        ShowFragmet(2, entity.getFloor());
-
-        ListViewForScrollView listViewForScrollView = new ListViewForScrollView(this);
-
-        Floor_Info_Adapter adapter = new Floor_Info_Adapter(this);
-        adapter.setResultBeans(entity.getResult().getSkjsInfoList());
-
-        listViewForScrollView.setAdapter(adapter);
-
-        item_2_view.addView(listViewForScrollView);
-
-        listViewForScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ShowFragmet(3, 0);
-
-                Teacher_Entity teacher_entity = new Teacher_Entity();
-                teacher_entity.setName(entity.getResult().getSkjsInfoList().get(position).getJsxm());
-                teacher_entity.setGender(entity.getResult().getSkjsInfoList().get(position).getJsxb());
-                teacher_entity.setNumber(entity.getResult().getSkjsInfoList().get(position).getJsgh());
-                teacher_entity.setLevel(entity.getResult().getSkjsInfoList().get(position).getJszc());
-                teacher_entity.setMessage(entity.getResult().getSkjsInfoList().get(position).getJsyjfx());
-
-                EventBus.getDefault().post(teacher_entity);
-                classroom_fragment.initeven(entity.getResult().getSkjsInfoList().get(position).getJsszlc(),
-                        entity.getResult().getSkjsInfoList().get(position).getSkdd());
-            }
-
-        });
-
-        EventBus.getDefault().post(entity);
-        LogUtil.e(TAG, "发送数据");
-
-    }
-
-    //TODO:dasdh
-
-    /**
      * 控制二级显示
      *
      * @param vid
