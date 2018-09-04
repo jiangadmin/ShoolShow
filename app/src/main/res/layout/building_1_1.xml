@@ -8,6 +8,7 @@
     android:layout_gravity="center">
 
     <LinearLayout
+        android:id="@+id/linearLayout17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -230,5 +231,14 @@
 
         </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="228dp"
+        android:src="@drawable/ic_position"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout17"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout17" />
 
 </android.support.constraint.ConstraintLayout>

@@ -12,4 +12,7 @@
 
     <color name="floor_bg">#39ffffff</color>
 
+    <color name="blue">#2b85e4</color>
+    <color name="blue_bg">#33B3FF</color>
+
 </resources>
