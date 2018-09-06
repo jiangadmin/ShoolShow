@@ -31,7 +31,7 @@ import java.util.Map;
 public class Floor_31_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_108, r_109;
+    TextView r_100, r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_108, r_109;
     Map<String, TextView> map;
 
     @Nullable
@@ -45,6 +45,7 @@ public class Floor_31_Fragment extends Fragment implements View.OnClickListener 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        r_100 = view.findViewById(R.id.building_3_1_100);
         r_101 = view.findViewById(R.id.building_3_1_101);
         r_102 = view.findViewById(R.id.building_3_1_102);
         r_103 = view.findViewById(R.id.building_3_1_103);
@@ -56,6 +57,7 @@ public class Floor_31_Fragment extends Fragment implements View.OnClickListener 
         r_109 = view.findViewById(R.id.building_3_1_109);
 
 
+        r_100.setOnClickListener(this);
         r_101.setOnClickListener(this);
         r_102.setOnClickListener(this);
         r_103.setOnClickListener(this);
@@ -69,6 +71,7 @@ public class Floor_31_Fragment extends Fragment implements View.OnClickListener 
 
         map = new HashMap<>();
 
+        map.put("教3－100", r_101);
         map.put("教3－101", r_101);
         map.put("教3－102", r_102);
         map.put("教3－103", r_103);
@@ -84,9 +87,12 @@ public class Floor_31_Fragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("floor", "1");
         switch (v.getId()) {
+            case R.id.building_3_1_100:
+                map.put("room", "教3－100");
+                break;
             case R.id.building_3_1_101:
                 map.put("room", "教3－101");
                 break;

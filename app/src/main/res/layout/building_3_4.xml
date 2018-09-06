@@ -31,8 +31,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="425"
-                android:textSize="10sp" />
+                android:text="4\n2\n5"
+                android:textSize="12sp" />
 
             <ImageView
                 android:layout_width="19dp"
@@ -199,8 +199,8 @@
                     android:layout_weight="4"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="420"
-                    android:textSize="10sp" />
+                    android:text="4\n2\n0"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -263,8 +263,8 @@
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="411"
-                    android:textSize="10sp" />
+                    android:text="4\n1\n1"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/building_3_4_412"
@@ -286,13 +286,14 @@
                     android:text="413" />
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_3_4_414"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="414" />
+                    android:text="4\n1\n4" />
 
             </LinearLayout>
 
@@ -370,8 +371,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="419"
-                android:textSize="10sp" />
+                android:text="4\n1\n9"
+                android:textSize="12sp" />
 
             <ImageView
                 android:layout_width="19dp"
@@ -419,8 +420,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="415"
-                android:textSize="10sp" />
+                android:text="4\n1\n5"
+                android:textSize="12sp" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -474,8 +475,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="407"
-                android:textSize="10sp" />
+                android:text="4\n0\n7"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="175dp"
@@ -484,12 +485,13 @@
 
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_3_4_406"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="406" />
+                    android:text="4\n0\n6" />
 
                 <TextView
                     android:id="@+id/building_3_4_403"

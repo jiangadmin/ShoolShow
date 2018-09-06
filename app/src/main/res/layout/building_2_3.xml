@@ -24,12 +24,13 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="12sp"
                 android:id="@+id/building_2_3_324"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="324" />
+                android:text="3\n2\n4" />
 
             <ImageView
                 android:layout_width="19dp"
@@ -108,12 +109,13 @@
             </LinearLayout>
 
             <TextView
+                android:textSize="12sp"
                 android:id="@+id/building_2_3_306"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="306" />
+                android:text="3\n0\n6" />
 
             <TextView
                 android:id="@+id/building_2_3_303"
@@ -167,6 +169,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/building_2_3_318"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -176,6 +179,7 @@
                     android:text="318" />
 
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/building_2_3_319"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -185,6 +189,7 @@
                     android:text="319" />
 
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/building_2_3_320"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -194,6 +199,7 @@
                     android:text="320" />
 
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/building_2_3_321"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -203,6 +209,7 @@
                     android:text="321" />
 
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/building_2_3_322"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -212,6 +219,7 @@
                     android:text="322" />
 
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/building_2_3_323"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -274,13 +282,14 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_2_3_310"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="310" />
+                    android:text="3\n1\n0" />
 
                 <TextView
                     android:id="@+id/building_2_3_309"
@@ -302,13 +311,14 @@
                     android:text="308" />
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_2_3_307"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="307" />
+                    android:text="3\n0\n7" />
 
             </LinearLayout>
 
@@ -380,12 +390,13 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="12sp"
                 android:id="@+id/building_2_3_317"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="317" />
+                android:text="3\n1\n7" />
 
             <ImageView
                 android:layout_width="19dp"

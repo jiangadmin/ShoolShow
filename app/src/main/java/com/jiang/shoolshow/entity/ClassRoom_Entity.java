@@ -33,6 +33,16 @@ public class ClassRoom_Entity extends Base_Entity {
          */
 
         private JsInfoBean jsInfo;
+        private String jc;
+
+        public String getJc() {
+            return jc;
+        }
+
+        public void setJc(String jc) {
+            this.jc = jc;
+        }
+
         private List<JsCurrentDayKcBean> jsCurrentDayKc;
 
         public JsInfoBean getJsInfo() {
@@ -523,4 +533,6 @@ public class ClassRoom_Entity extends Base_Entity {
             }
         }
     }
+
+
 }

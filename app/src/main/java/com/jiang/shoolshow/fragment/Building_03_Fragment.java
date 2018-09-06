@@ -43,11 +43,11 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
 
     int rx = 77, r = 0;
 
-    float s = 0.85F;
+    float s = 0.7F;
 
     int x1 = -80, x2 = -40, x3 = 0, x4 = 40, x5 = 80, x6 = 120;
 
-    int y1 = 250, y2 = 100, y3 = -50, y4 = -200, y5 = -350, y6 = -500;
+    int y1 = 220, y2 = 100, y3 = -20, y4 = -140, y5 = -260, y6 = -380;
 
     int top = -1080;
     int bottom = 1080;
@@ -57,7 +57,7 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
      */
     int fg1 = 0, fg2 = 0, fg3 = 0, fg4 = 0, fg5 = 0;
 
-    TextView r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_108, r_109,
+    TextView  r_100, r_101, r_102, r_103, r_104, r_105, r_106, r_107, r_108, r_109,
             r_201, r_202, r_203, r_204, r_205, r_208, r_213, r_214, r_215, r_216, r_225, r_226, r_227,
             r_300, r_301, r_302, r_303, r_304, r_305, r_308, r_309, r_310, r_312, r_313, r_322, r_323,
             r_400, r_401, r_402, r_403, r_404, r_405, r_408, r_409, r_410, r_412, r_413, r_417, r_418,
@@ -104,6 +104,7 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         floor_btn_5.setOnClickListener(this);
         floor_btn_6.setOnClickListener(this);
 
+        r_100 = view.findViewById(R.id.building_3_1_100);
         r_101 = view.findViewById(R.id.building_3_1_101);
         r_102 = view.findViewById(R.id.building_3_1_102);
         r_103 = view.findViewById(R.id.building_3_1_103);
@@ -113,7 +114,6 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         r_107 = view.findViewById(R.id.building_3_1_107);
         r_108 = view.findViewById(R.id.building_3_1_108);
         r_109 = view.findViewById(R.id.building_3_1_109);
-
 
         r_201 = view.findViewById(R.id.building_3_2_201);
         r_202 = view.findViewById(R.id.building_3_2_202);
@@ -195,6 +195,7 @@ public class Building_03_Fragment extends Fragment implements View.OnClickListen
         floor.add(floor_5);
         floor.add(floor_6);
 
+        map.put("教3－100", r_100);
         map.put("教3－101", r_101);
         map.put("教3－102", r_102);
         map.put("教3－103", r_103);

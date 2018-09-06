@@ -69,7 +69,6 @@ public class Floor_24_Fragment extends Fragment implements View.OnClickListener 
         r_414.setOnClickListener(this);
         r_415.setOnClickListener(this);
 
-
         map = new HashMap<>();
 
         map.put("教2－400", r_400);

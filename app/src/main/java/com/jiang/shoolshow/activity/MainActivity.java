@@ -7,23 +7,18 @@ import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
-import com.jiang.shoolshow.adapter.Floor_Info_Adapter;
 import com.jiang.shoolshow.entity.Building_Entity;
 import com.jiang.shoolshow.entity.Const;
-import com.jiang.shoolshow.entity.Floor_Entity;
-import com.jiang.shoolshow.entity.Teacher_Entity;
 import com.jiang.shoolshow.fragment.Building_Fragment;
 import com.jiang.shoolshow.fragment.Classroom_Fragment;
 import com.jiang.shoolshow.fragment.Floor_Fragment;
 import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.utils.LogUtil;
 import com.jiang.shoolshow.utils.ToolUtils;
-import com.jiang.shoolshow.view.ListViewForScrollView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -81,7 +76,7 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
             new Get_Building_Info(this).execute(Const.IP);
 
             if (timeCount == null) {
-                timeCount = new TimeCount(5 * 60 * 1000, 1000);
+                timeCount = new TimeCount(2 * 60 * 1000, 1000);
                 timeCount.start();
             }
         }
@@ -161,12 +156,13 @@ public class MainActivity extends Base_Activity implements View.OnClickListener 
         ShowFragmet(1, bean.getBuildCode());
         LogUtil.e(TAG, "楼：" + bean.getBuildCode());
 
-        String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个\n今日服务学生(人次): %s 人";
+        String text = "教室数量: %s 间\n当前在使用教室: %s 间\n当前空闲教室: %s 间\n今日课程安排: %s 节\n今日有课班级: %s 个";
         item_2_view.removeAllViews();
         TextView textView = new TextView(this);
         textView.setTextSize(10);
         textView.setLineSpacing(10, 1);
-        textView.setText(String.format(text, bean.getBuildTotel(), bean.getJsUsingTotel(), (bean.getBuildTotel() - bean.getJsUsingTotel()), bean.getKcTotel(), bean.getBjTotel(), bean.getStudentTotel()));
+        textView.setTextSize(14F);
+        textView.setText(String.format(text, bean.getBuildTotel(), bean.getJsUsingTotel(), (bean.getBuildTotel() - bean.getJsUsingTotel()), bean.getKcTotel(), bean.getBjTotel()));
         item_2_view.addView(textView);
         item_2_title.setText(String.format("教%s-分布", bean.getBuildCode()));
 

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/floor_bg"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="@color/floor_bg">
 
     <LinearLayout
         android:layout_width="720dp"
@@ -23,66 +23,74 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_weight="7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="7"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
+
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs"
-                android:layout_weight="8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
                 android:textSize="22sp" />
 
-            <TextView
-                android:layout_weight="7"
-                android:id="@+id/building_4_6_608"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="608"
-                android:textSize="22sp" />
+                android:layout_weight="4">
 
-            <TextView
-                android:layout_weight="7"
-                android:id="@+id/building_4_6_601"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="601"
-                android:textSize="22sp" />
+                <TextView
+                    android:id="@+id/building_4_6_607"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="607"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/building_4_6_608"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="608"
+                    android:textSize="22sp" />
 
 
-            <TextView
-                android:layout_weight="7"
-                android:id="@+id/building_4_6_609"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="609"
-                android:textSize="22sp" />
+                <TextView
+                    android:id="@+id/building_4_6_609"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="609"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
                 android:scaleType="center"
                 android:src="@drawable/ic_stairs"
-                android:layout_weight="8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
                 android:textSize="22sp" />
 
-           
 
             <TextView
-                android:layout_weight="7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="7"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -100,9 +108,9 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_weight="7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="8"
                 android:background="@drawable/kuang"
                 android:gravity="center"
                 android:text="女厕"
@@ -110,59 +118,99 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_weight="8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="配电间"
+                android:text="606"
                 android:textSize="22sp" />
 
-            <TextView
-                android:layout_weight="7"
-                android:id="@+id/building_4_6_607"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="607"
-                android:textSize="22sp" />
+                android:layout_weight="4">
+
+                <TextView
+                    android:id="@+id/building_4_6_605"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="605"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/building_4_6_604"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="604"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/building_4_6_603"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:background="@drawable/kuang_gray"
+                    android:gravity="center"
+                    android:text="603"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/building_4_6_602"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@drawable/kuang_green"
+                    android:gravity="center"
+                    android:text="602"
+                    android:textSize="22sp" />
+
+
+            </LinearLayout>
 
             <TextView
-                android:layout_weight="7"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="22sp" />
-
-            <TextView
-                android:layout_weight="7"
-                android:id="@+id/building_4_6_602"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
-                android:gravity="center"
-                android:text="602"
-                android:textSize="22sp" />
-
-            <TextView
                 android:layout_weight="8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:background="@drawable/kuang_gray"
                 android:gravity="center"
+                android:text="601"
                 android:textSize="22sp" />
 
             <TextView
-                android:layout_weight="7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
                 android:background="@drawable/kuang"
                 android:gravity="center"
                 android:text="男厕"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-            
+
         </LinearLayout>
 
     </LinearLayout>

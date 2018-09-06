@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
-import com.jiang.shoolshow.entity.Teacher_Entity;
-
-import org.greenrobot.eventbus.EventBus;
 
 /**
  * @author: jiangadmin
@@ -69,6 +66,13 @@ public class Project_Adapter extends BaseAdapter {
         }
 
         final ClassRoom_Entity.ResultBean.JsCurrentDayKcBean bean = resultBean.getJsCurrentDayKc().get(position);
+
+        if (bean.getJc().contains(resultBean.getJc())) {
+            holder.view.setBackgroundResource(R.color.floor_bg);
+        } else {
+            holder.view.setBackground(null);
+        }
+
         holder.num.setText(bean.getJc());
         holder.teacher.setText(bean.getJsxm());
         holder.name.setText(bean.getKcmc());

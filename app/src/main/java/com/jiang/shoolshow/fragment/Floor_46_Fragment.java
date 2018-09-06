@@ -70,15 +70,18 @@ public class Floor_46_Fragment extends Fragment implements View.OnClickListener 
         Map<String, String> map = new HashMap<>();
         map.put("floor", "6");
         switch (v.getId()) {
-            case R.id.building_4_6_602: map.put("room", "教4－602");
-            break;
-            case R.id.building_4_6_607: map.put("room", "教4－607");
-            break;
-            case R.id.building_4_6_608: map.put("room", "教4－608");
-            break;
-
-            case R.id.building_4_6_609: map.put("room", "教4－609");
-            break;
+            case R.id.building_4_6_602:
+                map.put("room", "教4－602");
+                break;
+            case R.id.building_4_6_607:
+                map.put("room", "教4－607");
+                break;
+            case R.id.building_4_6_608:
+                map.put("room", "教4－608");
+                break;
+            case R.id.building_4_6_609:
+                map.put("room", "教4－609");
+                break;
 
         }
         ClassRoom_Acivity.start(getActivity(), map.get("floor"), map.get("room"));

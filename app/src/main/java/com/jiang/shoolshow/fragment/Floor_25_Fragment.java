@@ -56,7 +56,6 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
         r_519 = view.findViewById(R.id.building_2_5_519);
         r_520 = view.findViewById(R.id.building_2_5_520);
 
-
         r_506.setOnClickListener(this);
         r_507.setOnClickListener(this);
         r_508.setOnClickListener(this);
@@ -67,7 +66,6 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
         r_518.setOnClickListener(this);
         r_519.setOnClickListener(this);
         r_520.setOnClickListener(this);
-
 
         map = new HashMap<>();
 
@@ -81,7 +79,6 @@ public class Floor_25_Fragment extends Fragment implements View.OnClickListener 
         map.put("教2－518", r_518);
         map.put("教2－519", r_519);
         map.put("教2－520", r_520);
-
 
     }
 

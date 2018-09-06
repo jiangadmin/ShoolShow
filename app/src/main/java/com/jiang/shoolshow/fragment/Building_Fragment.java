@@ -35,6 +35,8 @@ public class Building_Fragment extends Fragment {
     Building_03_Fragment building_03_fragment;
     Building_04_Fragment building_04_fragment;
 
+    FragmentTransaction buildingtion;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -50,7 +52,9 @@ public class Building_Fragment extends Fragment {
         Map map = new HashMap();
         map.put("building_ready", true);
         EventBus.getDefault().post(map);
-        LogUtil.e(TAG,"发送信息");
+        LogUtil.e(TAG, "发送信息");
+
+
 
     }
 
@@ -73,8 +77,10 @@ public class Building_Fragment extends Fragment {
      *
      * @param vid
      */
+
+
     public void ShowFragmet(int vid) {
-        FragmentTransaction buildingtion = getFragmentManager().beginTransaction();
+        buildingtion = getFragmentManager().beginTransaction();
 
         if (building_01_fragment == null) {
             building_01_fragment = new Building_01_Fragment();

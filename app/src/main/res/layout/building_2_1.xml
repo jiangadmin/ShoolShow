@@ -44,12 +44,13 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_2_1_123"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="123" />
+                    android:text="1\n2\n3" />
 
                 <ImageView
                     android:layout_width="19dp"
@@ -308,13 +309,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:textSize="12sp"
                         android:id="@+id/building_2_1_111"
                         android:layout_width="20dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="bottom"
                         android:background="@drawable/kuang_gray"
                         android:gravity="center"
-                        android:text="111" />
+                        android:text="1\n1\n1" />
 
                     <TextView
                         android:id="@+id/building_2_1_110"
@@ -336,13 +338,14 @@
                         android:text="109" />
 
                     <TextView
+                        android:textSize="12sp"
                         android:id="@+id/building_2_1_108"
                         android:layout_width="20dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="bottom"
                         android:background="@drawable/kuang_gray"
                         android:gravity="center"
-                        android:text="108" />
+                        android:text="1\n0\n8" />
 
                 </LinearLayout>
 
@@ -404,12 +407,13 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_2_1_122"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="122" />
+                    android:text="1\n2\n2" />
 
                 <ImageView
                     android:layout_width="19dp"

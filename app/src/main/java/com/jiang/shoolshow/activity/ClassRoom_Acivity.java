@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -17,9 +18,8 @@ import android.widget.TextView;
 import com.jiang.shoolshow.R;
 import com.jiang.shoolshow.adapter.Project_Adapter;
 import com.jiang.shoolshow.entity.ClassRoom_Entity;
-import com.jiang.shoolshow.entity.Const;
-import com.jiang.shoolshow.servlet.Get_Building_Info;
 import com.jiang.shoolshow.servlet.Get_Classroom_Info;
+import com.squareup.picasso.Picasso;
 
 /**
  * @author: jiangadmin
@@ -33,7 +33,7 @@ public class ClassRoom_Acivity extends Base_Activity {
     private static final String FLOOR = "floor";
     private static final String ROOM = "room";
 
-    TextView name, type, size, have;
+    TextView name, type, size;
 
     ImageView img;
 
@@ -61,7 +61,6 @@ public class ClassRoom_Acivity extends Base_Activity {
         name = findViewById(R.id.classroom_name);
         type = findViewById(R.id.classroom_type);
         size = findViewById(R.id.classroom_size);
-        have = findViewById(R.id.classroom_have);
         img = findViewById(R.id.classroom_img);
         project = findViewById(R.id.classroom_project_list);
 
@@ -72,7 +71,7 @@ public class ClassRoom_Acivity extends Base_Activity {
         //获取教室信息
         new Get_Classroom_Info(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getIntent().getStringExtra(FLOOR), getIntent().getStringExtra(ROOM));
 
-        timeCount = new TimeCount(5*60*1000,1000);
+        timeCount = new TimeCount(2 * 60 * 1000, 1000);
         timeCount.start();
 
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
@@ -103,6 +102,14 @@ public class ClassRoom_Acivity extends Base_Activity {
 
         }
     }
+
+    ImageView head;
+    TextView tname;
+    TextView gender;
+    TextView number;
+    TextView level;
+    TextView message;
+
     /**
      * 数据返回
      *
@@ -110,21 +117,51 @@ public class ClassRoom_Acivity extends Base_Activity {
      */
     public void CallBack(final ClassRoom_Entity.ResultBean bean) {
 
-        if (bean != null && bean.getJsCurrentDayKc().size() > 0) {
-            name.setText(bean.getJsCurrentDayKc().get(0).getSkdd());
-            type.setText(String.format("教室类型: %s", bean.getJsCurrentDayKc().get(0).getJslx()));
-            size.setText(String.format("教室容量: %s 人", bean.getJsCurrentDayKc().get(0).getJszws()));
-            have.setText("教室配备: ");
+        if (bean.getJsInfo() != null) {
+            name.setText(bean.getJsInfo().getSkdd());
+            type.setText(String.format("教室类型: %s", bean.getJsInfo().getJslx()));
+            size.setText(String.format("教室容量: %s 人", bean.getJsInfo().getJszws()));
 
-            if (bean.getJsCurrentDayKc().get(0).getJslx().contains("多媒体")) {
-                img.setImageResource(R.mipmap.icon_classroom_media);
+//            if (bean.getJsInfo().getJslx().contains("多媒体")) {
+//                img.setImageResource(R.mipmap.icon_classroom_media);
+//            }
+//            if (bean.getJsInfo().getJslx().contains("阶梯教室")) {
+//                img.setImageResource(R.mipmap.icon_classroom_ladder);
+//            }
+//            if (bean.getJsInfo().getJslx().contains("普通")) {
+//                img.setImageResource(R.mipmap.icon_classroom_routine);
+//            }
+
+        }
+        message_context.removeAllViews();
+
+        View v = View.inflate(this, R.layout.view_teacher, null);
+
+        head = v.findViewById(R.id.teacher_head);
+        tname = v.findViewById(R.id.teacher_name);
+        gender = v.findViewById(R.id.teacher_gender);
+        number = v.findViewById(R.id.teacher_number);
+        level = v.findViewById(R.id.teacher_level);
+        message = v.findViewById(R.id.message);
+
+        tname.setText("姓名：");
+        gender.setText("性别：");
+        number.setText("工号：");
+        level.setText("职称：");
+        message.setText("研究方向：");
+
+        message_context.addView(v);
+        message_title.setText("教师介绍");
+        message_view.setVisibility(View.VISIBLE);
+
+        if (bean != null && bean.getJsCurrentDayKc().size() > 0) {
+
+            for (ClassRoom_Entity.ResultBean.JsCurrentDayKcBean kcBean : bean.getJsCurrentDayKc()) {
+                if (kcBean.getJc().contains(bean.getJc())) {
+                    ShowTeacher(kcBean);
+                }
             }
-            if (bean.getJsCurrentDayKc().get(0).getJslx().contains("阶梯教室")) {
-                img.setImageResource(R.mipmap.icon_classroom_ladder);
-            }
-            if (bean.getJsCurrentDayKc().get(0).getJslx().contains("普通")) {
-                img.setImageResource(R.mipmap.icon_classroom_routine);
-            }
+
 
             Project_Adapter adapter = new Project_Adapter(this);
             adapter.setResultBean(bean);
@@ -134,28 +171,24 @@ public class ClassRoom_Acivity extends Base_Activity {
             project.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    message_context.removeAllViews();
-                    View v = View.inflate(ClassRoom_Acivity.this, R.layout.view_teacher, null);
+                    ShowTeacher(bean.getJsCurrentDayKc().get(position));
 
-                    ImageView head = v.findViewById(R.id.teacher_head);
-                    TextView name = v.findViewById(R.id.teacher_name);
-                    TextView gender = v.findViewById(R.id.teacher_gender);
-                    TextView number = v.findViewById(R.id.teacher_number);
-                    TextView level = v.findViewById(R.id.teacher_level);
-                    TextView message = v.findViewById(R.id.message);
-
-                    name.setText(String.format("姓名：%s", bean.getJsCurrentDayKc().get(position).getJsxm()));
-                    gender.setText(String.format("性别：%s",  bean.getJsCurrentDayKc().get(position).getJsxb()));
-                    number.setText(String.format("工号：%s",  bean.getJsCurrentDayKc().get(position).getJsgh()));
-                    level.setText(String.format("职称：%s",  bean.getJsCurrentDayKc().get(position).getJszc()));
-                    message.setText(String.format("研究方向：\n%s",  bean.getJsCurrentDayKc().get(position).getJsyjfx()));
-
-                    message_context.addView(v);
-                    message_title.setText("教师介绍");
-                    message_view.setVisibility(View.VISIBLE);
 
                 }
             });
         }
+    }
+
+    public void ShowTeacher(ClassRoom_Entity.ResultBean.JsCurrentDayKcBean bean) {
+        if (!TextUtils.isEmpty(bean.getZp())) {
+            Picasso.with(ClassRoom_Acivity.this).load(bean.getZp()).into(head);
+        } else {
+            head.setImageBitmap(null);
+        }
+        tname.setText(String.format("姓名：%s", bean.getJsxm()));
+        gender.setText(String.format("性别：%s", bean.getJsxb()));
+        number.setText(String.format("工号：%s", bean.getJsgh()));
+        level.setText(String.format("职称：%s", bean.getJszc()));
+        message.setText(String.format("研究方向：\n%s", bean.getJsyjfx()));
     }
 }

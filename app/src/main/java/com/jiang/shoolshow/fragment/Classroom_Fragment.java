@@ -46,7 +46,6 @@ public class Classroom_Fragment extends Fragment {
         name = view.findViewById(R.id.classroom_name);
         type = view.findViewById(R.id.classroom_type);
         size = view.findViewById(R.id.classroom_size);
-        have = view.findViewById(R.id.classroom_have);
         img = view.findViewById(R.id.classroom_img);
         project = view.findViewById(R.id.classroom_project_list);
 

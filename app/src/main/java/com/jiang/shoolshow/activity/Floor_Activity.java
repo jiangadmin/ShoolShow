@@ -97,7 +97,7 @@ public class Floor_Activity extends Base_Activity {
 
         new Get_Floor_Info(this, floor).execute(Const.IP, String.valueOf(floor % 10));
 
-        new TimeCount(5*60*1000,1000).start();
+        new TimeCount(2 * 60 * 1000, 1000).start();
 
         message_view = findViewById(R.id.message_view);
         message_title = findViewById(R.id.message_title);

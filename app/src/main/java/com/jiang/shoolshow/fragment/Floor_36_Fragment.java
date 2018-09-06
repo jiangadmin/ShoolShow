@@ -31,8 +31,7 @@ import java.util.Map;
 public class Floor_36_Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Floor_11_Fragment";
 
-    TextView
-            r_601, r_602, r_603, r_604, r_606, r_611;
+    TextView r_601, r_602, r_603, r_604, r_606, r_611;
     Map<String, TextView> map;
 
     @Nullable

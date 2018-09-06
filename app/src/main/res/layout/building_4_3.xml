@@ -26,12 +26,13 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="12sp"
                 android:id="@+id/building_4_3_324"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="324" />
+                android:text="3\n2\n4" />
 
             <ImageView
                 android:layout_width="19dp"
@@ -67,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/kuang_gray"
+                    android:background="@drawable/kuang_green"
                     android:gravity="center"
                     android:text="327" />
 
@@ -132,12 +133,13 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_4_3_303"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="303" />
+                    android:text="3\n0\n3" />
 
                 <TextView
                     android:id="@+id/building_4_3_304"
@@ -254,13 +256,14 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_4_3_310"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="310" />
+                    android:text="3\n1\n0" />
 
                 <TextView
                     android:id="@+id/building_4_3_309"
@@ -282,13 +285,14 @@
                     android:text="308" />
 
                 <TextView
+                    android:textSize="12sp"
                     android:id="@+id/building_4_3_307"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:background="@drawable/kuang_gray"
                     android:gravity="center"
-                    android:text="307" />
+                    android:text="3\n0\n7" />
 
             </LinearLayout>
 
@@ -361,12 +365,13 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="12sp"
                 android:id="@+id/building_4_3_317"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/kuang_green"
+                android:background="@drawable/kuang_gray"
                 android:gravity="center"
-                android:text="317" />
+                android:text="3\n1\n7" />
 
             <ImageView
                 android:layout_width="19dp"

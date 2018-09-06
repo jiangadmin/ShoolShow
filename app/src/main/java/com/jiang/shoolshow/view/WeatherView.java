@@ -22,7 +22,7 @@ public class WeatherView extends RelativeLayout {
     private final Context context;
 
     ImageView imgWeather;
-    private TextView tvTemperature , tvWeather;
+    private TextView tvTemperature, tvWeather;
 
     private final Handler timeHandle = new Handler();
 
@@ -32,7 +32,7 @@ public class WeatherView extends RelativeLayout {
             //获取天气
             new Get_Weather(WeatherView.this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
-            timeHandle.postDelayed(this, 60*60*1000);
+            timeHandle.postDelayed(this, 60 * 60 * 1000);
         }
 
     };
@@ -63,9 +63,10 @@ public class WeatherView extends RelativeLayout {
 
     /**
      * 天气数据返回
+     *
      * @param bean
      */
-    public void  Callback(Weather_Entity.ResultBean bean){
+    public void Callback(Weather_Entity.ResultBean bean) {
         tvWeather.setText(bean.getWeather());
         tvTemperature.setText(bean.getTemperature());
 
@@ -91,50 +92,48 @@ public class WeatherView extends RelativeLayout {
                 Resource = R.drawable.ic_weacther_07;
                 break;
             case "阵雨":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_zy;
                 break;
             case "暴雨":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_by;
                 break;
             case "雾":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_w;
                 break;
             case "霾":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_m;
                 break;
             case "霜冻":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_sd;
                 break;
             case "暴风":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_bf;
                 break;
             case "台风":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_tf;
                 break;
             case "暴风雪":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_bfx;
                 break;
             case "小雪":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_xx;
                 break;
             case "中雪":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_zx;
                 break;
             case "大雪":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_dx;
                 break;
             case "雨夹雪":
-                Resource = R.drawable.ic_weacther_02;
+                Resource = R.drawable.ic_weacther_yjx;
                 break;
             case "冰雹":
+                Resource = R.drawable.ic_weacther_bb;
+                break;
+            default:
                 Resource = R.drawable.ic_weacther_02;
                 break;
-            case "浮尘":
-                Resource = R.drawable.ic_weacther_02;
-                break;
-            case "扬沙":
-                Resource = R.drawable.ic_weacther_02;
-                break;
+
         }
 
         imgWeather.setImageResource(Resource);
