@@ -15,6 +15,8 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <permission
         android:name="com.jiang.shoolshow.permission.MIPUSH_RECEIVE"
         android:protectionLevel="signature" /> <!--这里com.xiaomi.mipushdemo改成app的包名-->
@@ -44,6 +46,11 @@
             </intent-filter>
 
         </activity>
+
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
 
         <activity
             android:name=".activity.Floor_Activity"
@@ -83,6 +90,17 @@
         <service
             android:name="com.xiaomi.mipush.sdk.MessageHandleService"
             android:enabled="true" /> <!--注：此service必须在2.2.5版本以后（包括2.2.5版本）加入-->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
 
         <receiver
             android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"

@@ -7,6 +7,7 @@ import android.content.Context;
 import com.jiang.shoolshow.entity.Const;
 import com.jiang.shoolshow.utils.LogUtil;
 import com.jiang.shoolshow.utils.ToolUtils;
+import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
@@ -39,7 +40,9 @@ public class MyApplication extends Application {
         Const.IP = ToolUtils.getMyUUID();
 
         //崩溃检测
-        CrashReport.initCrashReport(getApplicationContext(), "b761f87683", false);
+//        CrashReport.initCrashReport(getApplicationContext(), "b761f87683", false);
+
+        Bugly.init(getApplicationContext(), "b761f87683", false);
 
     }
 
