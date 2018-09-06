@@ -180,7 +180,6 @@
                     android:text="602"
                     android:textSize="22sp" />
 
-
             </LinearLayout>
 
             <TextView
